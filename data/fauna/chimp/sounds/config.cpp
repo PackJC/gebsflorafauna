@@ -7,18 +7,17 @@ class CfgPatches
 		requiredVersion=0.1;
 		requiredAddons[]=
 		{
-			"DZ_Data",
-			"DZ_Vehicles_Wheeled"
+			"DZ_Data"
 		};
 	};
 };
 class CfgSoundSets
 {
-	class kck_grombleAttack_soundset
+	class Chimp_Calm_soundset
 	{
 		soundShaders[]=
 		{
-			"kck_grombleOnHit"
+			"Chimp_OnHit"
 		};
 		sound3DProcessingType="infected3DProcessingType";
 		volumeCurve="infectedAttenuationCurve";
@@ -26,44 +25,94 @@ class CfgSoundSets
 		doppler=0;
 		loop=0;
 	};
+
+	class Chimp_Attack_soundset
+	{
+		soundShaders[] =
+		{
+			"Chimp_Attack"
+		};
+		sound3DProcessingType = "infected3DProcessingType";
+		volumeCurve = "infectedAttenuationCurve";
+		spatial = 1;
+		doppler = 0;
+		loop = 0;
+	};
+	class Chimp_Agr_soundset
+	{
+		soundShaders[] =
+		{
+			"Chimp_Agr"
+		};
+		sound3DProcessingType = "infected3DProcessingType";
+		volumeCurve = "infectedAttenuationCurve";
+		spatial = 1;
+		doppler = 0;
+		loop = 0;
+	};
+	class Chimp_Soundset
+	{
+		soundShaders[] =
+		{
+			"Chimp_Run"
+		};
+		sound3DProcessingType = "infected3DProcessingType";
+		volumeCurve = "infectedAttenuationCurve";
+		spatial = 1;
+		doppler = 0;
+		loop = 0;
+	};
+	class Chimp_Onhit_soundset
+	{
+		soundShaders[] =
+		{
+			"Chimp_OnHit"
+		};
+		sound3DProcessingType = "infected3DProcessingType";
+		volumeCurve = "infectedAttenuationCurve";
+		spatial = 1;
+		doppler = 0;
+		loop = 0;
+	};
 };
+
 class CfgSoundShaders
 {
-	class kck_grombleAttack
+	class Chimp_Attack
 	{
 		samples[]=
 		{
 			
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			}
 		};
 		volume=0.30000001;
 		range=44;
 	};
-	class kck_grombleonhit
+	class Chimp_Onhit
 	{
 		samples[]=
 		{
 			
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			}
 		};
@@ -72,84 +121,84 @@ class CfgSoundShaders
 	};
 
 
-	class kck_grombleAgr
+	class Chimp_Agr
 	{
 		samples[] =
 		{
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			}
 		};
 		volume = 1.4400001;
 		range = 120;
 	};
-	class kck_gromble_Calm
+	class Chimp_Calm
 	{
 		samples[] =
 		{
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			}
 		};
 		volume = 0.40000001;
 		range = 65;
 	};
-	class kck_grombleRun
+	class Chimp_Run
 	{
 		samples[] =
 		{
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"kck_gromble\sounds\vz9",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			},
 
 			{
-				"kck_gromble\sounds\vz10",
+				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
 				0.80000001
 			}
 		};

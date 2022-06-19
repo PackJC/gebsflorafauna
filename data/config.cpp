@@ -191,7 +191,7 @@ class cfgVehicles
 	{
 
 		scope = 0;
-		model = "\gebsflorafauna\data\fauna\chimp\chimp.p3d";
+		model = "\gebsflorafauna\data\fauna\chimp\geb_chimp.p3d";
 		class GlobalHealth
 		{
 			class Health
@@ -868,12 +868,12 @@ class cfgVehicles
 			};
 		};
 	};
-	class Chimp : ChimpBase
+	class geb_Chimp : ChimpBase
 	{
 		displayName = "Chimpanzee";
 		descriptionShort = "A common Chimpanzee";
 		scope = 2;
-		model = "\gebsflorafauna\data\fauna\chimp\chimp.p3d";
+		model = "\gebsflorafauna\data\fauna\chimp\geb_chimp.p3d";
 
 			class GlobalHealth
 			{
@@ -905,17 +905,231 @@ class cfgVehicles
 			};
 			class AnimEvents
 			{
+				class Steps
+				{
+					class Walk1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 1;
+					};
+					class Walk2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 2;
+					};
+					class Walk3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 3;
+					};
+					class Walk4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 4;
+					};
+					class Run1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 5;
+					};
+					class Run2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 6;
+					};
+					class Run3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 7;
+					};
+					class Run4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 8;
+					};
+					class Sprint1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 9;
+					};
+					class Sprint2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 10;
+					};
+					class Sprint3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 11;
+					};
+					class Sprint4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 12;
+					};
+					class Scuff1
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 17;
+					};
+					class Scuff2
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 18;
+					};
+					class Sccuff3
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 19;
+					};
+					class Scuff4
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 20;
+					};
+					class landFeetErc
+					{
+						soundLookupTable = "landFeetErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 21;
+					};
+					class landFootErc
+					{
+						soundLookupTable = "landFootErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 22;
+					};
+					class Bodyfall
+					{
+						soundLookupTable = "bodyfall_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 23;
+					};
+					class Bodyfall_Hand
+					{
+						soundLookupTable = "bodyfall_hand_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 24;
+					};
+					class Bodyfall_Slide
+					{
+						soundLookupTable = "bodyfall_slide_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 25;
+					};
+					class Prone_Walk_L
+					{
+						soundLookupTable = "walkProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 27;
+					};
+					class Prone_Walk_R
+					{
+						soundLookupTable = "walkProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 28;
+					};
+					class Prone_Run_L
+					{
+						soundLookupTable = "runProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 29;
+					};
+					class Prone_Run_R
+					{
+						soundLookupTable = "runProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 30;
+					};
+				};
+				class Sounds
+				{
+					class Attack_Light1
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 1;
+					};
+					class Attack_Light2
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 2;
+					};
+					class Attack_Heavy1
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 3;
+					};
+					class Attack_Heavy2
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 4;
+					};
+					class TwoHands
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 5;
+					};
+				};
+				class SoundVoice
+				{
+					class LightHit
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 1;
+					};
+					class HeavyHit
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 2;
+					};
+					class Attack
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 5;
+					};
+					class Jump
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 10;
+					};
+					class Land
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 11;
+					};
+					class CallToArmsShort
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 20;
+					};
+				};
 			};
 	};
 
 	//Human Skeleton
-	class Penguin : AnimalBase
+	class geb_Penguin : AnimalBase
 	{
 		displayName = "Penguin";
 		descriptionShort = "A common Penguin";
 		simulation = "dayzanimal";
 		scope = 2;
-		model = "\gebsflorafauna\data\fauna\penguin\penguin.p3d";
+		model = "\gebsflorafauna\data\fauna\penguin\geb_penguin.p3d";
 		aiAgentTemplate = "AmbientLife";
 		class DamageSystem
 		{
@@ -1249,7 +1463,7 @@ class cfgVehicles
 			movementSpeedMapping[] = { 0,0.25,0.80000001,3 };
 		};
 	}
-	class PenguinSteakMeat : Edible_Base
+	class geb_PenguinSteakMeat : Edible_Base
 	{
 		scope = 2;
 		displayName = "$STR_PenguinSteakMeat";
@@ -1429,11 +1643,11 @@ class cfgVehicles
 	};
 
 	//Goat Skeleton
-	class Rabbit : AnimalBase
+	class geb_Rabbit : AnimalBase
 	{
 		displayName = "Rabbit";
 		descriptionShort = "A common Rabbit";
-		model = "\gebsflorafauna\data\fauna\rabbit\rabbit.p3d";
+		model = "\gebsflorafauna\data\fauna\rabbit\geb_rabbit.p3d";
 		aiAgentTemplate = "AmbientLife";
 		scope = 2;
 		simulation = "dayzanimal";
@@ -1963,14 +2177,14 @@ class cfgVehicles
 
 
 	//Chicken Skeleton
-	class Turkey: AnimalBase
+	class geb_Turkey: AnimalBase
 	{
 		displayName = "Turkey";
 		descriptionShort = "A common Turkey";
 		simulation = "dayzanimal";
 		scope = 2;
 
-		model="\gebsflorafauna\data\fauna\turkey\turkey.p3d";
+		model="\gebsflorafauna\data\fauna\turkey\geb_turkey.p3d";
 		aiAgentTemplate="AmbientLife";
 		class DamageSystem
 		{
@@ -2134,127 +2348,127 @@ class cfgVehicles
 			{
 				class HenChick
 				{
-					soundSet="HenChick_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=1;
 				};
 				class HenCluck_A
 				{
-					soundSet="HenCluck_A_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=2;
 				};
 				class HenCluck_A_High
 				{
-					soundSet="HenCluck_A_High_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=3;
 				};
 				class HenCluck_B
 				{
-					soundSet="HenCluck_B_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=4;
 				};
 				class HenCluck_B_High
 				{
-					soundSet="HenCluck_B_High_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=5;
 				};
 				class HenCluck_C
 				{
-					soundSet="HenCluck_C_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=6;
 				};
 				class HenCluck_C_High
 				{
-					soundSet="HenCluck_C_High_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=7;
 				};
 				class HenCluck_D
 				{
-					soundSet="HenCluck_D_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=8;
 				};
 				class HenCluck_D_High
 				{
-					soundSet="HenCluck_D_High_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=9;
 				};
 				class HenCluck_E
 				{
-					soundSet="HenCluck_E_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=10;
 				};
 				class HenCluck_E_High
 				{
-					soundSet="HenCluck_E_High_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=11;
 				};
 				class HenCluck_Silky
 				{
-					soundSet="HenCluck_Silky_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=12;
 				};
 				class HenCluck_Silky_High
 				{
-					soundSet="HenCluck_Silky_High_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=13;
 				};
 				class HenCrow_A
 				{
-					soundSet="HenCrow_A_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=14;
 				};
 				class HenCrow_B
 				{
-					soundSet="HenCrow_B_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=15;
 				};
 				class HenCrow_C
 				{
-					soundSet="HenCrow_C_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=16;
 				};
 				class HenCrow_D
 				{
-					soundSet="HenCrow_D_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=17;
 				};
 				class HenCrow_E
 				{
-					soundSet="HenCrow_E_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=18;
 				};
 				class HenCrow_F
 				{
-					soundSet="HenCrow_F_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=19;
 				};
 				class HenCrow_G
 				{
-					soundSet="HenCrow_G_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=20;
 				};
 				class HenScream
 				{
-					soundSet="HenScream_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=21;
 				};
@@ -2284,7 +2498,7 @@ class cfgVehicles
 				};
 				class HenCrowX1
 				{
-					soundSet="HenCrowX1_SoundSet";
+					soundSet="Turkey_Soundset";
 					noise="DeerRoarNoise";
 					id=26;
 				};
@@ -2304,7 +2518,7 @@ class cfgVehicles
 			movementSpeedMapping[]={0,0.25,0.80000001,3};
 		};
 	}
-	class TurkeyBreastMeat : Edible_Base
+	class geb_TurkeyBreastMeat : Edible_Base
 	{
 		scope = 2;
 		displayName = "$STR_TurkeyBreastMeat";
@@ -2482,7 +2696,7 @@ class cfgVehicles
 			};
 		};
 	};
-	class Peacock : AnimalBase
+	class geb_Peacock : AnimalBase
 	{
 		displayName = "Peacock";
 		descriptionShort = "A common Peacock";
@@ -2490,7 +2704,7 @@ class cfgVehicles
 		scope = 2;
 
 
-		model = "\gebsflorafauna\data\fauna\peacock\peacock.p3d";
+		model = "\gebsflorafauna\data\fauna\peacock\geb_peacock.p3d";
 		aiAgentTemplate = "AmbientLife";
 		class DamageSystem
 		{
@@ -2831,7 +3045,7 @@ class cfgVehicles
 			movementSpeedMapping[] = { 0,0.25,0.80000001,3 };
 		};
 	}
-	class PeacockBreastMeat : Edible_Base
+	class geb_PeacockBreastMeat : Edible_Base
 	{
 		scope = 2;
 		displayName = "$STR_PeacockBreastMeat";
@@ -3011,7 +3225,7 @@ class cfgVehicles
 	};
 
 	//Bear Skeleton
-    class Blackbear: Animal_UrsusArctos
+    class geb_Blackbear: Animal_UrsusArctos
     {
 		scope=2;
 		displayName="Black Bear";
@@ -3073,7 +3287,7 @@ class cfgVehicles
 			};
 		};
     };
-	class Polarbear: Animal_UrsusArctos
+	class geb_Polarbear: Animal_UrsusArctos
     {
 		scope=2;
 		displayName="Polar Bear";
@@ -3137,14 +3351,14 @@ class cfgVehicles
     };
 
 	//Sheep Skeleton
-	class Racoon : AnimalBase
+	class geb_Racoon : AnimalBase
 	{
 		displayName = "Racoon";
 		descriptionShort = "A common Racoon";
 		simulation = "dayzanimal";
 		scope = 2;
 
-		model = "\gebsflorafauna\data\fauna\racoon\racoon.p3d";
+		model = "\gebsflorafauna\data\fauna\racoon\geb_racoon.p3d";
 		aiAgentTemplate = "Herbivores_OvisAries";
 		class DamageSystem
 		{
@@ -3691,7 +3905,7 @@ class cfgVehicles
 			lookAtFilterSpeed = 1.5700001;
 		};
 	};
-	class RacoonSteakMeat : Edible_Base
+	class geb_RacoonSteakMeat : Edible_Base
 	{
 		scope = 2;
 		displayName = "$STR_RacoonSteakMeat";
@@ -3871,7 +4085,7 @@ class cfgVehicles
 	};
 
 	//Bears
-	class BlackbearPelt: BearPelt
+	class geb_BlackbearPelt: BearPelt
 	{
 		scope=2;
 		displayName="Black Bear Pelt";
@@ -3885,7 +4099,7 @@ class cfgVehicles
 			"\gebsflorafauna\data\fauna\bears\ursus_arctos\blackbear_pelt_co.paa"
 		};
 	};
-	class PolarbearPelt: BearPelt
+	class geb_PolarbearPelt: BearPelt
 	{
 		scope=2;
 		displayName="Polar Bear Pelt";
@@ -3908,7 +4122,7 @@ class cfgVehicles
 		varQuantityMin = 0;
 		varQuantityMax = 130;
 	};
-	class BlackMorel : MushroomBase
+	class geb_BlackMorel : MushroomBase
 	{
 		scope = 2;
 		displayName = "Black Morel";
@@ -4071,10 +4285,10 @@ class cfgVehicles
 			};
 		};
 	};
-	class LionsMane : MushroomBase
+	class geb_LionsMane : MushroomBase
 	{
 		scope = 2;
-		displayName = "Black Morel";
+		displayName = "Lions Mane";
 		descriptionShort = "$STR_AgaricusMushroom1";
 		model = "\gebsflorafauna\data\mycology\lionsmane\lionsmane.p3d";
 		weight = 0;
@@ -4234,10 +4448,10 @@ class cfgVehicles
 			};
 		};
 	};
-	class PuffBall : MushroomBase
+	class geb_PuffBall : MushroomBase
 	{
 		scope = 2;
-		displayName = "Black Morel";
+		displayName = "Puff Ball";
 		descriptionShort = "$STR_AgaricusMushroom1";
 		model = "\gebsflorafauna\data\mycology\puffball\puffball.p3d";
 		weight = 0;
@@ -4397,10 +4611,10 @@ class cfgVehicles
 			};
 		};
 	};
-	class WhiteMorel : MushroomBase
+	class geb_WhiteMorel : MushroomBase
 	{
 		scope = 2;
-		displayName = "Black Morel";
+		displayName = "White Morel";
 		descriptionShort = "$STR_AgaricusMushroom1";
 		model = "\gebsflorafauna\data\mycology\whitemorel\whitemorel.p3d";
 		weight = 0;
