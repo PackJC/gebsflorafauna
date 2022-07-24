@@ -185,6 +185,7 @@ class cfgVehicles
 	class FoodAnimationSources;
 	class MushroomsStageTransitions;
 	class MeatStageTransitions;
+	class Animal_CanisLupus;
 
 	//Zombie Skeleton
 	class ChimpBase : ZombieBase
@@ -867,7 +868,1372 @@ class cfgVehicles
 				cooldown = 100.75;
 			};
 		};
-	};
+	}
+
+	//Zombie Skeleton
+	class AlienBase : ZombieBase
+	{
+
+		scope = 0;
+		model = "\gebsflorafauna\data\fauna\chimp\geb_Alien.p3d";
+		class GlobalHealth
+		{
+			class Health
+			{
+				hitpoints = 50;
+				healthLevels[] =
+				{
+
+					{
+						1.01,
+						{}
+					},
+
+					{
+						0.69999999,
+						{}
+					},
+
+					{
+						0.5,
+						{}
+					},
+
+					{
+						0.30000001,
+						{}
+					},
+
+					{
+						0.0099999998,
+						{}
+					}
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item = "rag";
+				count = 1;
+				quantityMinMaxCoef[] = { 1,1 };
+			};
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1.01,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0.0099999998,
+							{}
+						}
+					};
+				};
+			};
+			class DamageZones
+			{
+				class Head
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class Projectile
+						{
+							class Health
+							{
+								damage = 1.5;
+							};
+							class Shock
+							{
+								damage = 1.5;
+							};
+						};
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 3;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"Head",
+						"Neck"
+					};
+					fatalInjuryCoef = 0.1;
+					inventorySlots[] =
+					{
+						"Headgear",
+						"Mask"
+					};
+				};
+				class Torso
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"Spine1",
+						"Spine3"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Vest",
+						"Body",
+						"Back"
+					};
+					inventorySlotsCoefs[] = { 1.1,1,0.5 };
+				};
+				class LeftArm
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"LeftArm",
+						"LeftForeArm"
+					};
+					fatalInjuryCoef = -1;
+				};
+				class RightArm
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"RightArm",
+						"RightForeArm"
+					};
+					fatalInjuryCoef = -1;
+				};
+				class LeftLeg
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.33000001;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"LeftLeg",
+						"LeftUpLeg"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Legs"
+					};
+				};
+				class RightLeg
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.33000001;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"RightLeg",
+						"RightUpLeg"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Legs"
+					};
+				};
+				class LeftFoot
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					transferToZonesNames[] =
+					{
+						"LeftLeg"
+					};
+					transferToZonesCoefs[] = { 0.1 };
+					componentNames[] =
+					{
+						"LeftFoot"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Feet"
+					};
+				};
+				class RightFoot
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					transferToZonesNames[] =
+					{
+						"RightLeg"
+					};
+					transferToZonesCoefs[] = { 0.1 };
+					componentNames[] =
+					{
+						"RightFoot"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Feet"
+					};
+				};
+			};
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 1;
+				};
+				class Walk2
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 2;
+				};
+				class Walk3
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 3;
+				};
+				class Walk4
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 4;
+				};
+				class Run1
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 5;
+				};
+				class Run2
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 6;
+				};
+				class Run3
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 7;
+				};
+				class Run4
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 8;
+				};
+				class Sprint1
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 9;
+				};
+				class Sprint2
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 10;
+				};
+				class Sprint3
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 11;
+				};
+				class Sprint4
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 12;
+				};
+				class Scuff1
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 17;
+				};
+				class Scuff2
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 18;
+				};
+				class Sccuff3
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 19;
+				};
+				class Scuff4
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 20;
+				};
+				class landFeetErc
+				{
+					soundLookupTable = "landFeetErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 21;
+				};
+				class landFootErc
+				{
+					soundLookupTable = "landFootErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 22;
+				};
+				class Bodyfall
+				{
+					soundLookupTable = "bodyfall_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 23;
+				};
+				class Bodyfall_Hand
+				{
+					soundLookupTable = "bodyfall_hand_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 24;
+				};
+				class Bodyfall_Slide
+				{
+					soundLookupTable = "bodyfall_slide_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 25;
+				};
+				class Prone_Walk_L
+				{
+					soundLookupTable = "walkProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 27;
+				};
+				class Prone_Walk_R
+				{
+					soundLookupTable = "walkProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 28;
+				};
+				class Prone_Run_L
+				{
+					soundLookupTable = "runProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 29;
+				};
+				class Prone_Run_R
+				{
+					soundLookupTable = "runProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 30;
+				};
+			};
+			class Sounds
+			{
+				class Attack_Light1
+				{
+					soundSet = "";
+					id = 1;
+				};
+				class Attack_Light2
+				{
+					soundSet = "";
+					id = 2;
+				};
+				class Attack_Heavy1
+				{
+					soundSet = "";
+					id = 3;
+				};
+				class Attack_Heavy2
+				{
+					soundSet = "";
+					id = 4;
+				};
+				class TwoHands
+				{
+					soundSet = "";
+					id = 5;
+				};
+			};
+			class SoundVoice
+			{
+				class LightHit
+				{
+					soundSet = "";
+					id = 1;
+				};
+				class HeavyHit
+				{
+					soundSet = "";
+					id = 2;
+				};
+				class Attack
+				{
+					soundSet = "";
+					id = 5;
+				};
+				class Jump
+				{
+					soundSet = "";
+					id = 10;
+				};
+				class Land
+				{
+					soundSet = "";
+					id = 11;
+				};
+				class CallToArmsShort
+				{
+					soundSet = "";
+					id = 20;
+				};
+			};
+		};
+		class DamageApplied
+		{
+			type = "Projectile";
+			dispersion = 0;
+			bleedThreshold = 1;
+			class Health
+			{
+				damage = 90;
+			};
+			class Blood
+			{
+				damage = 2000;
+			};
+			class Shock
+			{
+				damage = 100;
+			};
+		};
+		class AttackActions
+		{
+			class AttackLong
+			{
+				attackName = "attackLong";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"run",
+					"sprint"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class AttackRun
+			{
+				attackName = "attackRun";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"run",
+					"sprint"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class AttackShort
+			{
+				attackName = "attackShort";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"idle",
+					"walk"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class AttackShortLow
+			{
+				attackName = "attackShortLow";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"idle",
+					"walk",
+					"run"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class CrawlAttackMove
+			{
+				attackName = "crawlAttackMove";
+				ammoType = "MeleeZombieMale";
+				stanceName = "crawl";
+				moveAnimNames[] =
+				{
+					"walk"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class CrawlAttackStill
+			{
+				attackName = "crawlAttackStill";
+				ammoType = "MeleeZombieMale";
+				stanceName = "crawl";
+				moveAnimNames[] =
+				{
+					"idle"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+		};
+	}
+		class GreenAlienBase : ZombieBase
+	{
+
+		scope = 0;
+		model = "\gebsflorafauna\data\fauna\chimp\geb_GreenAlien.p3d";
+		class GlobalHealth
+		{
+			class Health
+			{
+				hitpoints = 50;
+				healthLevels[] =
+				{
+
+					{
+						1.01,
+						{}
+					},
+
+					{
+						0.69999999,
+						{}
+					},
+
+					{
+						0.5,
+						{}
+					},
+
+					{
+						0.30000001,
+						{}
+					},
+
+					{
+						0.0099999998,
+						{}
+					}
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item = "rag";
+				count = 1;
+				quantityMinMaxCoef[] = { 1,1 };
+			};
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1.01,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0.0099999998,
+							{}
+						}
+					};
+				};
+			};
+			class DamageZones
+			{
+				class Head
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class Projectile
+						{
+							class Health
+							{
+								damage = 1.5;
+							};
+							class Shock
+							{
+								damage = 1.5;
+							};
+						};
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 3;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"Head",
+						"Neck"
+					};
+					fatalInjuryCoef = 0.1;
+					inventorySlots[] =
+					{
+						"Headgear",
+						"Mask"
+					};
+				};
+				class Torso
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"Spine1",
+						"Spine3"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Vest",
+						"Body",
+						"Back"
+					};
+					inventorySlotsCoefs[] = { 1.1,1,0.5 };
+				};
+				class LeftArm
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"LeftArm",
+						"LeftForeArm"
+					};
+					fatalInjuryCoef = -1;
+				};
+				class RightArm
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"RightArm",
+						"RightForeArm"
+					};
+					fatalInjuryCoef = -1;
+				};
+				class LeftLeg
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.33000001;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"LeftLeg",
+						"LeftUpLeg"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Legs"
+					};
+				};
+				class RightLeg
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.33000001;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					componentNames[] =
+					{
+						"RightLeg",
+						"RightUpLeg"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Legs"
+					};
+				};
+				class LeftFoot
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					transferToZonesNames[] =
+					{
+						"LeftLeg"
+					};
+					transferToZonesCoefs[] = { 0.1 };
+					componentNames[] =
+					{
+						"LeftFoot"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Feet"
+					};
+				};
+				class RightFoot
+				{
+					class Health
+					{
+						hitpoints = 50;
+						transferToGlobalCoef = 0.1;
+					};
+					class ArmorType
+					{
+						class FragGrenade
+						{
+							class Health
+							{
+								damage = 2;
+							};
+						};
+					};
+					transferToZonesNames[] =
+					{
+						"RightLeg"
+					};
+					transferToZonesCoefs[] = { 0.1 };
+					componentNames[] =
+					{
+						"RightFoot"
+					};
+					fatalInjuryCoef = -1;
+					inventorySlots[] =
+					{
+						"Feet"
+					};
+				};
+			};
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 1;
+				};
+				class Walk2
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 2;
+				};
+				class Walk3
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 3;
+				};
+				class Walk4
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 4;
+				};
+				class Run1
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 5;
+				};
+				class Run2
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 6;
+				};
+				class Run3
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 7;
+				};
+				class Run4
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 8;
+				};
+				class Sprint1
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 9;
+				};
+				class Sprint2
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 10;
+				};
+				class Sprint3
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 11;
+				};
+				class Sprint4
+				{
+					soundLookupTable = "";
+					noise = "ZombieStepNoise";
+					id = 12;
+				};
+				class Scuff1
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 17;
+				};
+				class Scuff2
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 18;
+				};
+				class Sccuff3
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 19;
+				};
+				class Scuff4
+				{
+					soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 20;
+				};
+				class landFeetErc
+				{
+					soundLookupTable = "landFeetErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 21;
+				};
+				class landFootErc
+				{
+					soundLookupTable = "landFootErc_Sneakers_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 22;
+				};
+				class Bodyfall
+				{
+					soundLookupTable = "bodyfall_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 23;
+				};
+				class Bodyfall_Hand
+				{
+					soundLookupTable = "bodyfall_hand_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 24;
+				};
+				class Bodyfall_Slide
+				{
+					soundLookupTable = "bodyfall_slide_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 25;
+				};
+				class Prone_Walk_L
+				{
+					soundLookupTable = "walkProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 27;
+				};
+				class Prone_Walk_R
+				{
+					soundLookupTable = "walkProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 28;
+				};
+				class Prone_Run_L
+				{
+					soundLookupTable = "runProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 29;
+				};
+				class Prone_Run_R
+				{
+					soundLookupTable = "runProne_Zmb_LookupTable";
+					noise = "ZombieStepNoise";
+					id = 30;
+				};
+			};
+			class Sounds
+			{
+				class Attack_Light1
+				{
+					soundSet = "";
+					id = 1;
+				};
+				class Attack_Light2
+				{
+					soundSet = "";
+					id = 2;
+				};
+				class Attack_Heavy1
+				{
+					soundSet = "";
+					id = 3;
+				};
+				class Attack_Heavy2
+				{
+					soundSet = "";
+					id = 4;
+				};
+				class TwoHands
+				{
+					soundSet = "";
+					id = 5;
+				};
+			};
+			class SoundVoice
+			{
+				class LightHit
+				{
+					soundSet = "";
+					id = 1;
+				};
+				class HeavyHit
+				{
+					soundSet = "";
+					id = 2;
+				};
+				class Attack
+				{
+					soundSet = "";
+					id = 5;
+				};
+				class Jump
+				{
+					soundSet = "";
+					id = 10;
+				};
+				class Land
+				{
+					soundSet = "";
+					id = 11;
+				};
+				class CallToArmsShort
+				{
+					soundSet = "";
+					id = 20;
+				};
+			};
+		};
+		class DamageApplied
+		{
+			type = "Projectile";
+			dispersion = 0;
+			bleedThreshold = 1;
+			class Health
+			{
+				damage = 90;
+			};
+			class Blood
+			{
+				damage = 2000;
+			};
+			class Shock
+			{
+				damage = 100;
+			};
+		};
+		class AttackActions
+		{
+			class AttackLong
+			{
+				attackName = "attackLong";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"run",
+					"sprint"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class AttackRun
+			{
+				attackName = "attackRun";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"run",
+					"sprint"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class AttackShort
+			{
+				attackName = "attackShort";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"idle",
+					"walk"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class AttackShortLow
+			{
+				attackName = "attackShortLow";
+				ammoType = "MeleeZombieMale";
+				stanceName = "erect";
+				moveAnimNames[] =
+				{
+					"idle",
+					"walk",
+					"run"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class CrawlAttackMove
+			{
+				attackName = "crawlAttackMove";
+				ammoType = "MeleeZombieMale";
+				stanceName = "crawl";
+				moveAnimNames[] =
+				{
+					"walk"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+			class CrawlAttackStill
+			{
+				attackName = "crawlAttackStill";
+				ammoType = "MeleeZombieMale";
+				stanceName = "crawl";
+				moveAnimNames[] =
+				{
+					"idle"
+				};
+				minDistance = 0;
+				distance = 100.75;
+				time = 0.001;
+				yawAngle = 90;
+				pitchAngle = 30;
+				attackWidth = 5.1999998;
+				repeatable = 0;
+				cooldown = 100.75;
+			};
+		};
+	}
+	//Zombie Skeleton
 	class geb_Chimp : ChimpBase
 	{
 		displayName = "Chimpanzee";
@@ -1120,8 +2486,888 @@ class cfgVehicles
 					};
 				};
 			};
-	};
+	}
+	class geb_ChimpSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
 
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+	//Zombie Skeleton
+	class geb_ChimpPelt: BearPelt
+	{
+		scope=2;
+		displayName="Polar Bear Pelt";
+		descriptionShort="Polar Bear Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
+
+	//Zombie Skeleton
+	class geb_Alien : AlienBase
+	{
+		displayName = "Alien";
+		descriptionShort = "A common Alien";
+		scope = 2;
+		model = "\gebsflorafauna\data\fauna\alien\geb_Alien.p3d";
+
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 60;
+				};
+			};
+
+			hiddenSelections[] =
+			{
+				"body_m"
+			};
+			class Cargo
+			{
+				itemsCargoSize[] = { 10,15 };
+				allowOwnedCargoManipulation = 1;
+				openable = 0;
+			};
+			class DamageSystem
+			{
+				class GlobalHealth
+				{
+					class Health
+					{
+						hitpoints = 50;
+					};
+				};
+			};
+			class AnimEvents
+			{
+				class Steps
+				{
+					class Walk1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 1;
+					};
+					class Walk2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 2;
+					};
+					class Walk3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 3;
+					};
+					class Walk4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 4;
+					};
+					class Run1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 5;
+					};
+					class Run2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 6;
+					};
+					class Run3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 7;
+					};
+					class Run4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 8;
+					};
+					class Sprint1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 9;
+					};
+					class Sprint2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 10;
+					};
+					class Sprint3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 11;
+					};
+					class Sprint4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 12;
+					};
+					class Scuff1
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 17;
+					};
+					class Scuff2
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 18;
+					};
+					class Sccuff3
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 19;
+					};
+					class Scuff4
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 20;
+					};
+					class landFeetErc
+					{
+						soundLookupTable = "landFeetErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 21;
+					};
+					class landFootErc
+					{
+						soundLookupTable = "landFootErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 22;
+					};
+					class Bodyfall
+					{
+						soundLookupTable = "bodyfall_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 23;
+					};
+					class Bodyfall_Hand
+					{
+						soundLookupTable = "bodyfall_hand_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 24;
+					};
+					class Bodyfall_Slide
+					{
+						soundLookupTable = "bodyfall_slide_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 25;
+					};
+					class Prone_Walk_L
+					{
+						soundLookupTable = "walkProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 27;
+					};
+					class Prone_Walk_R
+					{
+						soundLookupTable = "walkProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 28;
+					};
+					class Prone_Run_L
+					{
+						soundLookupTable = "runProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 29;
+					};
+					class Prone_Run_R
+					{
+						soundLookupTable = "runProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 30;
+					};
+				};
+				class Sounds
+				{
+					class Attack_Light1
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 1;
+					};
+					class Attack_Light2
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 2;
+					};
+					class Attack_Heavy1
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 3;
+					};
+					class Attack_Heavy2
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 4;
+					};
+					class TwoHands
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 5;
+					};
+				};
+				class SoundVoice
+				{
+					class LightHit
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 1;
+					};
+					class HeavyHit
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 2;
+					};
+					class Attack
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 5;
+					};
+					class Jump
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 10;
+					};
+					class Land
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 11;
+					};
+					class CallToArmsShort
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 20;
+					};
+				};
+			};
+	}
+
+
+		class geb_GreenAlien : GreenAlienBase
+	{
+		displayName = "Alien";
+		descriptionShort = "A common Alien";
+		scope = 2;
+		model = "\gebsflorafauna\data\fauna\alien\geb_GreenAlien.p3d";
+
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 60;
+				};
+			};
+
+			hiddenSelections[] =
+			{
+				"body_m"
+			};
+			class Cargo
+			{
+				itemsCargoSize[] = { 10,15 };
+				allowOwnedCargoManipulation = 1;
+				openable = 0;
+			};
+			class DamageSystem
+			{
+				class GlobalHealth
+				{
+					class Health
+					{
+						hitpoints = 50;
+					};
+				};
+			};
+			class AnimEvents
+			{
+				class Steps
+				{
+					class Walk1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 1;
+					};
+					class Walk2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 2;
+					};
+					class Walk3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 3;
+					};
+					class Walk4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 4;
+					};
+					class Run1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 5;
+					};
+					class Run2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 6;
+					};
+					class Run3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 7;
+					};
+					class Run4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 8;
+					};
+					class Sprint1
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 9;
+					};
+					class Sprint2
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 10;
+					};
+					class Sprint3
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 11;
+					};
+					class Sprint4
+					{
+						soundLookupTable = "Chimp_Calm_soundset";
+						noise = "ZombieStepNoise";
+						id = 12;
+					};
+					class Scuff1
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 17;
+					};
+					class Scuff2
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 18;
+					};
+					class Sccuff3
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 19;
+					};
+					class Scuff4
+					{
+						soundLookupTable = "scuffErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 20;
+					};
+					class landFeetErc
+					{
+						soundLookupTable = "landFeetErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 21;
+					};
+					class landFootErc
+					{
+						soundLookupTable = "landFootErc_Sneakers_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 22;
+					};
+					class Bodyfall
+					{
+						soundLookupTable = "bodyfall_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 23;
+					};
+					class Bodyfall_Hand
+					{
+						soundLookupTable = "bodyfall_hand_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 24;
+					};
+					class Bodyfall_Slide
+					{
+						soundLookupTable = "bodyfall_slide_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 25;
+					};
+					class Prone_Walk_L
+					{
+						soundLookupTable = "walkProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 27;
+					};
+					class Prone_Walk_R
+					{
+						soundLookupTable = "walkProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 28;
+					};
+					class Prone_Run_L
+					{
+						soundLookupTable = "runProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 29;
+					};
+					class Prone_Run_R
+					{
+						soundLookupTable = "runProne_Zmb_LookupTable";
+						noise = "ZombieStepNoise";
+						id = 30;
+					};
+				};
+				class Sounds
+				{
+					class Attack_Light1
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 1;
+					};
+					class Attack_Light2
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 2;
+					};
+					class Attack_Heavy1
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 3;
+					};
+					class Attack_Heavy2
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 4;
+					};
+					class TwoHands
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 5;
+					};
+				};
+				class SoundVoice
+				{
+					class LightHit
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 1;
+					};
+					class HeavyHit
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 2;
+					};
+					class Attack
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 5;
+					};
+					class Jump
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 10;
+					};
+					class Land
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 11;
+					};
+					class CallToArmsShort
+					{
+						soundSet = "Chimp_Attack_soundset";
+						id = 20;
+					};
+				};
+			};
+	}
+	class geb_AlienSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
 	//Human Skeleton
 	class geb_Penguin : AnimalBase
 	{
@@ -1181,7 +3427,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item = "PenguinSteakMeat";
+				item = "geb_PenguinSteakMeat";
 				count = 2;
 				quantityMinMaxCoef[] = { 0.5,1 };
 			};
@@ -1197,6 +3443,18 @@ class cfgVehicles
 				count = 1;
 				quantityMinMaxCoef[] = { 0.2,0.30000001 };
 				transferToolDamageCoef = 1;
+			};
+			class ObtainedPelt
+			{
+				item="geb_PenguinPelt";
+				count=1;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef=1;
+				transferToolDamageCoef=1;
 			};
 		};
 		class enfanimsys
@@ -1460,9 +3718,10 @@ class cfgVehicles
 		class CommandMoveSettings
 		{
 			useSpeedMapping = 1;
-			movementSpeedMapping[] = { 0,0.25,0.80000001,3 };
+			movementSpeedMapping[] = { 0,0.25,0.80000001,1.2 };
 		};
 	}
+
 	class geb_PenguinSteakMeat : Edible_Base
 	{
 		scope = 2;
@@ -1640,7 +3899,22 @@ class cfgVehicles
 				};
 			};
 		};
-	};
+	}
+
+	class geb_PenguinPelt: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
 
 	//Goat Skeleton
 	class geb_Rabbit : AnimalBase
@@ -2173,8 +4447,4127 @@ class cfgVehicles
 			lookAtFilterTimeout = 0.5;
 			lookAtFilterSpeed = 1.5700001;
 		};
-	};
+	}
 
+	/*
+	//Cow Skeleton
+	class geb_Bison: AnimalBase
+	{
+		simulation="dayzanimal";
+		scope=0;
+		model = "\gebsflorafauna\data\fauna\bison\geb_Bison.p3d";
+		displayName="$STR_CfgVehicles_Animal_BosTaurus0";
+		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		aiAgentTemplate="Herbivores_BosTaurus";
+		injuryLevels[]={1,0.5,0.2,0};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=500;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							{}
+						},
+						
+						{
+							0.69999999,
+							{}
+						},
+						
+						{
+							0.5,
+							{}
+						},
+						
+						{
+							0.30000001,
+							{}
+						},
+						
+						{
+							0,
+							{}
+						}
+					};
+				};
+				class Blood
+				{
+					hitpoints=5000;
+				};
+				class Shock
+				{
+					hitpoints=100;
+				};
+			};
+			class DamageZones
+			{
+				class Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Head"
+					};
+					transferToZonesNames[]={};
+					transferToZonesCoefs[]={};
+					fatalInjuryCoef=0.15000001;
+					canBleed=0;
+					class Health
+					{
+						hitpoints=250;
+						transferToGlobalCoef=1;
+					};
+					class Blood: Health
+					{
+						hitpoints=0;
+					};
+					class Shock: Health
+					{
+						hitpoints=0;
+					};
+				};
+				class Zone_Neck: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Neck"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=150;
+					};
+				};
+				class Zone_Chest: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Neck",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Belly: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Belly"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Spine: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Spine"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Pelvis: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Pelvis"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Spine",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=250;
+					};
+				};
+				class Zone_Legs: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Legs"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=100;
+					};
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item="geb_BisonSteakMeat";
+				count=20;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly",
+					"Zone_Pelvis"
+				};
+				countByZone[]={6,6,6};
+				quantityMinMaxCoef[]={0.75,1};
+			};
+			class ObtainedPelt
+			{
+				item="geb_BisonPelt";
+				count=1;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef=1;
+				transferToolDamageCoef=1;
+			};
+			class ObtainedGuts
+			{
+				item="Guts";
+				count=5;
+				quantityMinMaxCoef[]={0.5,0.80000001};
+			};
+			class ObtainedLard
+			{
+				item="Lard";
+				count=3;
+				quantityMinMaxCoef[]={0.5,1};
+			};
+			class ObtainedBones
+			{
+				item="Bone";
+				count=4;
+				quantityMinMaxCoef[]={0.80000001,1};
+				transferToolDamageCoef=1;
+			};
+		};
+		class enfanimsys
+		{
+			meshObject="dz\animals\bos_taurus\data\CowAndBull_skeleton.xob";
+			graphname="dz\animals\animations\!graph_files\Herbivores\Herbivores_Graph.agr";
+			defaultinstance="dz\animals\animations\!graph_files\Herbivores\CowAndBull_AnimInstance.asi";
+			startnode="Master_CowAndBull_SM";
+			skeletonName="CowAndBull_skeleton.xob";
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=1;
+				};
+				class Walk2
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=2;
+				};
+				class Walk3
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=3;
+				};
+				class Walk4
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=4;
+				};
+				class Run1
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=5;
+				};
+				class Run2
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=6;
+				};
+				class Run3
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=7;
+				};
+				class Run4
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=8;
+				};
+				class Grazing1
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=9;
+				};
+				class Grazing2
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=10;
+				};
+				class Bodyfall
+				{
+					soundLookupTable="HoofMediumBodyfall_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=11;
+				};
+				class Settle
+				{
+					soundLookupTable="HoofMediumSettle_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=12;
+				};
+				class Rest2standA
+				{
+					soundLookupTable="HoofMediumRest2standA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=13;
+				};
+				class Rest2standB
+				{
+					soundLookupTable="HoofMediumRest2standB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=14;
+				};
+				class Stand2restA
+				{
+					soundLookupTable="HoofMediumStand2restA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=15;
+				};
+				class Stand2restB
+				{
+					soundLookupTable="HoofMediumStand2restB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=16;
+				};
+				class Stand2restC
+				{
+					soundLookupTable="HoofMediumStand2restC_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=17;
+				};
+				class Rub1
+				{
+					soundLookupTable="HoofMediumRub1_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=18;
+				};
+				class Rub2
+				{
+					soundLookupTable="HoofMediumRub2_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=19;
+				};
+			};
+			class Sounds
+			{
+				class CattleBawl
+				{
+					soundSet="CattleBawl_SoundSet";
+					noise="DeerRoarNoise";
+					id=1;
+				};
+				class CattleBellow
+				{
+					soundSet="CattleBellow_SoundSet";
+					noise="DeerRoarNoise";
+					id=2;
+				};
+				class CattleBreath
+				{
+					soundSet="CattleBreath_SoundSet";
+					noise="DeerRoarNoise";
+					id=3;
+				};
+				class CattleGroan
+				{
+					soundSet="CattleGroan_SoundSet";
+					noise="DeerRoarNoise";
+					id=4;
+				};
+				class CattleHoarse
+				{
+					soundSet="CattleHoarse_SoundSet";
+					noise="DeerRoarNoise";
+					id=5;
+				};
+				class CattleHonk
+				{
+					soundSet="CattleHonk_SoundSet";
+					noise="DeerRoarNoise";
+					id=6;
+				};
+				class CattleMooA
+				{
+					soundSet="CattleMooA_SoundSet";
+					noise="DeerRoarNoise";
+					id=7;
+				};
+				class CattleMooALong
+				{
+					soundSet="CattleMooALong_SoundSet";
+					noise="DeerRoarNoise";
+					id=8;
+				};
+				class CattleMooB
+				{
+					soundSet="CattleMooB_SoundSet";
+					noise="DeerRoarNoise";
+					id=9;
+				};
+				class CattleMooC
+				{
+					soundSet="CattleMooC_SoundSet";
+					noise="DeerRoarNoise";
+					id=10;
+				};
+				class CattleRoar
+				{
+					soundSet="CattleRoar_SoundSet";
+					noise="DeerRoarNoise";
+					id=11;
+				};
+				class CattleSigh
+				{
+					soundSet="CattleSigh_SoundSet";
+					noise="DeerRoarNoise";
+					id=12;
+				};
+				class CattleSighLong
+				{
+					soundSet="CattleSighLong_SoundSet";
+					noise="DeerRoarNoise";
+					id=13;
+				};
+				class CattleMooX1
+				{
+					soundSet="CattleMooX1_SoundSet";
+					noise="DeerRoarNoise";
+					id=14;
+				};
+				class CattleMooX1_Tail
+				{
+					soundSet="CattleMooX1_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=15;
+				};
+				class CattleMooX2
+				{
+					soundSet="CattleMooX2_SoundSet";
+					noise="DeerRoarNoise";
+					id=16;
+				};
+				class CattleMooX2_Tail
+				{
+					soundSet="CattleMooX2_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=17;
+				};
+				class CattleMooX3
+				{
+					soundSet="CattleMooX3_SoundSet";
+					noise="DeerRoarNoise";
+					id=18;
+				};
+				class CattleMooX3_Tail
+				{
+					soundSet="CattleMooX3_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=19;
+				};
+				class CattleMooX4
+				{
+					soundSet="CattleMooX4_SoundSet";
+					noise="DeerRoarNoise";
+					id=20;
+				};
+				class CattleMooX4_Tail
+				{
+					soundSet="CattleMooX4_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=21;
+				};
+				class CattleMooX5
+				{
+					soundSet="CattleMooX5_SoundSet";
+					noise="DeerRoarNoise";
+					id=22;
+				};
+				class CattleMooX5_Tail
+				{
+					soundSet="CattleMooX5_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=23;
+				};
+				class CattleSnort
+				{
+					soundSet="CattleSnort_SoundSet";
+					noise="DeerRoarNoise";
+					id=24;
+				};
+			};
+			class Damages
+			{
+				class Bite
+				{
+					damage="DeerBiteDamage";
+					id=1;
+				};
+			};
+		};
+		class CommandMoveSettings
+		{
+			useSpeedMapping=1;
+			movementSpeedMapping[]={0,0.25,0.60000002,2.2,5,11};
+		};
+		class CommandLookAtSettings
+		{
+			lookAtFilterTimeout=0.5;
+			lookAtFilterSpeed=1.5700001;
+		};
+	}
+	*/
+	class geb_BisonSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+	class geb_BisonPelt: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
+	
+	//Cow Skeleton
+	class geb_camel: AnimalBase
+	{
+		simulation="dayzanimal";
+		scope=2;
+		model = "\gebsflorafauna\data\fauna\camel\geb_camel.p3d";
+		displayName="$STR_CfgVehicles_Animal_BosTaurus0";
+		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		aiAgentTemplate="Herbivores_BosTaurus";
+		injuryLevels[]={1,0.5,0.2,0};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=500;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							{}
+						},
+						
+						{
+							0.69999999,
+							{}
+						},
+						
+						{
+							0.5,
+							{}
+						},
+						
+						{
+							0.30000001,
+							{}
+						},
+						
+						{
+							0,
+							{}
+						}
+					};
+				};
+				class Blood
+				{
+					hitpoints=5000;
+				};
+				class Shock
+				{
+					hitpoints=100;
+				};
+			};
+			class DamageZones
+			{
+				class Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Head"
+					};
+					transferToZonesNames[]={};
+					transferToZonesCoefs[]={};
+					fatalInjuryCoef=0.15000001;
+					canBleed=0;
+					class Health
+					{
+						hitpoints=250;
+						transferToGlobalCoef=1;
+					};
+					class Blood: Health
+					{
+						hitpoints=0;
+					};
+					class Shock: Health
+					{
+						hitpoints=0;
+					};
+				};
+				class Zone_Neck: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Neck"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=150;
+					};
+				};
+				class Zone_Chest: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Neck",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Belly: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Belly"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Spine: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Spine"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Pelvis: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Pelvis"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Spine",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=250;
+					};
+				};
+				class Zone_Legs: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Legs"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=100;
+					};
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item="geb_CamelSteakMeat";
+				count=20;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly",
+					"Zone_Pelvis"
+				};
+				countByZone[]={6,6,6};
+				quantityMinMaxCoef[]={0.75,1};
+			};
+			class ObtainedPelt
+			{
+				item="geb_CamelPelt";
+				count=1;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef=1;
+				transferToolDamageCoef=1;
+			};
+			class ObtainedGuts
+			{
+				item="Guts";
+				count=5;
+				quantityMinMaxCoef[]={0.5,0.80000001};
+			};
+			class ObtainedLard
+			{
+				item="Lard";
+				count=3;
+				quantityMinMaxCoef[]={0.5,1};
+			};
+			class ObtainedBones
+			{
+				item="Bone";
+				count=4;
+				quantityMinMaxCoef[]={0.80000001,1};
+				transferToolDamageCoef=1;
+			};
+		};
+		class enfanimsys
+		{
+			meshObject="dz\animals\bos_taurus\data\CowAndBull_skeleton.xob";
+			graphname="dz\animals\animations\!graph_files\Herbivores\Herbivores_Graph.agr";
+			defaultinstance="dz\animals\animations\!graph_files\Herbivores\CowAndBull_AnimInstance.asi";
+			startnode="Master_CowAndBull_SM";
+			skeletonName="CowAndBull_skeleton.xob";
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=1;
+				};
+				class Walk2
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=2;
+				};
+				class Walk3
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=3;
+				};
+				class Walk4
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=4;
+				};
+				class Run1
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=5;
+				};
+				class Run2
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=6;
+				};
+				class Run3
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=7;
+				};
+				class Run4
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=8;
+				};
+				class Grazing1
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=9;
+				};
+				class Grazing2
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=10;
+				};
+				class Bodyfall
+				{
+					soundLookupTable="HoofMediumBodyfall_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=11;
+				};
+				class Settle
+				{
+					soundLookupTable="HoofMediumSettle_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=12;
+				};
+				class Rest2standA
+				{
+					soundLookupTable="HoofMediumRest2standA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=13;
+				};
+				class Rest2standB
+				{
+					soundLookupTable="HoofMediumRest2standB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=14;
+				};
+				class Stand2restA
+				{
+					soundLookupTable="HoofMediumStand2restA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=15;
+				};
+				class Stand2restB
+				{
+					soundLookupTable="HoofMediumStand2restB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=16;
+				};
+				class Stand2restC
+				{
+					soundLookupTable="HoofMediumStand2restC_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=17;
+				};
+				class Rub1
+				{
+					soundLookupTable="HoofMediumRub1_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=18;
+				};
+				class Rub2
+				{
+					soundLookupTable="HoofMediumRub2_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=19;
+				};
+			};
+			class Sounds
+			{
+				class CattleBawl
+				{
+					soundSet="CattleBawl_SoundSet";
+					noise="DeerRoarNoise";
+					id=1;
+				};
+				class CattleBellow
+				{
+					soundSet="CattleBellow_SoundSet";
+					noise="DeerRoarNoise";
+					id=2;
+				};
+				class CattleBreath
+				{
+					soundSet="CattleBreath_SoundSet";
+					noise="DeerRoarNoise";
+					id=3;
+				};
+				class CattleGroan
+				{
+					soundSet="CattleGroan_SoundSet";
+					noise="DeerRoarNoise";
+					id=4;
+				};
+				class CattleHoarse
+				{
+					soundSet="CattleHoarse_SoundSet";
+					noise="DeerRoarNoise";
+					id=5;
+				};
+				class CattleHonk
+				{
+					soundSet="CattleHonk_SoundSet";
+					noise="DeerRoarNoise";
+					id=6;
+				};
+				class CattleMooA
+				{
+					soundSet="CattleMooA_SoundSet";
+					noise="DeerRoarNoise";
+					id=7;
+				};
+				class CattleMooALong
+				{
+					soundSet="CattleMooALong_SoundSet";
+					noise="DeerRoarNoise";
+					id=8;
+				};
+				class CattleMooB
+				{
+					soundSet="CattleMooB_SoundSet";
+					noise="DeerRoarNoise";
+					id=9;
+				};
+				class CattleMooC
+				{
+					soundSet="CattleMooC_SoundSet";
+					noise="DeerRoarNoise";
+					id=10;
+				};
+				class CattleRoar
+				{
+					soundSet="CattleRoar_SoundSet";
+					noise="DeerRoarNoise";
+					id=11;
+				};
+				class CattleSigh
+				{
+					soundSet="CattleSigh_SoundSet";
+					noise="DeerRoarNoise";
+					id=12;
+				};
+				class CattleSighLong
+				{
+					soundSet="CattleSighLong_SoundSet";
+					noise="DeerRoarNoise";
+					id=13;
+				};
+				class CattleMooX1
+				{
+					soundSet="CattleMooX1_SoundSet";
+					noise="DeerRoarNoise";
+					id=14;
+				};
+				class CattleMooX1_Tail
+				{
+					soundSet="CattleMooX1_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=15;
+				};
+				class CattleMooX2
+				{
+					soundSet="CattleMooX2_SoundSet";
+					noise="DeerRoarNoise";
+					id=16;
+				};
+				class CattleMooX2_Tail
+				{
+					soundSet="CattleMooX2_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=17;
+				};
+				class CattleMooX3
+				{
+					soundSet="CattleMooX3_SoundSet";
+					noise="DeerRoarNoise";
+					id=18;
+				};
+				class CattleMooX3_Tail
+				{
+					soundSet="CattleMooX3_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=19;
+				};
+				class CattleMooX4
+				{
+					soundSet="CattleMooX4_SoundSet";
+					noise="DeerRoarNoise";
+					id=20;
+				};
+				class CattleMooX4_Tail
+				{
+					soundSet="CattleMooX4_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=21;
+				};
+				class CattleMooX5
+				{
+					soundSet="CattleMooX5_SoundSet";
+					noise="DeerRoarNoise";
+					id=22;
+				};
+				class CattleMooX5_Tail
+				{
+					soundSet="CattleMooX5_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=23;
+				};
+				class CattleSnort
+				{
+					soundSet="CattleSnort_SoundSet";
+					noise="DeerRoarNoise";
+					id=24;
+				};
+			};
+			class Damages
+			{
+				class Bite
+				{
+					damage="DeerBiteDamage";
+					id=1;
+				};
+			};
+		};
+		class CommandMoveSettings
+		{
+			useSpeedMapping=1;
+			movementSpeedMapping[]={0,0.25,0.60000002,2.2,5,11};
+		};
+		class CommandLookAtSettings
+		{
+			lookAtFilterTimeout=0.5;
+			lookAtFilterSpeed=1.5700001;
+		};
+	}
+	
+	class geb_CamelSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+	class geb_CamelPelt: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
+	//Cow Skeleton
+	class Animal_BosTaurus;
+	class geb_elephant: Animal_BosTaurus
+	{
+		simulation="dayzanimal";
+		scope=2;
+		model = "\gebsflorafauna\data\fauna\elephant\geb_elephant.p3d";
+		displayName="$STR_CfgVehicles_Animal_BosTaurus0";
+		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		aiAgentTemplate="Herbivores_BosTaurus";
+		injuryLevels[]={1,0.5,0.2,0};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=500;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							{}
+						},
+						
+						{
+							0.69999999,
+							{}
+						},
+						
+						{
+							0.5,
+							{}
+						},
+						
+						{
+							0.30000001,
+							{}
+						},
+						
+						{
+							0,
+							{}
+						}
+					};
+				};
+				class Blood
+				{
+					hitpoints=5000;
+				};
+				class Shock
+				{
+					hitpoints=100;
+				};
+			};
+			class DamageZones
+			{
+				class Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Head"
+					};
+					transferToZonesNames[]={};
+					transferToZonesCoefs[]={};
+					fatalInjuryCoef=0.15000001;
+					canBleed=0;
+					class Health
+					{
+						hitpoints=250;
+						transferToGlobalCoef=1;
+					};
+					class Blood: Health
+					{
+						hitpoints=0;
+					};
+					class Shock: Health
+					{
+						hitpoints=0;
+					};
+				};
+				class Zone_Neck: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Neck"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=150;
+					};
+				};
+				class Zone_Chest: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Neck",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Belly: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Belly"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Spine: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Spine"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Pelvis: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Pelvis"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Spine",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=250;
+					};
+				};
+				class Zone_Legs: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Legs"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=100;
+					};
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item="geb_ElephantSteakMeat";
+				count=20;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly",
+					"Zone_Pelvis"
+				};
+				countByZone[]={6,6,6};
+				quantityMinMaxCoef[]={0.75,1};
+			};
+			class ObtainedPelt
+			{
+				item="geb_ElephantPelt";
+				count=1;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef=1;
+				transferToolDamageCoef=1;
+			};
+			class ObtainedGuts
+			{
+				item="Guts";
+				count=5;
+				quantityMinMaxCoef[]={0.5,0.80000001};
+			};
+			class ObtainedLard
+			{
+				item="Lard";
+				count=3;
+				quantityMinMaxCoef[]={0.5,1};
+			};
+			class ObtainedBones
+			{
+				item="Bone";
+				count=4;
+				quantityMinMaxCoef[]={0.80000001,1};
+				transferToolDamageCoef=1;
+			};
+		};
+		class enfanimsys
+		{
+			meshObject="dz\animals\bos_taurus\data\CowAndBull_skeleton.xob";
+			graphname="dz\animals\animations\!graph_files\Herbivores\Herbivores_Graph.agr";
+			defaultinstance="dz\animals\animations\!graph_files\Herbivores\CowAndBull_AnimInstance.asi";
+			startnode="Master_CowAndBull_SM";
+			skeletonName="CowAndBull_skeleton.xob";
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=1;
+				};
+				class Walk2
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=2;
+				};
+				class Walk3
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=3;
+				};
+				class Walk4
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=4;
+				};
+				class Run1
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=5;
+				};
+				class Run2
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=6;
+				};
+				class Run3
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=7;
+				};
+				class Run4
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=8;
+				};
+				class Grazing1
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=9;
+				};
+				class Grazing2
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=10;
+				};
+				class Bodyfall
+				{
+					soundLookupTable="HoofMediumBodyfall_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=11;
+				};
+				class Settle
+				{
+					soundLookupTable="HoofMediumSettle_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=12;
+				};
+				class Rest2standA
+				{
+					soundLookupTable="HoofMediumRest2standA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=13;
+				};
+				class Rest2standB
+				{
+					soundLookupTable="HoofMediumRest2standB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=14;
+				};
+				class Stand2restA
+				{
+					soundLookupTable="HoofMediumStand2restA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=15;
+				};
+				class Stand2restB
+				{
+					soundLookupTable="HoofMediumStand2restB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=16;
+				};
+				class Stand2restC
+				{
+					soundLookupTable="HoofMediumStand2restC_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=17;
+				};
+				class Rub1
+				{
+					soundLookupTable="HoofMediumRub1_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=18;
+				};
+				class Rub2
+				{
+					soundLookupTable="HoofMediumRub2_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=19;
+				};
+			};
+			class Sounds
+			{
+				class CattleBawl
+				{
+					soundSet="CattleBawl_SoundSet";
+					noise="DeerRoarNoise";
+					id=1;
+				};
+				class CattleBellow
+				{
+					soundSet="CattleBellow_SoundSet";
+					noise="DeerRoarNoise";
+					id=2;
+				};
+				class CattleBreath
+				{
+					soundSet="CattleBreath_SoundSet";
+					noise="DeerRoarNoise";
+					id=3;
+				};
+				class CattleGroan
+				{
+					soundSet="CattleGroan_SoundSet";
+					noise="DeerRoarNoise";
+					id=4;
+				};
+				class CattleHoarse
+				{
+					soundSet="CattleHoarse_SoundSet";
+					noise="DeerRoarNoise";
+					id=5;
+				};
+				class CattleHonk
+				{
+					soundSet="CattleHonk_SoundSet";
+					noise="DeerRoarNoise";
+					id=6;
+				};
+				class CattleMooA
+				{
+					soundSet="CattleMooA_SoundSet";
+					noise="DeerRoarNoise";
+					id=7;
+				};
+				class CattleMooALong
+				{
+					soundSet="CattleMooALong_SoundSet";
+					noise="DeerRoarNoise";
+					id=8;
+				};
+				class CattleMooB
+				{
+					soundSet="CattleMooB_SoundSet";
+					noise="DeerRoarNoise";
+					id=9;
+				};
+				class CattleMooC
+				{
+					soundSet="CattleMooC_SoundSet";
+					noise="DeerRoarNoise";
+					id=10;
+				};
+				class CattleRoar
+				{
+					soundSet="CattleRoar_SoundSet";
+					noise="DeerRoarNoise";
+					id=11;
+				};
+				class CattleSigh
+				{
+					soundSet="CattleSigh_SoundSet";
+					noise="DeerRoarNoise";
+					id=12;
+				};
+				class CattleSighLong
+				{
+					soundSet="CattleSighLong_SoundSet";
+					noise="DeerRoarNoise";
+					id=13;
+				};
+				class CattleMooX1
+				{
+					soundSet="CattleMooX1_SoundSet";
+					noise="DeerRoarNoise";
+					id=14;
+				};
+				class CattleMooX1_Tail
+				{
+					soundSet="CattleMooX1_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=15;
+				};
+				class CattleMooX2
+				{
+					soundSet="CattleMooX2_SoundSet";
+					noise="DeerRoarNoise";
+					id=16;
+				};
+				class CattleMooX2_Tail
+				{
+					soundSet="CattleMooX2_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=17;
+				};
+				class CattleMooX3
+				{
+					soundSet="CattleMooX3_SoundSet";
+					noise="DeerRoarNoise";
+					id=18;
+				};
+				class CattleMooX3_Tail
+				{
+					soundSet="CattleMooX3_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=19;
+				};
+				class CattleMooX4
+				{
+					soundSet="CattleMooX4_SoundSet";
+					noise="DeerRoarNoise";
+					id=20;
+				};
+				class CattleMooX4_Tail
+				{
+					soundSet="CattleMooX4_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=21;
+				};
+				class CattleMooX5
+				{
+					soundSet="CattleMooX5_SoundSet";
+					noise="DeerRoarNoise";
+					id=22;
+				};
+				class CattleMooX5_Tail
+				{
+					soundSet="CattleMooX5_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=23;
+				};
+				class CattleSnort
+				{
+					soundSet="CattleSnort_SoundSet";
+					noise="DeerRoarNoise";
+					id=24;
+				};
+			};
+			class Damages
+			{
+				class Bite
+				{
+					damage="DeerBiteDamage";
+					id=1;
+				};
+			};
+		};
+		class CommandMoveSettings
+		{
+			useSpeedMapping=1;
+			movementSpeedMapping[]={0,0.25,0.60000002,2.2,5,11};
+		};
+		class CommandLookAtSettings
+		{
+			lookAtFilterTimeout=0.5;
+			lookAtFilterSpeed=1.5700001;
+		};
+	}
+	class geb_ElephantSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+	class geb_ElephantPelt: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
+
+	
+
+
+	class geb_giraffe: Animal_BosTaurus
+	{
+		simulation="dayzanimal";
+		scope=2;
+		model = "\gebsflorafauna\data\fauna\giraffe\geb_giraffe.p3d";
+		displayName="geb_giraffe";
+		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		aiAgentTemplate="Herbivores_BosTaurus";
+		injuryLevels[]={1,0.5,0.2,0};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=500;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							{}
+						},
+						
+						{
+							0.69999999,
+							{}
+						},
+						
+						{
+							0.5,
+							{}
+						},
+						
+						{
+							0.30000001,
+							{}
+						},
+						
+						{
+							0,
+							{}
+						}
+					};
+				};
+				class Blood
+				{
+					hitpoints=5000;
+				};
+				class Shock
+				{
+					hitpoints=100;
+				};
+			};
+			class DamageZones
+			{
+				class Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Head"
+					};
+					transferToZonesNames[]={};
+					transferToZonesCoefs[]={};
+					fatalInjuryCoef=0.15000001;
+					canBleed=0;
+					class Health
+					{
+						hitpoints=250;
+						transferToGlobalCoef=1;
+					};
+					class Blood: Health
+					{
+						hitpoints=0;
+					};
+					class Shock: Health
+					{
+						hitpoints=0;
+					};
+				};
+				class Zone_Neck: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Neck"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=150;
+					};
+				};
+				class Zone_Chest: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Neck",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Belly: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Belly"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Spine: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Spine"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=200;
+					};
+				};
+				class Zone_Pelvis: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Pelvis"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Spine",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=250;
+					};
+				};
+				class Zone_Legs: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Legs"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.5,0.5,0.5};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=100;
+					};
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item="geb_ElephantSteakMeat";
+				count=20;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly",
+					"Zone_Pelvis"
+				};
+				countByZone[]={6,6,6};
+				quantityMinMaxCoef[]={0.75,1};
+			};
+			class ObtainedPelt
+			{
+				item="geb_ElephantPelt";
+				count=1;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef=1;
+				transferToolDamageCoef=1;
+			};
+			class ObtainedGuts
+			{
+				item="Guts";
+				count=5;
+				quantityMinMaxCoef[]={0.5,0.80000001};
+			};
+			class ObtainedLard
+			{
+				item="Lard";
+				count=3;
+				quantityMinMaxCoef[]={0.5,1};
+			};
+			class ObtainedBones
+			{
+				item="Bone";
+				count=4;
+				quantityMinMaxCoef[]={0.80000001,1};
+				transferToolDamageCoef=1;
+			};
+		};
+		class enfanimsys
+		{
+			meshObject="dz\animals\bos_taurus\data\CowAndBull_skeleton.xob";
+			graphname="dz\animals\animations\!graph_files\Herbivores\Herbivores_Graph.agr";
+			defaultinstance="dz\animals\animations\!graph_files\Herbivores\CowAndBull_AnimInstance.asi";
+			startnode="Master_CowAndBull_SM";
+			skeletonName="CowAndBull_skeleton.xob";
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=1;
+				};
+				class Walk2
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=2;
+				};
+				class Walk3
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=3;
+				};
+				class Walk4
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=4;
+				};
+				class Run1
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=5;
+				};
+				class Run2
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=6;
+				};
+				class Run3
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=7;
+				};
+				class Run4
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=8;
+				};
+				class Grazing1
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=9;
+				};
+				class Grazing2
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=10;
+				};
+				class Bodyfall
+				{
+					soundLookupTable="HoofMediumBodyfall_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=11;
+				};
+				class Settle
+				{
+					soundLookupTable="HoofMediumSettle_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=12;
+				};
+				class Rest2standA
+				{
+					soundLookupTable="HoofMediumRest2standA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=13;
+				};
+				class Rest2standB
+				{
+					soundLookupTable="HoofMediumRest2standB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=14;
+				};
+				class Stand2restA
+				{
+					soundLookupTable="HoofMediumStand2restA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=15;
+				};
+				class Stand2restB
+				{
+					soundLookupTable="HoofMediumStand2restB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=16;
+				};
+				class Stand2restC
+				{
+					soundLookupTable="HoofMediumStand2restC_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=17;
+				};
+				class Rub1
+				{
+					soundLookupTable="HoofMediumRub1_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=18;
+				};
+				class Rub2
+				{
+					soundLookupTable="HoofMediumRub2_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=19;
+				};
+			};
+			class Sounds
+			{
+				class CattleBawl
+				{
+					soundSet="CattleBawl_SoundSet";
+					noise="DeerRoarNoise";
+					id=1;
+				};
+				class CattleBellow
+				{
+					soundSet="CattleBellow_SoundSet";
+					noise="DeerRoarNoise";
+					id=2;
+				};
+				class CattleBreath
+				{
+					soundSet="CattleBreath_SoundSet";
+					noise="DeerRoarNoise";
+					id=3;
+				};
+				class CattleGroan
+				{
+					soundSet="CattleGroan_SoundSet";
+					noise="DeerRoarNoise";
+					id=4;
+				};
+				class CattleHoarse
+				{
+					soundSet="CattleHoarse_SoundSet";
+					noise="DeerRoarNoise";
+					id=5;
+				};
+				class CattleHonk
+				{
+					soundSet="CattleHonk_SoundSet";
+					noise="DeerRoarNoise";
+					id=6;
+				};
+				class CattleMooA
+				{
+					soundSet="CattleMooA_SoundSet";
+					noise="DeerRoarNoise";
+					id=7;
+				};
+				class CattleMooALong
+				{
+					soundSet="CattleMooALong_SoundSet";
+					noise="DeerRoarNoise";
+					id=8;
+				};
+				class CattleMooB
+				{
+					soundSet="CattleMooB_SoundSet";
+					noise="DeerRoarNoise";
+					id=9;
+				};
+				class CattleMooC
+				{
+					soundSet="CattleMooC_SoundSet";
+					noise="DeerRoarNoise";
+					id=10;
+				};
+				class CattleRoar
+				{
+					soundSet="CattleRoar_SoundSet";
+					noise="DeerRoarNoise";
+					id=11;
+				};
+				class CattleSigh
+				{
+					soundSet="CattleSigh_SoundSet";
+					noise="DeerRoarNoise";
+					id=12;
+				};
+				class CattleSighLong
+				{
+					soundSet="CattleSighLong_SoundSet";
+					noise="DeerRoarNoise";
+					id=13;
+				};
+				class CattleMooX1
+				{
+					soundSet="CattleMooX1_SoundSet";
+					noise="DeerRoarNoise";
+					id=14;
+				};
+				class CattleMooX1_Tail
+				{
+					soundSet="CattleMooX1_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=15;
+				};
+				class CattleMooX2
+				{
+					soundSet="CattleMooX2_SoundSet";
+					noise="DeerRoarNoise";
+					id=16;
+				};
+				class CattleMooX2_Tail
+				{
+					soundSet="CattleMooX2_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=17;
+				};
+				class CattleMooX3
+				{
+					soundSet="CattleMooX3_SoundSet";
+					noise="DeerRoarNoise";
+					id=18;
+				};
+				class CattleMooX3_Tail
+				{
+					soundSet="CattleMooX3_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=19;
+				};
+				class CattleMooX4
+				{
+					soundSet="CattleMooX4_SoundSet";
+					noise="DeerRoarNoise";
+					id=20;
+				};
+				class CattleMooX4_Tail
+				{
+					soundSet="CattleMooX4_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=21;
+				};
+				class CattleMooX5
+				{
+					soundSet="CattleMooX5_SoundSet";
+					noise="DeerRoarNoise";
+					id=22;
+				};
+				class CattleMooX5_Tail
+				{
+					soundSet="CattleMooX5_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=23;
+				};
+				class CattleSnort
+				{
+					soundSet="CattleSnort_SoundSet";
+					noise="DeerRoarNoise";
+					id=24;
+				};
+			};
+			class Damages
+			{
+				class Bite
+				{
+					damage="DeerBiteDamage";
+					id=1;
+				};
+			};
+		};
+		class CommandMoveSettings
+		{
+			useSpeedMapping=1;
+			movementSpeedMapping[]={0,0.25,0.60000002,2.2,5,11};
+		};
+		class CommandLookAtSettings
+		{
+			lookAtFilterTimeout=0.5;
+			lookAtFilterSpeed=1.5700001;
+		};
+	}
+	
+	class geb_GiraffeSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+	class geb_GiraffePelt: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
+	//Deer Skeleton
+	/*
+	class geb_Zebra: AnimalBase
+	{
+		simulation="dayzanimal";
+		scope=2;
+		model = "\gebsflorafauna\data\fauna\zebra\geb_Zebra.p3d";
+		displayName="$STR_CfgVehicles_Animal_CapreolusCapreolus0";
+		descriptionShort="$STR_CfgVehicles_Animal_CapreolusCapreolus1";
+		aiAgentTemplate="Herbivores_CapreolusCapreolus";
+		injuryLevels[]={1,0.5,0.2,0};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=160;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							{}
+						},
+						
+						{
+							0.69999999,
+							{}
+						},
+						
+						{
+							0.5,
+							{}
+						},
+						
+						{
+							0.30000001,
+							{}
+						},
+						
+						{
+							0,
+							{}
+						}
+					};
+				};
+				class Blood
+				{
+					hitpoints=5000;
+				};
+				class Shock
+				{
+					hitpoints=100;
+				};
+			};
+			class DamageZones
+			{
+				class Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Head"
+					};
+					transferToZonesNames[]={};
+					transferToZonesCoefs[]={};
+					fatalInjuryCoef=0.15000001;
+					canBleed=0;
+					class Health
+					{
+						hitpoints=100;
+						transferToGlobalCoef=1;
+					};
+					class Blood: Health
+					{
+						hitpoints=0;
+					};
+					class Shock: Health
+					{
+						hitpoints=0;
+					};
+				};
+				class Zone_Neck: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Neck"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.2};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=80;
+					};
+				};
+				class Zone_Chest: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Chest"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Neck",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.15000001,0.15000001};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=140;
+					};
+				};
+				class Zone_Belly: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Belly"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.15000001,0.15000001};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=160;
+					};
+				};
+				class Zone_Spine: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Spine"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.1,0.1,0.1};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=90;
+					};
+				};
+				class Zone_Pelvis: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Pelvis"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Spine",
+						"Zone_Belly"
+					};
+					transferToZonesCoefs[]={0.15000001,0.15000001};
+					fatalInjuryCoef=0.050000001;
+					class Health: Health
+					{
+						hitpoints=140;
+					};
+				};
+				class Zone_Legs: Zone_Head
+				{
+					componentNames[]=
+					{
+						"Zone_Legs"
+					};
+					transferToZonesNames[]=
+					{
+						"Zone_Pelvis",
+						"Zone_Belly",
+						"Zone_Chest"
+					};
+					transferToZonesCoefs[]={0.1,0.1,0.1};
+					fatalInjuryCoef=0;
+					class Health: Health
+					{
+						hitpoints=50;
+					};
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item="geb_ZebraSteakMeat";
+				count=10;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly",
+					"Zone_Pelvis"
+				};
+				countByZone[]={4,2,4};
+				quantityMinMaxCoef[]={0.30000001,7};
+			};
+			class ObtainedPelt
+			{
+				item="geb_ZebraPelt";
+				count=1;
+				itemZones[]=
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef=0.5;
+				transferToolDamageCoef=1;
+			};
+			class ObtainedGuts
+			{
+				item="Guts";
+				count=2;
+				quantityMinMaxCoef[]={0.5,0.80000001};
+			};
+			class ObtainedLard
+			{
+				item="Lard";
+				count=1;
+				quantityMinMaxCoef[]={0.2,0.5};
+			};
+			class ObtainedBones
+			{
+				item="Bone";
+				count=1;
+				quantityMinMaxCoef[]={0.80000001,1};
+				transferToolDamageCoef=1;
+			};
+		};
+		class enfanimsys
+		{
+			meshObject="dz\animals\capreolus_capreolus\data\capreolus_capreolus_skeleton.xob";
+			graphname="dz\animals\animations\!graph_files\Herbivores\Herbivores_Graph.agr";
+			defaultinstance="dz\animals\animations\!graph_files\Herbivores\RoeDeerSkeleton_AnimInstance.asi";
+			startnode="MasterDeers_SM";
+			skeletonName="capreolus_capreolus_skeleton.xob";
+		};
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=1;
+				};
+				class Walk2
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=2;
+				};
+				class Walk3
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=3;
+				};
+				class Walk4
+				{
+					soundLookupTable="HoofMediumWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=4;
+				};
+				class Run1
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=5;
+				};
+				class Run2
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=6;
+				};
+				class Run3
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=7;
+				};
+				class Run4
+				{
+					soundLookupTable="HoofMediumRun_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=8;
+				};
+				class Grazing1
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=9;
+				};
+				class Grazing2
+				{
+					soundLookupTable="HoofMediumGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=10;
+				};
+				class Bodyfall
+				{
+					soundLookupTable="HoofMediumBodyfall_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=11;
+				};
+				class Settle
+				{
+					soundLookupTable="HoofMediumSettle_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=12;
+				};
+				class Rest2standA
+				{
+					soundLookupTable="HoofMediumRest2standA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=13;
+				};
+				class Rest2standB
+				{
+					soundLookupTable="HoofMediumRest2standB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=14;
+				};
+				class Stand2restA
+				{
+					soundLookupTable="HoofMediumStand2restA_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=15;
+				};
+				class Stand2restB
+				{
+					soundLookupTable="HoofMediumStand2restB_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=16;
+				};
+				class Stand2restC
+				{
+					soundLookupTable="HoofMediumStand2restC_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=17;
+				};
+				class Rub1
+				{
+					soundLookupTable="HoofMediumRub1_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=18;
+				};
+				class Rub2
+				{
+					soundLookupTable="HoofMediumRub2_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=19;
+				};
+			};
+			class Sounds
+			{
+				class DeerBleat
+				{
+					soundSet="DeerBleat_SoundSet";
+					noise="DeerRoarNoise";
+					id=1;
+				};
+				class DoeBleat
+				{
+					soundSet="DoeBleat_SoundSet";
+					noise="DeerRoarNoise";
+					id=2;
+				};
+				class DeerBreath
+				{
+					soundSet="DeerBreath_SoundSet";
+					noise="DeerRoarNoise";
+					id=3;
+				};
+				class DeerBark
+				{
+					soundSet="DeerBark_SoundSet";
+					noise="DeerRoarNoise";
+					id=4;
+				};
+				class DoeBark
+				{
+					soundSet="DoeBark_SoundSet";
+					noise="DeerRoarNoise";
+					id=5;
+				};
+				class RoeBark
+				{
+					soundSet="RoeBark_SoundSet";
+					noise="DeerRoarNoise";
+					id=6;
+				};
+				class DeerCall
+				{
+					soundSet="DeerCall_SoundSet";
+					noise="DeerRoarNoise";
+					id=7;
+				};
+				class DeerCallFear
+				{
+					soundSet="DeerCallFear_SoundSet";
+					noise="DeerRoarNoise";
+					id=8;
+				};
+				class DeerGrunt
+				{
+					soundSet="DeerGrunt_SoundSet";
+					noise="DeerRoarNoise";
+					id=9;
+				};
+				class DeerRoar
+				{
+					soundSet="DeerRoar_SoundSet";
+					noise="DeerRoarNoise";
+					id=10;
+				};
+				class DeerRoarLong
+				{
+					soundSet="DeerRoarLong_SoundSet";
+					noise="DeerRoarNoise";
+					id=11;
+				};
+				class DeerRoarShort
+				{
+					soundSet="DeerRoarShort_SoundSet";
+					noise="DeerRoarNoise";
+					id=12;
+				};
+				class DeerSnort
+				{
+					soundSet="DeerSnort_SoundSet";
+					noise="DeerRoarNoise";
+					id=13;
+				};
+				class RoeBarkX1
+				{
+					soundSet="RoeBarkX1_SoundSet";
+					noise="DeerRoarNoise";
+					id=14;
+				};
+				class RoeBarkX1_Tail
+				{
+					soundSet="RoeBarkX1_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=15;
+				};
+				class RoeBarkX2
+				{
+					soundSet="RoeBarkX2_SoundSet";
+					noise="DeerRoarNoise";
+					id=16;
+				};
+				class RoeBarkX2_Tail
+				{
+					soundSet="RoeBarkX2_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=17;
+				};
+				class RoeBarkX3
+				{
+					soundSet="RoeBarkX3_SoundSet";
+					noise="DeerRoarNoise";
+					id=18;
+				};
+				class RoeBarkX3_Tail
+				{
+					soundSet="RoeBarkX3_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=19;
+				};
+				class RoeBarkX4
+				{
+					soundSet="RoeBarkX4_SoundSet";
+					noise="DeerRoarNoise";
+					id=20;
+				};
+				class RoeBarkX4_Tail
+				{
+					soundSet="RoeBarkX4_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=21;
+				};
+				class RoeBarkX5
+				{
+					soundSet="RoeBarkX5_SoundSet";
+					noise="DeerRoarNoise";
+					id=22;
+				};
+				class RoeBarkX5_Tail
+				{
+					soundSet="RoeBarkX5_Tail_SoundSet";
+					noise="DeerRoarNoise";
+					id=23;
+				};
+			};
+			class Damages
+			{
+				class Bite
+				{
+					damage="DeerBiteDamage";
+					id=1;
+				};
+			};
+		};
+		class CommandMoveSettings
+		{
+			useSpeedMapping=1;
+			movementSpeedMapping[]={0,0.13,0.52999997,2.1300001,4.4099998,11.76};
+		};
+		class CommandLookAtSettings
+		{
+			lookAtFilterTimeout=0.5;
+			lookAtFilterSpeed=1.5700001;
+		};
+	}
+	*/
+
+	class geb_ZebraSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+
+	class geb_ZebraPelt: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
 
 	//Chicken Skeleton
 	class geb_Turkey: AnimalBase
@@ -2236,7 +8629,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item="TurkeyBreastMeat";
+				item="geb_TurkeyMeat";
 				count=2;
 				quantityMinMaxCoef[]={0.5,1};
 			};
@@ -2518,7 +8911,8 @@ class cfgVehicles
 			movementSpeedMapping[]={0,0.25,0.80000001,3};
 		};
 	}
-	class geb_TurkeyBreastMeat : Edible_Base
+
+	class geb_TurkeyMeat : Edible_Base
 	{
 		scope = 2;
 		displayName = "$STR_TurkeyBreastMeat";
@@ -2695,7 +9089,10 @@ class cfgVehicles
 				};
 			};
 		};
-	};
+	}
+
+
+	//Chicken Skeleton
 	class geb_Peacock : AnimalBase
 	{
 		displayName = "Peacock";
@@ -2756,16 +9153,9 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item = "ChickenBreastMeat";
+				item = "PeacockMeat";
 				count = 2;
 				quantityMinMaxCoef[] = { 0.5,1 };
-			};
-			class ObtainedFeathers
-			{
-				item = "ChickenFeather";
-				count = 0;
-				quantityMinMaxCoef[] = { 0.5,1 };
-				transferToolDamageCoef = 1;
 			};
 			class ObtainedGuts
 			{
@@ -3045,7 +9435,7 @@ class cfgVehicles
 			movementSpeedMapping[] = { 0,0.25,0.80000001,3 };
 		};
 	}
-	class geb_PeacockBreastMeat : Edible_Base
+	class geb_PeacockMeat : Edible_Base
 	{
 		scope = 2;
 		displayName = "$STR_PeacockBreastMeat";
@@ -3546,7 +9936,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item = "RacoonSteakMeat";
+				item = "geb_RacoonSteakMeat";
 				count = 2;
 				itemZones[] =
 				{
@@ -3558,7 +9948,7 @@ class cfgVehicles
 			};
 			class ObtainedPelt
 			{
-				item = "RacoonPelt";
+				item = "geb_RacoonPelt";
 				count = 1;
 				itemZones[] =
 				{
@@ -3897,7 +10287,7 @@ class cfgVehicles
 		class CommandMoveSettings
 		{
 			useSpeedMapping = 1;
-			movementSpeedMapping[] = { 0,0.090999998,0.30000001,1.3,3.53,8.6300001 };
+			movementSpeedMapping[] = { 0,0.090999998,0.30000001,0.3,0.53,0.6300001 };
 		};
 		class CommandLookAtSettings
 		{
@@ -4083,6 +10473,796 @@ class cfgVehicles
 			};
 		};
 	};
+	class geb_RacoonPelt: BearPelt
+	{
+		scope=2;
+		displayName="Racoon Pelt";
+		descriptionShort="Racoon Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	};
+	
+	//Wolf Skeleton
+	class geb_Leopard : Animal_CanisLupus 
+	{
+			simulation="dayzanimal";
+			scope=2;
+			displayName="geb_leopard";
+			model = "\gebsflorafauna\data\fauna\cats\geb_leopard.p3d";
+			hiddenSelections[]=
+			{
+				"Camo",
+				"CamoHair"
+			};
+			DamageSphereAmmos[]=
+			{
+				"MeleeWolf"
+			};
+			aiAgentTemplate="Predators_Wolf";
+			injuryLevels[]={1,0.5,0.2,0};
+			class DamageSystem
+			{
+				class GlobalHealth
+				{
+					class Health
+					{
+						hitpoints=200;
+						healthLevels[]=
+						{
+						
+							{
+								1,
+								{}
+							},
+						
+							{
+								0.69999999,
+								{}
+							},
+						
+							{
+								0.5,
+								{}
+							},
+						
+							{
+								0.30000001,
+								{}
+							},
+						
+							{
+								0,
+								{}
+							}
+						};
+					};
+					class Blood
+					{
+						hitpoints=5000;
+					};
+					class Shock
+					{
+						hitpoints=100;
+					};
+				};
+				class DamageZones
+				{
+					class Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Head"
+						};
+						transferToZonesNames[]={};
+						transferToZonesCoefs[]={};
+						fatalInjuryCoef=0.15000001;
+						canBleed=0;
+						class Health
+						{
+							hitpoints=120;
+							transferToGlobalCoef=1;
+						};
+						class Blood: Health
+						{
+							hitpoints=0;
+						};
+						class Shock: Health
+						{
+							hitpoints=0;
+						};
+					};
+					class Zone_Neck: Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Neck"
+						};
+						transferToZonesNames[]={};
+						transferToZonesCoefs[]={};
+						fatalInjuryCoef=0.050000001;
+						class Health: Health
+						{
+							hitpoints=100;
+						};
+					};
+					class Zone_Chest: Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Chest"
+						};
+						transferToZonesNames[]={};
+						transferToZonesCoefs[]={};
+						fatalInjuryCoef=0.050000001;
+						class Health: Health
+						{
+							hitpoints=150;
+						};
+					};
+					class Zone_Belly: Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Belly"
+						};
+						transferToZonesNames[]={};
+						transferToZonesCoefs[]={};
+						fatalInjuryCoef=0.050000001;
+						class Health: Health
+						{
+							hitpoints=150;
+						};
+					};
+					class Zone_Spine: Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Spine_Front",
+							"Zone_Spine_Back"
+						};
+						transferToZonesNames[]={};
+						transferToZonesCoefs[]={};
+						fatalInjuryCoef=0.050000001;
+						class Health: Health
+						{
+							hitpoints=150;
+						};
+					};
+					class Zone_Pelvis: Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Pelvis"
+						};
+						transferToZonesNames[]=
+						{
+							"Zone_Spine"
+						};
+						transferToZonesCoefs[]={0.5};
+						fatalInjuryCoef=0.050000001;
+						class Health: Health
+						{
+							hitpoints=180;
+						};
+					};
+					class Zone_Legs: Zone_Head
+					{
+						componentNames[]=
+						{
+							"Zone_Legs_Front",
+							"Zone_Legs_Back"
+						};
+						transferToZonesNames[]={};
+						transferToZonesCoefs[]={};
+						fatalInjuryCoef=0;
+						class Health: Health
+						{
+							hitpoints=100;
+						};
+					};
+				};
+			};
+			class Skinning
+			{
+				class ObtainedSteaks
+				{
+					item="geb_LeopardSteakMeat";
+					count=10;
+					itemZones[]=
+					{
+						"Zone_Chest",
+						"Zone_Belly",
+						"Zone_Pelvis"
+					};
+					countByZone[]={3,3,3};
+					quantityMinMaxCoef[]={0.5,1};
+				};
+				class ObtainedPelt
+				{
+					item="geb_LeopardPelt";
+					count=1;
+					itemZones[]=
+					{
+						"Zone_Chest",
+						"Zone_Belly"
+					};
+					quantityCoef=1;
+					transferToolDamageCoef=1;
+				};
+				class ObtainedGuts
+				{
+					item="Guts";
+					count=2;
+					quantityMinMaxCoef[]={0.5,0.80000001};
+				};
+				class ObtainedLard
+				{
+					item="Lard";
+					count=1;
+					quantityMinMaxCoef[]={0.5,1};
+				};
+				class ObtainedBones
+				{
+					item="Bone";
+					count=1;
+					quantityMinMaxCoef[]={0.69999999,1};
+					transferToolDamageCoef=1;
+				};
+			};
+			class enfanimsys
+			{
+				meshObject="dz\animals\canis_lupus\Data\canis_lupus_skeleton.xob";
+				graphname="dz\animals\animations\!graph_files\Wolf\Wolf_Graph.agr";
+				defaultinstance="dz\animals\animations\!graph_files\Wolf\Wolf_AnimInstance.asi";
+				startnode="AlignToTerrain_Rot";
+				skeletonName="canis_lupus_skeleton.xob";
+			};
+			class AnimEvents
+			{
+				class Steps
+				{
+					class Walk1
+					{
+						soundLookupTable="PawMediumWalk_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=1;
+					};
+					class Walk2
+					{
+						soundLookupTable="PawMediumWalk_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=2;
+					};
+					class Walk3
+					{
+						soundLookupTable="PawMediumWalk_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=3;
+					};
+					class Walk4
+					{
+						soundLookupTable="PawMediumWalk_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=4;
+					};
+					class Run1
+					{
+						soundLookupTable="PawMediumRun_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=5;
+					};
+					class Run2
+					{
+						soundLookupTable="PawMediumRun_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=6;
+					};
+					class Run3
+					{
+						soundLookupTable="PawMediumRun_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=7;
+					};
+					class Run4
+					{
+						soundLookupTable="PawMediumRun_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=8;
+					};
+					class Bodyfall
+					{
+						soundLookupTable="PawMediumBodyfall_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=11;
+					};
+					class Settle
+					{
+						soundLookupTable="PawMediumSettle_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=12;
+					};
+					class Rest2standA
+					{
+						soundLookupTable="PawMediumRest2standA_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=13;
+					};
+					class Rest2standB
+					{
+						soundLookupTable="PawMediumRest2standB_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=14;
+					};
+					class Stand2restA
+					{
+						soundLookupTable="PawMediumStand2restA_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=15;
+					};
+					class Stand2restB
+					{
+						soundLookupTable="PawMediumStand2restB_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=16;
+					};
+					class Stand2restC
+					{
+						soundLookupTable="PawMediumStand2restC_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=17;
+					};
+					class Jump
+					{
+						soundLookupTable="PawMediumJump_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=18;
+					};
+					class Impact
+					{
+						soundLookupTable="PawMediumImpact_LookupTable";
+						noise="WolfStepNoise";
+						effectSet[]=
+						{
+							"WolfStepEffect1",
+							"WolfStepEffect2"
+						};
+						id=19;
+					};
+				};
+				class Sounds
+				{
+					class WolfBark
+					{
+						soundSet="WolfBark_SoundSet";
+						noise="WolfRoarNoise";
+						id=1;
+					};
+					class WolfBark_1
+					{
+						soundSet="WolfBark_SoundSet";
+						noise="WolfRoarNoise";
+						id=61;
+					};
+					class WolfBark_2
+					{
+						soundSet="WolfBark_SoundSet";
+						noise="WolfRoarNoise";
+						id=71;
+					};
+					class WolfBark2
+					{
+						soundSet="WolfBark2_SoundSet";
+						noise="WolfRoarNoise";
+						id=2;
+					};
+					class WolfBark3
+					{
+						soundSet="WolfBark3_SoundSet";
+						noise="WolfRoarNoise";
+						id=3;
+					};
+					class WolfBreath
+					{
+						soundSet="WolfBreath_SoundSet";
+						noise="WolfRoarNoise";
+						id=4;
+					};
+					class WolfGroans
+					{
+						soundSet="WolfGroans_SoundSet";
+						noise="WolfRoarNoise";
+						id=5;
+					};
+					class WolfGrowl_A
+					{
+						soundSet="WolfGrowl_A_SoundSet";
+						noise="WolfRoarNoise";
+						id=6;
+					};
+					class WolfGrowl_B
+					{
+						soundSet="WolfGrowl_B_SoundSet";
+						noise="WolfRoarNoise";
+						id=7;
+					};
+					class WolfGrowl
+					{
+						soundSet="WolfGrowl_A_SoundSet";
+						noise="WolfRoarNoise";
+						id=8;
+					};
+					class WolfPant
+					{
+						soundSet="WolfPant_SoundSet";
+						noise="WolfRoarNoise";
+						id=9;
+					};
+					class WolfPantShort
+					{
+						soundSet="WolfPantShort_SoundSet";
+						noise="WolfRoarNoise";
+						id=10;
+					};
+					class WolfPantLong
+					{
+						soundSet="WolfPantShort_SoundSet";
+						noise="WolfRoarNoise";
+						id=18;
+					};
+					class WolfSnarl
+					{
+						soundSet="WolfSnarl_SoundSet";
+						noise="WolfRoarNoise";
+						id=11;
+					};
+					class WolfSnarlShort
+					{
+						soundSet="WolfSnarlShort_SoundSet";
+						noise="WolfRoarNoise";
+						id=12;
+					};
+					class WolfWhimper
+					{
+						soundSet="WolfWhimper_SoundSet";
+						noise="WolfRoarNoise";
+						id=13;
+					};
+					class WolfYelp
+					{
+						soundSet="WolfYelp_SoundSet";
+						noise="WolfRoarNoise";
+						id=14;
+					};
+					class WolfYawn
+					{
+						soundSet="WolfYelp_SoundSet";
+						noise="WolfRoarNoise";
+						id=15;
+					};
+					class WolfDeath
+					{
+						soundSet="WolfDeath_SoundSet";
+						noise="WolfRoarNoise";
+						id=20;
+					};
+					class WolfHowl
+					{
+						soundSet="WolfHowl_SoundSet";
+						noise="WolfRoarNoise";
+						id=16;
+					};
+					class WolfHowls
+					{
+						soundSet="WolfHowls_SoundSet";
+						noise="WolfRoarNoise";
+						id=17;
+					};
+				};
+				class Damages
+				{
+					class Bite
+					{
+						damage="WolfBiteDamage";
+						id=1;
+					};
+					class BiteLow
+					{
+						damage="WolfLowBiteDamage";
+						id=2;
+					};
+				};
+			};
+			class CommandMoveSettings
+			{
+				useSpeedMapping=1;
+				movementSpeedMapping[]={0,0.25,0.5,1.2,4.5,12.2};
+			};
+			class CommandLookAtSettings
+			{
+				lookAtFilterTimeout=0.5;
+				lookAtFilterSpeed=1.5700001;
+			};
+	}
+
+	class geb_LeopardSteakMeat : Edible_Base
+	{
+		scope = 2;
+		displayName = "$STR_RacoonSteakMeat";
+		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		model = "\dz\gear\food\meat_steak.p3d";
+		debug_ItemCategory = 6;
+		rotationFlags = 34;
+		weight = 0;
+		interactionWeight = 1;
+		quantityBar = 1;
+		varQuantityInit = 150;
+		varQuantityMin = 0;
+		varQuantityMax = 150;
+		itemSize[] = { 1,2 };
+		inventorySlot[] =
+		{
+			"Ingredient",
+			"DirectCookingA",
+			"DirectCookingB",
+			"DirectCookingC",
+			"SmokingA",
+			"SmokingB",
+			"SmokingC",
+			"SmokingD"
+		};
+		hiddenSelections[] =
+		{
+			"cs_raw"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"dz\gear\food\data\meat_steak_baked_CO.paa",
+			"dz\gear\food\data\meat_steak_boiled_co.paa",
+			"dz\gear\food\data\meat_steak_dried_CO.paa",
+			"dz\gear\food\data\meat_steak_burned_CO.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"dz\gear\food\data\meat_steak_raw.rvmat",
+			"dz\gear\food\data\meat_steak_baked.rvmat",
+			"dz\gear\food\data\meat_steak_boiled.rvmat",
+			"dz\gear\food\data\meat_steak_dried.rvmat",
+			"dz\gear\food\data\meat_steak_burnt.rvmat",
+			"dz\gear\food\data\meat_steak_rotten.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints = 50;
+					healthLevels[] =
+					{
+
+						{
+							1,
+							{}
+						},
+
+						{
+							0.69999999,
+							{}
+						},
+
+						{
+							0.5,
+							{}
+						},
+
+						{
+							0.30000001,
+							{}
+						},
+
+						{
+							0,
+							{}
+						}
+					};
+				};
+			};
+		};
+		class AnimationSources : FoodAnimationSources
+		{
+		};
+		class Food
+		{
+			class FoodStages
+			{
+				class Raw
+				{
+					visual_properties[] = { 0,0,0 };
+					nutrition_properties[] = { 5,50,50,1,0,4 };
+					cooking_properties[] = { 0,0 };
+				};
+				class Rotten
+				{
+					visual_properties[] = { -1,-1,5 };
+					nutrition_properties[] =
+					{
+						10,
+						25,
+						25,
+						1,
+						0,
+						"4 + 		  16"
+					};
+					cooking_properties[] = { 0,0 };
+				};
+				class Baked
+				{
+					visual_properties[] = { 0,1,1 };
+					nutrition_properties[] = { 2,250,50,1,0 };
+					cooking_properties[] = { 70,45 };
+				};
+				class Boiled
+				{
+					visual_properties[] = { 0,2,2 };
+					nutrition_properties[] = { 2,200,100,1,0 };
+					cooking_properties[] = { 70,55 };
+				};
+				class Dried
+				{
+					visual_properties[] = { 0,3,3 };
+					nutrition_properties[] = { 3,200,0,1,0 };
+					cooking_properties[] = { 70,120,80 };
+				};
+				class Burned
+				{
+					visual_properties[] = { 0,4,4 };
+					nutrition_properties[] = { 5,50,0,1,0,16 };
+					cooking_properties[] = { 100,30 };
+				};
+			};
+			class FoodStageTransitions : MeatStageTransitions
+			{
+			};
+		};
+		class NoiseImpact
+		{
+			strength = 600;
+			type = "sound";
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class openTunaCan
+				{
+					soundSet = "openTunaCan_SoundSet";
+					id = 204;
+				};
+				class Eating_TakeFood
+				{
+					soundSet = "Eating_TakeFood_Soundset";
+					id = 889;
+				};
+				class Eating_BoxOpen
+				{
+					soundSet = "Eating_BoxOpen_Soundset";
+					id = 893;
+				};
+				class Eating_BoxShake
+				{
+					soundSet = "Eating_BoxShake_Soundset";
+					id = 894;
+				};
+				class Eating_BoxEnd
+				{
+					soundSet = "Eating_BoxEnd_Soundset";
+					id = 895;
+				};
+			};
+		};
+	}
+
+	class geb_LeopardPelt: BearPelt
+	{
+		scope=2;
+		displayName="Leopard Pelt";
+		descriptionShort="Leopard Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
 
 	//Bears
 	class geb_BlackbearPelt: BearPelt
@@ -4774,5 +11954,4 @@ class cfgVehicles
 			};
 		};
 	};
-
-};
+}

@@ -3,12 +3,11 @@
     "",
     "\\data",
     "\\data\\fauna",
-    "\\data\\fauna\\chimp",
-    "\\data\\fauna\\chimp\\sounds",
+    "\\data\\fauna\\giraffe\\sounds",
     "\\data\\fauna\\turkey",
     "\\data\\fauna\\turkey\\sounds",
-    "\\scripts"
+    "\\data\\fauna\\zebra"
   ],
-  "SelectedNode": "\\data\\config.cpp",
+  "SelectedNode": "\\data\\fauna\\zebra",
   "PreviewInSolutionExplorer": false
 }
