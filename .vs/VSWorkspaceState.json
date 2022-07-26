@@ -3,11 +3,11 @@
     "",
     "\\data",
     "\\data\\fauna",
-    "\\data\\fauna\\giraffe\\sounds",
-    "\\data\\fauna\\turkey",
-    "\\data\\fauna\\turkey\\sounds",
-    "\\data\\fauna\\zebra"
+    "\\data\\fauna\\alien",
+    "\\scripts",
+    "\\scripts\\4_world",
+    "\\scripts\\4_world\\entities",
+    "\\scripts\\4_world\\entities\\itembase"
   ],
-  "SelectedNode": "\\data\\fauna\\zebra",
   "PreviewInSolutionExplorer": false
 }

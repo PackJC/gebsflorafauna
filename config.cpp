@@ -42,9 +42,10 @@ class CfgMods
 				value="";
 				files[]=
 				{
-					"gebsflorafauna/data"
+					"gebsflorafauna/scripts"
 				};
 			};
+
 		};
 	};
 

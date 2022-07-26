@@ -13,11 +13,11 @@ class CfgPatches
 };
 class CfgSoundSets
 {
-	class Chimp_Calm_soundset
+	class Alien_Calm_soundset
 	{
 		soundShaders[]=
 		{
-			"Chimp_OnHit"
+			"Alien_OnHit"
 		};
 		sound3DProcessingType="infected3DProcessingType";
 		volumeCurve="infectedAttenuationCurve";
@@ -26,11 +26,11 @@ class CfgSoundSets
 		loop=0;
 	};
 
-	class Chimp_Attack_soundset
+	class Alien_Attack_soundset
 	{
 		soundShaders[] =
 		{
-			"Chimp_Attack"
+			"Alien_Attack"
 		};
 		sound3DProcessingType = "infected3DProcessingType";
 		volumeCurve = "infectedAttenuationCurve";
@@ -38,11 +38,11 @@ class CfgSoundSets
 		doppler = 0;
 		loop = 0;
 	};
-	class Chimp_Agr_soundset
+	class Alien_Agr_soundset
 	{
 		soundShaders[] =
 		{
-			"Chimp_Agr"
+			"Alien_Agr"
 		};
 		sound3DProcessingType = "infected3DProcessingType";
 		volumeCurve = "infectedAttenuationCurve";
@@ -50,11 +50,11 @@ class CfgSoundSets
 		doppler = 0;
 		loop = 0;
 	};
-	class Chimp_Soundset
+	class Alien_Soundset
 	{
 		soundShaders[] =
 		{
-			"Chimp_Run"
+			"Alien_Run"
 		};
 		sound3DProcessingType = "infected3DProcessingType";
 		volumeCurve = "infectedAttenuationCurve";
@@ -62,11 +62,11 @@ class CfgSoundSets
 		doppler = 0;
 		loop = 0;
 	};
-	class Chimp_Onhit_soundset
+	class Alien_Onhit_soundset
 	{
 		soundShaders[] =
 		{
-			"Chimp_OnHit"
+			"Alien_OnHit"
 		};
 		sound3DProcessingType = "infected3DProcessingType";
 		volumeCurve = "infectedAttenuationCurve";
@@ -78,41 +78,41 @@ class CfgSoundSets
 
 class CfgSoundShaders
 {
-	class Chimp_Attack
+	class Alien_Attack
 	{
 		samples[]=
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};
 		volume=0.30000001;
 		range=44;
 	};
-	class Chimp_Onhit
+	class Alien_Onhit
 	{
 		samples[]=
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};
@@ -121,84 +121,84 @@ class CfgSoundShaders
 	};
 
 
-	class Chimp_Agr
+	class Alien_Agr
 	{
 		samples[] =
 		{
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};
 		volume = 1.4400001;
 		range = 120;
 	};
-	class Chimp_Calm
+	class Alien_Calm
 	{
 		samples[] =
 		{
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};
 		volume = 0.40000001;
 		range = 65;
 	};
-	class Chimp_Run
+	class Alien_Run
 	{
 		samples[] =
 		{
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\chimp\sounds\chimp",
+				"gebsflorafauna\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};
