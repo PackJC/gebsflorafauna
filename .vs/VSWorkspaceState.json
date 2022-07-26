@@ -3,11 +3,11 @@
     "",
     "\\data",
     "\\data\\fauna",
-    "\\data\\fauna\\alien",
-    "\\scripts",
     "\\scripts\\4_world",
-    "\\scripts\\4_world\\entities",
-    "\\scripts\\4_world\\entities\\itembase"
+    "\\scripts\\4_world\\classes",
+    "\\scripts\\4_world\\classes\\recipes",
+    "\\scripts\\4_world\\classes\\recipes\\recipes"
   ],
+  "SelectedNode": "\\data\\fauna\\leopard",
   "PreviewInSolutionExplorer": false
 }

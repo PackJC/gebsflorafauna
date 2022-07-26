@@ -5362,6 +5362,20 @@ class cfgVehicles
 			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
 		};
 	}
+	class geb_ElephantTusk: BearPelt
+	{
+		scope=2;
+		displayName="Zebra Pelt";
+		descriptionShort="Zebra Pelt";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+		};
+	}
 
 	//Cow Skeleton
 	class geb_Giraffe: Animal_BosTaurus
@@ -8921,29 +8935,6 @@ class cfgVehicles
 			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
 		};
 	}
-
-
-
-	class HouseNoDestruct;
-	class geb_Aliencrash_ColorBase: HouseNoDestruct
-	{
-
-		model = "\gebsflorafauna\data\fauna\alien\crash.p3d";
-		class EnergyManager
-		{
-			energyAtSpawn=10800;
-			energyUsagePerSecond=1;
-			updateInterval=50;
-			convertEnergyToQuantity=1;
-		};
-	};
-	class geb_Aliencrash: geb_Aliencrash_ColorBase
-	{
-		scope=2;
-
-	};
-
-
 
 	//Bears
 	class geb_BlackbearPelt: BearPelt
