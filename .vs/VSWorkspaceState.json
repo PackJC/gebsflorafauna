@@ -3,11 +3,9 @@
     "",
     "\\data",
     "\\data\\fauna",
-    "\\scripts\\4_world",
-    "\\scripts\\4_world\\classes",
-    "\\scripts\\4_world\\classes\\recipes",
-    "\\scripts\\4_world\\classes\\recipes\\recipes"
+    "\\data\\fauna\\alien",
+    "\\data\\fauna\\alien\\sounds"
   ],
-  "SelectedNode": "\\data\\fauna\\leopard",
+  "SelectedNode": "\\data\\fauna\\alien\\sounds\\config.cpp",
   "PreviewInSolutionExplorer": false
 }

@@ -187,6 +187,8 @@ class cfgVehicles
 	class MeatStageTransitions;
 	class Animal_CanisLupus;
 	class Animal_BosTaurus;
+	class ChickenBreastMeat;
+	class CowSteakMeat;
 
 	//Zombie Skeleton
 	class ChimpBase : ZombieBase
@@ -872,8 +874,8 @@ class cfgVehicles
 	}
 	class geb_Chimp : ChimpBase
 	{
-		displayName = "Chimpanzee";
-		descriptionShort = "A common Chimpanzee";
+		displayName = "$STR_Chimp";
+		descriptionShort = "$STR_ChimpDesc";
 		scope = 2;
 		model = "\gebsflorafauna\data\fauna\chimp\geb_chimp.p3d";
 
@@ -1123,36 +1125,11 @@ class cfgVehicles
 				};
 			};
 	}
-	class geb_ChimpSteakMeat : Edible_Base
+	class geb_ChimpMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
-		hiddenSelections[] =
-		{
-			"cs_raw"
-		};
+		displayName = "$STR_ChimpMeat";
+		descriptionShort = "$STR_ChimpMeatDesc";
 		hiddenSelectionsTextures[] =
 		{
 			"dz\gear\food\data\meat_steak_raw_CO.paa",
@@ -1161,151 +1138,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_dried_CO.paa",
 			"dz\gear\food\data\meat_steak_burned_CO.paa"
 		};
-		hiddenSelectionsMaterials[] =
-		{
-			"dz\gear\food\data\meat_steak_raw.rvmat",
-			"dz\gear\food\data\meat_steak_baked.rvmat",
-			"dz\gear\food\data\meat_steak_boiled.rvmat",
-			"dz\gear\food\data\meat_steak_dried.rvmat",
-			"dz\gear\food\data\meat_steak_burnt.rvmat",
-			"dz\gear\food\data\meat_steak_rotten.rvmat"
-		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_ChimpPelt: BearPelt
 	{
 		scope=2;
-		displayName="Polar Bear Pelt";
-		descriptionShort="Polar Bear Pelt";
+		displayName = "$STR_ChimpPelt";
+		descriptionShort = "$STR_ChimpPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -2000,8 +1838,8 @@ class cfgVehicles
 	}
 	class geb_GreenAlien : GreenAlienBase
 	{
-		displayName = "Alien";
-		descriptionShort = "A common Alien";
+		displayName = "$STR_GreenAlien";
+		descriptionShort = "$STR_GreenAlienDesc";
 		scope = 2;
 		model = "\gebsflorafauna\data\fauna\alien\geb_GreenAlien.p3d";
 
@@ -2251,32 +2089,11 @@ class cfgVehicles
 				};
 			};
 	}
-	class geb_GreenAlienSteakMeat : Edible_Base
+	class geb_GreenAlienMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_GreenAlienMeat";
+		descriptionShort = "$STR_GreenAlienMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -2289,151 +2106,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_dried_CO.paa",
 			"dz\gear\food\data\meat_steak_burned_CO.paa"
 		};
-		hiddenSelectionsMaterials[] =
-		{
-			"dz\gear\food\data\meat_steak_raw.rvmat",
-			"dz\gear\food\data\meat_steak_baked.rvmat",
-			"dz\gear\food\data\meat_steak_boiled.rvmat",
-			"dz\gear\food\data\meat_steak_dried.rvmat",
-			"dz\gear\food\data\meat_steak_burnt.rvmat",
-			"dz\gear\food\data\meat_steak_rotten.rvmat"
-		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
-	class geb_AlienSkin: BearPelt
+	class geb_GreenAlienSkin: BearPelt
 	{
 		scope=2;
-		displayName="Polar Bear Pelt";
-		descriptionShort="Polar Bear Pelt";
+		displayName="$STR_GreenAlienskin";
+		descriptionShort="$STR_GreenAlienskinDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -2447,8 +2125,8 @@ class cfgVehicles
 	//Human Skeleton
 	class geb_Penguin : AnimalBase
 	{
-		displayName = "Penguin";
-		descriptionShort = "A common Penguin";
+		displayName = "$STR_Penguin";
+		descriptionShort = "$STR_PenguinDesc";
 		simulation = "dayzanimal";
 		scope = 2;
 		model = "\gebsflorafauna\data\fauna\penguin\geb_penguin.p3d";
@@ -2503,7 +2181,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item = "geb_PenguinSteakMeat";
+				item = "geb_PenguinMeat";
 				count = 2;
 				quantityMinMaxCoef[] = { 0.5,1 };
 			};
@@ -2627,127 +2305,127 @@ class cfgVehicles
 			{
 				class HenChick
 				{
-					soundSet = "HenChick_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 1;
 				};
 				class HenCluck_A
 				{
-					soundSet = "HenCluck_A_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 2;
 				};
 				class HenCluck_A_High
 				{
-					soundSet = "HenCluck_A_High_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 3;
 				};
 				class HenCluck_B
 				{
-					soundSet = "HenCluck_B_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 4;
 				};
 				class HenCluck_B_High
 				{
-					soundSet = "HenCluck_B_High_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 5;
 				};
 				class HenCluck_C
 				{
-					soundSet = "HenCluck_C_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 6;
 				};
 				class HenCluck_C_High
 				{
-					soundSet = "HenCluck_C_High_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 7;
 				};
 				class HenCluck_D
 				{
-					soundSet = "HenCluck_D_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 8;
 				};
 				class HenCluck_D_High
 				{
-					soundSet = "HenCluck_D_High_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 9;
 				};
 				class HenCluck_E
 				{
-					soundSet = "HenCluck_E_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 10;
 				};
 				class HenCluck_E_High
 				{
-					soundSet = "HenCluck_E_High_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 11;
 				};
 				class HenCluck_Silky
 				{
-					soundSet = "HenCluck_Silky_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 12;
 				};
 				class HenCluck_Silky_High
 				{
-					soundSet = "HenCluck_Silky_High_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 13;
 				};
 				class HenCrow_A
 				{
-					soundSet = "HenCrow_A_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 14;
 				};
 				class HenCrow_B
 				{
-					soundSet = "HenCrow_B_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 15;
 				};
 				class HenCrow_C
 				{
-					soundSet = "HenCrow_C_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 16;
 				};
 				class HenCrow_D
 				{
-					soundSet = "HenCrow_D_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 17;
 				};
 				class HenCrow_E
 				{
-					soundSet = "HenCrow_E_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 18;
 				};
 				class HenCrow_F
 				{
-					soundSet = "HenCrow_F_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 19;
 				};
 				class HenCrow_G
 				{
-					soundSet = "HenCrow_G_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 20;
 				};
 				class HenScream
 				{
-					soundSet = "HenScream_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 21;
 				};
@@ -2777,7 +2455,7 @@ class cfgVehicles
 				};
 				class HenCrowX1
 				{
-					soundSet = "HenCrowX1_SoundSet";
+					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 26;
 				};
@@ -2797,32 +2475,11 @@ class cfgVehicles
 			movementSpeedMapping[] = { 0,0.25,0.30000001,0.3 };
 		};
 	}
-	class geb_PenguinSteakMeat : Edible_Base
+	class geb_PenguinMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_PenguinSteakMeat";
-		descriptionShort = "$STR_PenguinSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_PenguinMeat";
+		descriptionShort = "$STR_PenguinMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -2844,142 +2501,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_PenguinPelt: BearPelt
 	{
 		scope=2;
-		displayName="Zebra Pelt";
-		descriptionShort="Zebra Pelt";
+		displayName="$STR_PenguinPelt";
+		descriptionShort="$STR_PenguinPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -2993,8 +2520,8 @@ class cfgVehicles
 	//Goat Skeleton
 	class geb_Rabbit : AnimalBase
 	{
-		displayName = "Rabbit";
-		descriptionShort = "A common Rabbit";
+		displayName = "$STR_Rabbit";
+		descriptionShort = "$STR_RabbitDesc";
 		model = "\gebsflorafauna\data\fauna\rabbit\geb_rabbit.p3d";
 		aiAgentTemplate = "AmbientLife";
 		scope = 2;
@@ -3437,67 +2964,67 @@ class cfgVehicles
 			{
 				class GoatBleat_A
 				{
-					soundSet = "GoatBleat_A_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 1;
 				};
 				class GoatBleat_B
 				{
-					soundSet = "GoatBleat_B_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 2;
 				};
 				class GoatBleat_C
 				{
-					soundSet = "GoatBleat_C_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 3;
 				};
 				class GoatBleat_D
 				{
-					soundSet = "GoatBleat_D_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 4;
 				};
 				class GoatBleat_E
 				{
-					soundSet = "GoatBleat_E_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 5;
 				};
 				class GoatBleat_F
 				{
-					soundSet = "GoatBleat_F_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 6;
 				};
 				class GoatBleatX1
 				{
-					soundSet = "GoatBleatX1_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 14;
 				};
 				class GoatBleatX2
 				{
-					soundSet = "GoatBleatX2_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 16;
 				};
 				class GoatBleatX3
 				{
-					soundSet = "GoatBleatX3_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 18;
 				};
 				class GoatBleatX4
 				{
-					soundSet = "GoatBleatX4_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 20;
 				};
 				class GoatBleatX5
 				{
-					soundSet = "GoatBleatX5_SoundSet";
+					soundSet = "rabbit_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 22;
 				};
@@ -3522,32 +3049,11 @@ class cfgVehicles
 			lookAtFilterSpeed = 1.5700001;
 		};
 	}
-	class geb_RabbitSteakMeat : Edible_Base
+	class geb_RabbitMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_PenguinSteakMeat";
-		descriptionShort = "$STR_PenguinSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_RabbitMeat";
+		descriptionShort = "$STR_RabbitMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -3569,142 +3075,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_RabbitPelt: BearPelt
 	{
 		scope=2;
-		displayName="Zebra Pelt";
-		descriptionShort="Zebra Pelt";
+		displayName="$STR_RabbitPelt";
+		descriptionShort="$STR_RabbitPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -3721,8 +3097,8 @@ class cfgVehicles
 		simulation="dayzanimal";
 		scope=2;
 		model = "\gebsflorafauna\data\fauna\camel\geb_camel.p3d";
-		displayName="$STR_CfgVehicles_Animal_BosTaurus0";
-		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		displayName="$STR_Camel";
+		descriptionShort="$STR_CamelDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -3914,7 +3290,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item="geb_CamelSteakMeat";
+				item="geb_CamelMeat";
 				count=20;
 				itemZones[]=
 				{
@@ -4346,32 +3722,11 @@ class cfgVehicles
 			lookAtFilterSpeed=1.5700001;
 		};
 	}
-	class geb_CamelSteakMeat : Edible_Base
+	class geb_CamelMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_CamelMeat";
+		descriptionShort = "$STR_CamelMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -4393,142 +3748,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_CamelPelt: BearPelt
 	{
 		scope=2;
-		displayName="Zebra Pelt";
-		descriptionShort="Zebra Pelt";
+		displayName="$STR_CamelPelt";
+		descriptionShort="$STR_CamelPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -4545,8 +3770,8 @@ class cfgVehicles
 		simulation="dayzanimal";
 		scope=2;
 		model = "\gebsflorafauna\data\fauna\elephant\geb_elephant.p3d";
-		displayName="$STR_CfgVehicles_Animal_BosTaurus0";
-		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		displayName="$STR_Elephant";
+		descriptionShort="$STR_ElephantDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -4738,7 +3963,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item="geb_ElephantSteakMeat";
+				item="geb_ElephantMeat";
 				count=20;
 				itemZones[]=
 				{
@@ -4775,8 +4000,8 @@ class cfgVehicles
 			};
 			class ObtainedBones
 			{
-				item="Bone";
-				count=4;
+				item="geb_ElephantTusk";
+				count=2;
 				quantityMinMaxCoef[]={0.80000001,1};
 				transferToolDamageCoef=1;
 			};
@@ -5007,13 +4232,13 @@ class cfgVehicles
 			{
 				class CattleBawl
 				{
-					soundSet="CattleBawl_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=1;
 				};
 				class CattleBellow
 				{
-					soundSet="CattleBellow_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=2;
 				};
@@ -5025,49 +4250,49 @@ class cfgVehicles
 				};
 				class CattleGroan
 				{
-					soundSet="CattleGroan_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=4;
 				};
 				class CattleHoarse
 				{
-					soundSet="CattleHoarse_SoundSet";
+					soundSet="";
 					noise="DeerRoarNoise";
 					id=5;
 				};
 				class CattleHonk
 				{
-					soundSet="CattleHonk_SoundSet";
+					soundSet="";
 					noise="DeerRoarNoise";
 					id=6;
 				};
 				class CattleMooA
 				{
-					soundSet="CattleMooA_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=7;
 				};
 				class CattleMooALong
 				{
-					soundSet="CattleMooALong_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=8;
 				};
 				class CattleMooB
 				{
-					soundSet="CattleMooB_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=9;
 				};
 				class CattleMooC
 				{
-					soundSet="CattleMooC_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=10;
 				};
 				class CattleRoar
 				{
-					soundSet="CattleRoar_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=11;
 				};
@@ -5085,67 +4310,67 @@ class cfgVehicles
 				};
 				class CattleMooX1
 				{
-					soundSet="CattleMooX1_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=14;
 				};
 				class CattleMooX1_Tail
 				{
-					soundSet="CattleMooX1_Tail_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=15;
 				};
 				class CattleMooX2
 				{
-					soundSet="CattleMooX2_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=16;
 				};
 				class CattleMooX2_Tail
 				{
-					soundSet="CattleMooX2_Tail_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=17;
 				};
 				class CattleMooX3
 				{
-					soundSet="CattleMooX3_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=18;
 				};
 				class CattleMooX3_Tail
 				{
-					soundSet="CattleMooX3_Tail_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=19;
 				};
 				class CattleMooX4
 				{
-					soundSet="CattleMooX4_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=20;
 				};
 				class CattleMooX4_Tail
 				{
-					soundSet="CattleMooX4_Tail_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=21;
 				};
 				class CattleMooX5
 				{
-					soundSet="CattleMooX5_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=22;
 				};
 				class CattleMooX5_Tail
 				{
-					soundSet="CattleMooX5_Tail_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=23;
 				};
 				class CattleSnort
 				{
-					soundSet="CattleSnort_SoundSet";
+					soundSet="elephant_Calm_soundset";
 					noise="DeerRoarNoise";
 					id=24;
 				};
@@ -5170,32 +4395,11 @@ class cfgVehicles
 			lookAtFilterSpeed=1.5700001;
 		};
 	}
-	class geb_ElephantSteakMeat : Edible_Base
+	class geb_ElephantMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_ElephantMeat";
+		descriptionShort = "$STR_ElephantMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -5217,142 +4421,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_ElephantPelt: BearPelt
 	{
 		scope=2;
-		displayName="Zebra Pelt";
-		descriptionShort="Zebra Pelt";
+		displayName="$STR_ElephantPelt";
+		descriptionShort="$STR_ElephantPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -5365,8 +4439,8 @@ class cfgVehicles
 	class geb_ElephantTusk: BearPelt
 	{
 		scope=2;
-		displayName="Zebra Pelt";
-		descriptionShort="Zebra Pelt";
+		displayName="$STR_ElephantTusk";
+		descriptionShort="$STR_ElephantTuskDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -5383,8 +4457,8 @@ class cfgVehicles
 		simulation="dayzanimal";
 		scope=2;
 		model = "\gebsflorafauna\data\fauna\giraffe\geb_giraffe.p3d";
-		displayName="geb_giraffe";
-		descriptionShort="$STR_CfgVehicles_Animal_BosTaurus1";
+		displayName="$STR_Giraffe";
+		descriptionShort="$STR_GiraffeDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -5576,7 +4650,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item="geb_ElephantSteakMeat";
+				item="geb_GiraffeMeat";
 				count=20;
 				itemZones[]=
 				{
@@ -5589,7 +4663,7 @@ class cfgVehicles
 			};
 			class ObtainedPelt
 			{
-				item="geb_ElephantPelt";
+				item="geb_GiraffePelt";
 				count=1;
 				itemZones[]=
 				{
@@ -6008,32 +5082,12 @@ class cfgVehicles
 			lookAtFilterSpeed=1.5700001;
 		};
 	}
-	class geb_GiraffeSteakMeat : Edible_Base
+	class geb_GiraffeMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
+		displayName = "$STR_GiraffeMeat";
+		descriptionShort = "$STR_GiraffeMeatDesc";
 		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -6055,142 +5109,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_GiraffePelt: BearPelt
 	{
 		scope=2;
-		displayName="Zebra Pelt";
-		descriptionShort="Zebra Pelt";
+		displayName="$STR_GiraffePelt";
+		descriptionShort="$STR_GiraffePeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -6205,8 +5129,8 @@ class cfgVehicles
 	//Chicken Skeleton
 	class geb_Turkey: AnimalBase
 	{
-		displayName = "Turkey";
-		descriptionShort = "A common Turkey";
+		displayName = "$STR_Turkey";
+		descriptionShort = "$STR_Turkey";
 		simulation = "dayzanimal";
 		scope = 2;
 
@@ -6544,32 +5468,11 @@ class cfgVehicles
 			movementSpeedMapping[]={0,0.25,0.80000001,3};
 		};
 	}
-	class geb_TurkeyMeat : Edible_Base
+	class geb_TurkeyMeat : ChickenBreastMeat
 	{
 		scope = 2;
-		displayName = "$STR_TurkeyBreastMeat";
-		descriptionShort = "$STR_TurkeyBreastMeatDesc";
-		model = "\dz\gear\food\meat_breast.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 125;
-		varQuantityMin = 0;
-		varQuantityMax = 125;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_TurkeyMeat";
+		descriptionShort = "$STR_TurkeyMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -6591,142 +5494,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_breast_burnt.rvmat",
 			"dz\gear\food\data\meat_breast_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 1,200,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 1,150,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 2,150,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
 	class geb_TurkeyTail: BearPelt
 	{
 		scope=2;
-		displayName="Racoon Pelt";
-		descriptionShort="Racoon Pelt";
+		displayName="$STR_TurkeyTail";
+		descriptionShort="$STR_TurkeyTailDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -6741,8 +5514,8 @@ class cfgVehicles
 	//Chicken Skeleton
 	class geb_Peacock : AnimalBase
 	{
-		displayName = "Peacock";
-		descriptionShort = "A common Peacock";
+		displayName = "$STR_Peacock";
+		descriptionShort = "$STR_PeacockDesc";
 		simulation = "dayzanimal";
 		scope = 2;
 
@@ -6911,127 +5684,127 @@ class cfgVehicles
 			{
 				class HenChick
 				{
-					soundSet = "HenChick_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 1;
 				};
 				class HenCluck_A
 				{
-					soundSet = "HenCluck_A_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 2;
 				};
 				class HenCluck_A_High
 				{
-					soundSet = "HenCluck_A_High_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 3;
 				};
 				class HenCluck_B
 				{
-					soundSet = "HenCluck_B_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 4;
 				};
 				class HenCluck_B_High
 				{
-					soundSet = "HenCluck_B_High_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 5;
 				};
 				class HenCluck_C
 				{
-					soundSet = "HenCluck_C_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 6;
 				};
 				class HenCluck_C_High
 				{
-					soundSet = "HenCluck_C_High_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 7;
 				};
 				class HenCluck_D
 				{
-					soundSet = "HenCluck_D_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 8;
 				};
 				class HenCluck_D_High
 				{
-					soundSet = "HenCluck_D_High_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 9;
 				};
 				class HenCluck_E
 				{
-					soundSet = "HenCluck_E_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 10;
 				};
 				class HenCluck_E_High
 				{
-					soundSet = "HenCluck_E_High_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 11;
 				};
 				class HenCluck_Silky
 				{
-					soundSet = "HenCluck_Silky_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 12;
 				};
 				class HenCluck_Silky_High
 				{
-					soundSet = "HenCluck_Silky_High_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 13;
 				};
 				class HenCrow_A
 				{
-					soundSet = "HenCrow_A_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 14;
 				};
 				class HenCrow_B
 				{
-					soundSet = "HenCrow_B_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 15;
 				};
 				class HenCrow_C
 				{
-					soundSet = "HenCrow_C_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 16;
 				};
 				class HenCrow_D
 				{
-					soundSet = "HenCrow_D_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 17;
 				};
 				class HenCrow_E
 				{
-					soundSet = "HenCrow_E_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 18;
 				};
 				class HenCrow_F
 				{
-					soundSet = "HenCrow_F_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 19;
 				};
 				class HenCrow_G
 				{
-					soundSet = "HenCrow_G_SoundSet";
+					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 20;
 				};
 				class HenScream
 				{
-					soundSet = "HenScream_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 21;
 				};
@@ -7061,7 +5834,7 @@ class cfgVehicles
 				};
 				class HenCrowX1
 				{
-					soundSet = "HenCrowX1_SoundSet";
+					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 26;
 				};
@@ -7081,32 +5854,11 @@ class cfgVehicles
 			movementSpeedMapping[] = { 0,0.25,0.80000001,3 };
 		};
 	}
-	class geb_PeacockMeat : Edible_Base
+	class geb_PeacockMeat : ChickenBreastMeat
 	{
 		scope = 2;
-		displayName = "$STR_PeacockBreastMeat";
-		descriptionShort = "$STR_PeacockBreastMeatDesc";
-		model = "\dz\gear\food\meat_breast.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 125;
-		varQuantityMin = 0;
-		varQuantityMax = 125;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_PeacockMeat";
+		descriptionShort = "$STR_PeacockMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -7128,142 +5880,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_breast_burnt.rvmat",
 			"dz\gear\food\data\meat_breast_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 1,200,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 1,150,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 2,150,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	};
 	class geb_PeacockTail: BearPelt
 	{
 		scope=2;
-		displayName="Racoon Pelt";
-		descriptionShort="Racoon Pelt";
+		displayName="$STR_PeacockTail";
+		descriptionShort="$STR_PeacockTailDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -7403,8 +6025,8 @@ class cfgVehicles
 	//Sheep Skeleton
 	class geb_Racoon : AnimalBase
 	{
-		displayName = "Racoon";
-		descriptionShort = "A common Racoon";
+		displayName = "$STR_Racoon";
+		descriptionShort = "$STR_RacoonDesc";
 		simulation = "dayzanimal";
 		scope = 2;
 
@@ -7596,7 +6218,7 @@ class cfgVehicles
 		{
 			class ObtainedSteaks
 			{
-				item = "geb_RacoonSteakMeat";
+				item = "geb_RacoonMeat";
 				count = 2;
 				itemZones[] =
 				{
@@ -7858,79 +6480,79 @@ class cfgVehicles
 			{
 				class SheepBleat_A
 				{
-					soundSet = "SheepBleat_A_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 1;
 				};
 				class SheepBleat_B
 				{
-					soundSet = "SheepBleat_B_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 2;
 				};
 				class SheepBleat_C
 				{
-					soundSet = "SheepBleat_C_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 3;
 				};
 				class SheepBleat_D
 				{
-					soundSet = "SheepBleat_D_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 4;
 				};
 				class SheepBleat_E
 				{
-					soundSet = "SheepBleat_E_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 5;
 				};
 				class SheepBleat_F
 				{
-					soundSet = "SheepBleat_F_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 6;
 				};
 				class SheepBleat_G
 				{
-					soundSet = "SheepBleat_G_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 7;
 				};
 				class SheepBleat_H
 				{
-					soundSet = "SheepBleat_H_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 8;
 				};
 				class SheepBleatX1
 				{
-					soundSet = "SheepBleatX1_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 14;
 				};
 				class SheepBleatX2
 				{
-					soundSet = "SheepBleatX2_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 16;
 				};
 				class SheepBleatX3
 				{
-					soundSet = "SheepBleatX3_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 18;
 				};
 				class SheepBleatX4
 				{
-					soundSet = "SheepBleatX4_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 20;
 				};
 				class SheepBleatX5
 				{
-					soundSet = "SheepBleatX5_SoundSet";
+					soundSet = "racoon_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 22;
 				};
@@ -7955,32 +6577,11 @@ class cfgVehicles
 			lookAtFilterSpeed = 1.5700001;
 		};
 	};
-	class geb_RacoonSteakMeat : Edible_Base
+	class geb_RacoonMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_RacoonMeat";
+		descriptionShort = "$STR_RacoonMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -8002,142 +6603,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	};
 	class geb_RacoonPelt: BearPelt
 	{
 		scope=2;
-		displayName="Racoon Pelt";
-		descriptionShort="Racoon Pelt";
+		displayName="$STR_RacoonPelt";
+		descriptionShort="$STR_RacoonPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -8150,8 +6621,8 @@ class cfgVehicles
 	class geb_RacoonTail: BearPelt
 	{
 		scope=2;
-		displayName="Racoon Pelt";
-		descriptionShort="Racoon Pelt";
+		displayName="$STR_RacoonTail";
+		descriptionShort="$STR_RacoonTailDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -8163,12 +6634,12 @@ class cfgVehicles
 	};
 	
 	//Wolf Skeleton
-	class geb_Leopard : Animal_CanisLupus 
+	class geb_Cheetah : Animal_CanisLupus 
 	{
 			simulation="dayzanimal";
 			scope=2;
-			displayName="geb_leopard";
-			model = "\gebsflorafauna\data\fauna\leopard\geb_leopard.p3d";
+			displayName="$STR_Cheetah";
+			model = "\gebsflorafauna\data\fauna\cheetah\geb_cheetah.p3d";
 			hiddenSelections[]=
 			{
 				"Camo",
@@ -8346,7 +6817,7 @@ class cfgVehicles
 			{
 				class ObtainedSteaks
 				{
-					item="geb_LeopardSteakMeat";
+					item="geb_CheetahMeat";
 					count=10;
 					itemZones[]=
 					{
@@ -8359,7 +6830,7 @@ class cfgVehicles
 				};
 				class ObtainedPelt
 				{
-					item="geb_LeopardPelt";
+					item="geb_CheetahPelt";
 					count=1;
 					itemZones[]=
 					{
@@ -8593,61 +7064,61 @@ class cfgVehicles
 				{
 					class WolfBark
 					{
-						soundSet="WolfBark_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=1;
 					};
 					class WolfBark_1
 					{
-						soundSet="WolfBark_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=61;
 					};
 					class WolfBark_2
 					{
-						soundSet="WolfBark_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=71;
 					};
 					class WolfBark2
 					{
-						soundSet="WolfBark2_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=2;
 					};
 					class WolfBark3
 					{
-						soundSet="WolfBark3_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=3;
 					};
 					class WolfBreath
 					{
-						soundSet="WolfBreath_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=4;
 					};
 					class WolfGroans
 					{
-						soundSet="WolfGroans_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=5;
 					};
 					class WolfGrowl_A
 					{
-						soundSet="WolfGrowl_A_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=6;
 					};
 					class WolfGrowl_B
 					{
-						soundSet="WolfGrowl_B_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=7;
 					};
 					class WolfGrowl
 					{
-						soundSet="WolfGrowl_A_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=8;
 					};
@@ -8671,13 +7142,13 @@ class cfgVehicles
 					};
 					class WolfSnarl
 					{
-						soundSet="WolfSnarl_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=11;
 					};
 					class WolfSnarlShort
 					{
-						soundSet="WolfSnarlShort_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=12;
 					};
@@ -8707,13 +7178,13 @@ class cfgVehicles
 					};
 					class WolfHowl
 					{
-						soundSet="WolfHowl_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=16;
 					};
 					class WolfHowls
 					{
-						soundSet="WolfHowls_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=17;
 					};
@@ -8743,32 +7214,11 @@ class cfgVehicles
 				lookAtFilterSpeed=1.5700001;
 			};
 	}
-	class geb_LeopardSteakMeat : Edible_Base
+	class geb_CheetahMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_RacoonSteakMeat";
-		descriptionShort = "$STR_RacoonSteakMeatDesc";
-		model = "\dz\gear\food\meat_steak.p3d";
-		debug_ItemCategory = 6;
-		rotationFlags = 34;
-		weight = 0;
-		interactionWeight = 1;
-		quantityBar = 1;
-		varQuantityInit = 150;
-		varQuantityMin = 0;
-		varQuantityMax = 150;
-		itemSize[] = { 1,2 };
-		inventorySlot[] =
-		{
-			"Ingredient",
-			"DirectCookingA",
-			"DirectCookingB",
-			"DirectCookingC",
-			"SmokingA",
-			"SmokingB",
-			"SmokingC",
-			"SmokingD"
-		};
+		displayName = "$STR_CheetahMeat";
+		descriptionShort = "$STR_CheetahMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -8790,142 +7240,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 50;
-					healthLevels[] =
-					{
-
-						{
-							1,
-							{}
-						},
-
-						{
-							0.69999999,
-							{}
-						},
-
-						{
-							0.5,
-							{}
-						},
-
-						{
-							0.30000001,
-							{}
-						},
-
-						{
-							0,
-							{}
-						}
-					};
-				};
-			};
-		};
-		class AnimationSources : FoodAnimationSources
-		{
-		};
-		class Food
-		{
-			class FoodStages
-			{
-				class Raw
-				{
-					visual_properties[] = { 0,0,0 };
-					nutrition_properties[] = { 5,50,50,1,0,4 };
-					cooking_properties[] = { 0,0 };
-				};
-				class Rotten
-				{
-					visual_properties[] = { -1,-1,5 };
-					nutrition_properties[] =
-					{
-						10,
-						25,
-						25,
-						1,
-						0,
-						"4 + 		  16"
-					};
-					cooking_properties[] = { 0,0 };
-				};
-				class Baked
-				{
-					visual_properties[] = { 0,1,1 };
-					nutrition_properties[] = { 2,250,50,1,0 };
-					cooking_properties[] = { 70,45 };
-				};
-				class Boiled
-				{
-					visual_properties[] = { 0,2,2 };
-					nutrition_properties[] = { 2,200,100,1,0 };
-					cooking_properties[] = { 70,55 };
-				};
-				class Dried
-				{
-					visual_properties[] = { 0,3,3 };
-					nutrition_properties[] = { 3,200,0,1,0 };
-					cooking_properties[] = { 70,120,80 };
-				};
-				class Burned
-				{
-					visual_properties[] = { 0,4,4 };
-					nutrition_properties[] = { 5,50,0,1,0,16 };
-					cooking_properties[] = { 100,30 };
-				};
-			};
-			class FoodStageTransitions : MeatStageTransitions
-			{
-			};
-		};
-		class NoiseImpact
-		{
-			strength = 600;
-			type = "sound";
-		};
-		class AnimEvents
-		{
-			class SoundWeapon
-			{
-				class openTunaCan
-				{
-					soundSet = "openTunaCan_SoundSet";
-					id = 204;
-				};
-				class Eating_TakeFood
-				{
-					soundSet = "Eating_TakeFood_Soundset";
-					id = 889;
-				};
-				class Eating_BoxOpen
-				{
-					soundSet = "Eating_BoxOpen_Soundset";
-					id = 893;
-				};
-				class Eating_BoxShake
-				{
-					soundSet = "Eating_BoxShake_Soundset";
-					id = 894;
-				};
-				class Eating_BoxEnd
-				{
-					soundSet = "Eating_BoxEnd_Soundset";
-					id = 895;
-				};
-			};
-		};
 	}
-	class geb_LeopardPelt: BearPelt
+	class geb_CheetahPelt: BearPelt
 	{
 		scope=2;
-		displayName="Leopard Pelt";
-		descriptionShort="Leopard Pelt";
+		displayName="$STR_CheetahPelt";
+		descriptionShort="$STR_CheetahPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
