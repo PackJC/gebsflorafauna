@@ -5,7 +5,8 @@ class CfgPatches
 		requiredVersion=0.1;
 		requiredAddons[]=
 		{
-			"DZ_Data"
+			"DZ_Data",
+			"DZ_Characters"
 		};
 	};
 };
@@ -189,6 +190,7 @@ class cfgVehicles
 	class Animal_BosTaurus;
 	class ChickenBreastMeat;
 	class CowSteakMeat;
+
 
 	//Zombie Skeleton
 	class ChimpBase : ZombieBase
@@ -1139,20 +1141,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burned_CO.paa"
 		};
 	}
-	class geb_ChimpPelt: BearPelt
-	{
-		scope=2;
-		displayName = "$STR_ChimpPelt";
-		descriptionShort = "$STR_ChimpPeltDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
-	}
+
 
 	//Zombie Skeleton
 	class GreenAlienBase : ZombieBase
@@ -2100,7 +2089,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[] =
 		{
-			"dz\gear\food\data\meat_steak_raw_CO.paa",
+			"\gebsflorafauna\data\fauna\alien\alienmeat.paa";
 			"dz\gear\food\data\meat_steak_baked_CO.paa",
 			"dz\gear\food\data\meat_steak_boiled_co.paa",
 			"dz\gear\food\data\meat_steak_dried_CO.paa",
@@ -2118,7 +2107,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+			"\gebsflorafauna\data\fauna\alien\alienpelt.paa";
 		};
 	}
 
@@ -2502,20 +2491,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
 	}
-	class geb_PenguinPelt: BearPelt
-	{
-		scope=2;
-		displayName="$STR_PenguinPelt";
-		descriptionShort="$STR_PenguinPeltDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
-	}
+
 
 	//Goat Skeleton
 	class geb_Rabbit : AnimalBase
@@ -3076,20 +3052,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
 	}
-	class geb_RabbitPelt: BearPelt
-	{
-		scope=2;
-		displayName="$STR_RabbitPelt";
-		descriptionShort="$STR_RabbitPeltDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
-	}
+
 
 	//Cow Skeleton
 	class geb_Camel: AnimalBase
@@ -3749,20 +3712,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
 	}
-	class geb_CamelPelt: BearPelt
-	{
-		scope=2;
-		displayName="$STR_CamelPelt";
-		descriptionShort="$STR_CamelPeltDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
-	}
+
 
 	//Cow Skeleton
 	class geb_Elephant: Animal_BosTaurus
@@ -4433,7 +4383,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+			"\gebsflorafauna\data\fauna\elephant\elephantpelt.paa";
 		};
 	}
 	class geb_ElephantTusk: BearPelt
@@ -4441,14 +4391,8 @@ class cfgVehicles
 		scope=2;
 		displayName="$STR_ElephantTusk";
 		descriptionShort="$STR_ElephantTuskDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
+		model = "\gebsflorafauna\data\fauna\elephant\geb_elephanttusk.p3d";
+
 	}
 
 	//Cow Skeleton
@@ -5121,7 +5065,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+			"\gebsflorafauna\data\fauna\giraffe\giraffepelt.paa";
 		};
 	}
 
@@ -5495,20 +5439,6 @@ class cfgVehicles
 			"dz\gear\food\data\meat_breast_rotten.rvmat"
 		};
 	}
-	class geb_TurkeyTail: BearPelt
-	{
-		scope=2;
-		displayName="$STR_TurkeyTail";
-		descriptionShort="$STR_TurkeyTailDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
-	};
 
 
 	//Chicken Skeleton
@@ -5881,20 +5811,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_breast_rotten.rvmat"
 		};
 	};
-	class geb_PeacockTail: BearPelt
-	{
-		scope=2;
-		displayName="$STR_PeacockTail";
-		descriptionShort="$STR_PeacockTailDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
-	};
+
 
 	//Bear Skeleton
     class geb_Blackbear: Animal_UrsusArctos
@@ -6615,7 +6532,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+			"\gebsflorafauna\data\fauna\racoon\racoonpelt.paa";
 		};
 	};
 	class geb_RacoonTail: BearPelt
@@ -6623,18 +6540,42 @@ class cfgVehicles
 		scope=2;
 		displayName="$STR_RacoonTail";
 		descriptionShort="$STR_RacoonTailDesc";
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
-		};
+		model = "\gebsflorafauna\data\fauna\racoon\geb_racoontail.p3d";
+
 	};
-	
+
+	class Clothing_Base;
+	class Clothing: Clothing_Base
+	{
+	};
+	class geb_RacoonSkinCap: Clothing
+	{
+		descriptionShort="$STR_RacoonSkinCapDesc";
+		displayName="$STR_RacoonSkinCap";
+		scope=2;
+		model = "\gebsflorafauna\data\fauna\racoon\geb_racoonskincap_g.p3d";
+		inventorySlot="Headgear";
+		itemInfo[]=
+		{
+			"Clothing",
+			"Headgear"
+		};
+		rotationFlags=2;
+		weight=730;
+		itemSize[]={2,3};
+		heatIsolation=0.5;
+		visibilityModifier=0.89999998;
+		noHelmet=1;
+		class ClothingTypes
+		{
+			male="\gebsflorafauna\data\fauna\racoon\geb_racoonskincap_m.p3d";
+			female="\gebsflorafauna\data\fauna\racoon\geb_racoonskincap_f.p3d";
+		};
+
+	};
+
 	//Wolf Skeleton
-	class geb_Cheetah : Animal_CanisLupus 
+	class geb_Cheetah : AnimalBase 
 	{
 			simulation="dayzanimal";
 			scope=2;
@@ -7154,25 +7095,25 @@ class cfgVehicles
 					};
 					class WolfWhimper
 					{
-						soundSet="WolfWhimper_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=13;
 					};
 					class WolfYelp
 					{
-						soundSet="WolfYelp_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=14;
 					};
 					class WolfYawn
 					{
-						soundSet="WolfYelp_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=15;
 					};
 					class WolfDeath
 					{
-						soundSet="WolfDeath_SoundSet";
+						soundSet="cheetah_Calm_soundset";
 						noise="WolfRoarNoise";
 						id=20;
 					};
@@ -7252,7 +7193,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_pelt_co.paa"
+			"\gebsflorafauna\data\fauna\cheetah\cheetahpelt.paa";
 		};
 	}
 

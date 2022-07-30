@@ -20,6 +20,7 @@ modded class PluginRecipesManager
 
 		//Freshwater Life 	
 		RegisterRecipe(new PrepareTurkey);
+		RegisterRecipe(new craftRacoonSkinHat);
 
 
 	}

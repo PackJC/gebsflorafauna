@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\data",
-    "\\data\\fauna",
-    "\\data\\fauna\\alien",
-    "\\data\\fauna\\alien\\sounds"
+    "\\data\\fauna"
   ],
-  "SelectedNode": "\\data\\fauna\\alien\\sounds\\config.cpp",
+  "SelectedNode": "\\data\\flora",
   "PreviewInSolutionExplorer": false
 }

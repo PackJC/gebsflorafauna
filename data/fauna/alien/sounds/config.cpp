@@ -82,9 +82,13 @@ class CfgSoundShaders
 	{
 		samples[]=
 		{
-			
 			{
 				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				0.80000001
+			},
+			
+			{
+				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			}
 		};
@@ -102,12 +106,12 @@ class CfgSoundShaders
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			},
 			
@@ -125,9 +129,13 @@ class CfgSoundShaders
 	{
 		samples[] =
 		{
-
 			{
 				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				0.80000001
+			},
+			
+			{
+				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			}
 		};
@@ -141,6 +149,11 @@ class CfgSoundShaders
 
 			{
 				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				0.80000001
+			},
+			
+			{
+				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			}
 		};
