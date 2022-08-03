@@ -5,9 +5,11 @@ class CfgPatches
 		requiredVersion=0.1;
 		requiredAddons[]=
 		{
-			"DZ_Data",
-			"DZ_Characters"
-		};
+			"DZ_Characters",
+			"DZ_Characters_Pants",
+			"DZ_Characters_Tops",
+			"DZ_Characters_Headgear",
+			"DZ_Data"		};
 	};
 };
 
@@ -5817,8 +5819,8 @@ class cfgVehicles
     class geb_Blackbear: Animal_UrsusArctos
     {
 		scope=2;
-		displayName="Black Bear";
-		descriptionShort="A black bear";
+		displayName="$STR_BlackBear";
+		descriptionShort="$STR_BlackBearDesc";
 
     	hiddenSelections[]=
         {
@@ -5828,18 +5830,18 @@ class cfgVehicles
 		hiddenSelectionsTextures[]=
         {
             "\gebsflorafauna\data\fauna\bears\ursus_arctos\blackbear_co.paa",
-            "\gebsflorafauna\data\fauna\bears\ursus_arctos\blackbear_fur_co.paa";
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\blackfurry_co.paa"
         };
         hiddenSelectionsMaterials[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\ursus_arctor.rvmat",
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\furry_alphatest32.rvmat"
+			"dz\animals_bliss\ursus_arctos\data\furry_alphatest32.rvmat",
+			"dz\animals_bliss\ursus_arctos\data\ursus_arctor.rvmat"
 		};
 		class Skinning
 		{
 			class ObtainedPelt
 			{
-				item="BlackbearPelt";
+				item="geb_BlackbearPelt";
 				count=2;
 				transferToolDamageCoef=1;
 			};
@@ -5879,8 +5881,8 @@ class cfgVehicles
 	class geb_Polarbear: Animal_UrsusArctos
     {
 		scope=2;
-		displayName="Polar Bear";
-		descriptionShort="A polar bear";
+		displayName="$STR_PolarBear";
+		descriptionShort="$STR_PolarBearDesc";
 
     	hiddenSelections[]=
         {
@@ -5890,18 +5892,19 @@ class cfgVehicles
 		hiddenSelectionsTextures[]=
         {
             "\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_co.paa",
-            "\gebsflorafauna\data\fauna\bears\ursus_arctos\polarbear_fur_co.paa";
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\polarfurry_co.paa"
         };
         hiddenSelectionsMaterials[]=
 		{
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\furry_alphatest32.rvmat",
 			"\gebsflorafauna\data\fauna\bears\ursus_arctos\ursus_arctor.rvmat",
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\furry_alphatest32.rvmat"
+
 		};
 		class Skinning
 		{
 			class ObtainedPelt
 			{
-				item="PolarbearPelt";
+				item="geb_PolarbearPelt";
 				count=2;
 				transferToolDamageCoef=1;
 			};
@@ -5955,7 +5958,7 @@ class cfgVehicles
 			{
 				class Health
 				{
-					hitpoints = 280;
+					hitpoints = 100;
 					healthLevels[] =
 					{
 
@@ -5987,7 +5990,7 @@ class cfgVehicles
 				};
 				class Blood
 				{
-					hitpoints = 5000;
+					hitpoints = 2000;
 				};
 				class Shock
 				{
@@ -6168,6 +6171,18 @@ class cfgVehicles
 				item = "Bone";
 				count = 2;
 				quantityMinMaxCoef[] = { 0.80000001,1 };
+				transferToolDamageCoef = 1;
+			};
+			class ObtainedTail
+			{
+				item = "geb_RacoonTail";
+				count = 1;
+				itemZones[] =
+				{
+					"Zone_Chest",
+					"Zone_Belly"
+				};
+				quantityCoef = 1;
 				transferToolDamageCoef = 1;
 			};
 		};
@@ -6545,27 +6560,149 @@ class cfgVehicles
 	};
 
 	class Clothing_Base;
-	class Clothing: Clothing_Base
-	{
-	};
-	class geb_RacoonSkinCap: Clothing
+	class geb_RacoonSkinCap: Clothing_Base
 	{
 		descriptionShort="$STR_RacoonSkinCapDesc";
 		displayName="$STR_RacoonSkinCap";
 		scope=2;
 		model = "\gebsflorafauna\data\fauna\racoon\geb_racoonskincap_g.p3d";
+		repairableWithKits[]={2,3,5,8};
+		repairCosts[]={25,25,25,25};
+		rotationFlags=2;
 		inventorySlot="Headgear";
+		simulation="clothing";
+		vehicleClass="Clothing";
 		itemInfo[]=
 		{
 			"Clothing",
 			"Headgear"
 		};
-		rotationFlags=2;
-		weight=730;
-		itemSize[]={2,3};
-		heatIsolation=0.5;
-		visibilityModifier=0.89999998;
-		noHelmet=1;
+		weight=470;
+		itemSize[]={4,3};
+		absorbency=0;
+		heatIsolation=0.25;
+		noMask=0;
+				class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=100;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							
+							{
+								"Pith_Helmet\Data\PithHelmet.rvmat",
+								"Pith_Helmet\Data\PithHelmet.rvmat"
+							}
+						},
+						
+						{
+							0.69999999,
+							
+							{
+								"Pith_Helmet\Data\PithHelmet.rvmat",
+								"Pith_Helmet\Data\PithHelmet.rvmat"
+							}
+						},
+						
+						{
+							0.5,
+							
+							{
+								"Pith_Helmet\Data\PithHelmet_damage.rvmat",
+								"Pith_Helmet\Data\PithHelmet_damage.rvmat"
+							}
+						},
+						
+						{
+							0.30000001,
+							
+							{
+								"Pith_Helmet\Data\PithHelmet_damage.rvmat",
+								"Pith_Helmet\Data\PithHelmet_damage.rvmat"
+							}
+						},
+						
+						{
+							0,
+							
+							{
+								"Pith_Helmet\Data\PithHelmet_destruct.rvmat",
+								"Pith_Helmet\Data\PithHelmet_destruct.rvmat"
+							}
+						}
+					};
+				};
+			};
+			class GlobalArmor
+			{
+				class Projectile
+				{
+					class Health
+					{
+						damage=0.5;
+					};
+					class Blood
+					{
+						damage=0;
+					};
+					class Shock
+					{
+						damage=0.5;
+					};
+				};
+				class Melee
+				{
+					class Health
+					{
+						damage=0.75;
+					};
+					class Blood
+					{
+						damage=0;
+					};
+					class Shock
+					{
+						damage=0.75;
+					};
+				};
+				class Infected
+				{
+					class Health
+					{
+						damage=0.75;
+					};
+					class Blood
+					{
+						damage=0;
+					};
+					class Shock
+					{
+						damage=0.75;
+					};
+				};
+				class FragGrenade
+				{
+					class Health
+					{
+						damage=0.5;
+					};
+					class Blood
+					{
+						damage=0;
+					};
+					class Shock
+					{
+						damage=0.5;
+					};
+				};
+			};
+		};
 		class ClothingTypes
 		{
 			male="\gebsflorafauna\data\fauna\racoon\geb_racoonskincap_m.p3d";
@@ -7209,7 +7346,7 @@ class cfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\gebsflorafauna\data\fauna\bears\ursus_arctos\blackbear_pelt_co.paa"
+			"\gebsflorafauna\data\fauna\bears\ursus_arctos\blackbear_pelt_co.paa",
 		};
 	};
 	class geb_PolarbearPelt: BearPelt
