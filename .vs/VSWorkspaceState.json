@@ -1,15 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\data",
     "\\data\\fauna",
-    "\\data\\fauna\\bears",
-    "\\data\\fauna\\bears\\ursus_arctos",
-    "\\data\\fauna\\chimp",
-    "\\scripts",
-    "\\scripts\\4_world",
-    "\\scripts\\4_world\\classes",
-    "\\scripts\\4_world\\classes\\recipes",
-    "\\scripts\\4_world\\classes\\recipes\\recipes"
+    "\\data\\fauna\\mask",
+    "\\data\\fauna\\racoon"
   ],
+  "SelectedNode": "\\data\\fauna\\racoon\\model.cfg",
   "PreviewInSolutionExplorer": false
 }
