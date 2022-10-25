@@ -3,9 +3,13 @@
     "",
     "\\data",
     "\\data\\fauna",
-    "\\data\\fauna\\mask",
-    "\\data\\fauna\\racoon"
+    "\\data\\fauna\\alien",
+    "\\languagecore",
+    "\\scripts",
+    "\\scripts\\4_world",
+    "\\scripts\\4_world\\classes",
+    "\\scripts\\4_world\\classes\\recipes",
+    "\\scripts\\4_world\\classes\\recipes\\recipes"
   ],
-  "SelectedNode": "\\data\\fauna\\racoon\\model.cfg",
   "PreviewInSolutionExplorer": false
 }

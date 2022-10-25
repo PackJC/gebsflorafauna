@@ -250,7 +250,7 @@ class cfgVehicles
 			{
 				class Health
 				{
-					hitpoints = 50;
+					hitpoints = 400;
 					healthLevels[] =
 					{
 
@@ -287,7 +287,7 @@ class cfgVehicles
 				{
 					class Health
 					{
-						hitpoints = 50;
+						hitpoints = 75;
 						transferToGlobalCoef = 1;
 					};
 					class ArmorType
@@ -327,7 +327,7 @@ class cfgVehicles
 				{
 					class Health
 					{
-						hitpoints = 50;
+						hitpoints = 150;
 						transferToGlobalCoef = 1;
 					};
 					class ArmorType
@@ -887,7 +887,7 @@ class cfgVehicles
 			{
 				class Health
 				{
-					hitpoints = 60;
+					hitpoints = 400;
 				};
 			};
 
@@ -6556,7 +6556,6 @@ class cfgVehicles
 		displayName="$STR_RacoonTail";
 		descriptionShort="$STR_RacoonTailDesc";
 		model = "\gebsflorafauna\data\fauna\racoon\geb_racoontail.p3d";
-
 	};
 
 	class Clothing_Base;
@@ -6709,171 +6708,6 @@ class cfgVehicles
 			female="\gebsflorafauna\data\fauna\racoon\geb_racoonskincap_f.p3d";
 		};
 	};
-
-
-
-
-
-
-
-		class mask: Clothing_Base
-	{
-		descriptionShort="Mask";
-		displayName="A mask";
-		scope=2;
-		model = "\gebsflorafauna\data\fauna\mask\mask_g.p3d";
-		repairableWithKits[]={2,3,5,8};
-		repairCosts[]={25,25,25,25};
-		rotationFlags=2;
-		inventorySlot="Headgear";
-		simulation="clothing";
-		vehicleClass="Clothing";
-		itemInfo[]=
-		{
-			"Clothing",
-			"Headgear"
-		};
-		weight=470;
-		itemSize[]={4,3};
-		absorbency=0;
-		heatIsolation=0.25;
-		noMask=0;
-				class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints=100;
-					healthLevels[]=
-					{
-						
-						{
-							1,
-							
-							{
-								"Pith_Helmet\Data\PithHelmet.rvmat",
-								"Pith_Helmet\Data\PithHelmet.rvmat"
-							}
-						},
-						
-						{
-							0.69999999,
-							
-							{
-								"Pith_Helmet\Data\PithHelmet.rvmat",
-								"Pith_Helmet\Data\PithHelmet.rvmat"
-							}
-						},
-						
-						{
-							0.5,
-							
-							{
-								"Pith_Helmet\Data\PithHelmet_damage.rvmat",
-								"Pith_Helmet\Data\PithHelmet_damage.rvmat"
-							}
-						},
-						
-						{
-							0.30000001,
-							
-							{
-								"Pith_Helmet\Data\PithHelmet_damage.rvmat",
-								"Pith_Helmet\Data\PithHelmet_damage.rvmat"
-							}
-						},
-						
-						{
-							0,
-							
-							{
-								"Pith_Helmet\Data\PithHelmet_destruct.rvmat",
-								"Pith_Helmet\Data\PithHelmet_destruct.rvmat"
-							}
-						}
-					};
-				};
-			};
-			class GlobalArmor
-			{
-				class Projectile
-				{
-					class Health
-					{
-						damage=0.5;
-					};
-					class Blood
-					{
-						damage=0;
-					};
-					class Shock
-					{
-						damage=0.5;
-					};
-				};
-				class Melee
-				{
-					class Health
-					{
-						damage=0.75;
-					};
-					class Blood
-					{
-						damage=0;
-					};
-					class Shock
-					{
-						damage=0.75;
-					};
-				};
-				class Infected
-				{
-					class Health
-					{
-						damage=0.75;
-					};
-					class Blood
-					{
-						damage=0;
-					};
-					class Shock
-					{
-						damage=0.75;
-					};
-				};
-				class FragGrenade
-				{
-					class Health
-					{
-						damage=0.5;
-					};
-					class Blood
-					{
-						damage=0;
-					};
-					class Shock
-					{
-						damage=0.5;
-					};
-				};
-			};
-		};
-		class ClothingTypes
-		{
-			male="\gebsflorafauna\data\fauna\mask\mask_m.p3d";
-			female="\gebsflorafauna\data\fauna\mask\mask_f.p3d";
-		};
-	};
-
-
-
-
-
-
-
-
-
 
 	//Wolf Skeleton
 	class geb_Cheetah : AnimalBase 
