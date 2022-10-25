@@ -204,7 +204,7 @@ class cfgVehicles
 		{
 			class Health
 			{
-				hitpoints = 50;
+				hitpoints = 400;
 				healthLevels[] =
 				{
 
@@ -1146,7 +1146,7 @@ class cfgVehicles
 
 
 	//Zombie Skeleton
-	class GreenAlienBase : ZombieBase
+	class AlienBase : ZombieBase
 	{
 
 		scope = 2;
@@ -1155,7 +1155,7 @@ class cfgVehicles
 		{
 			class Health
 			{
-				hitpoints = 50;
+				hitpoints = 400;
 				healthLevels[] =
 				{
 
@@ -1201,7 +1201,7 @@ class cfgVehicles
 			{
 				class Health
 				{
-					hitpoints = 50;
+					hitpoints = 400;
 					healthLevels[] =
 					{
 
@@ -1827,7 +1827,7 @@ class cfgVehicles
 			};
 		};
 	}
-	class geb_GreenAlien : GreenAlienBase
+	class geb_Alien : AlienBase
 	{
 		displayName = "$STR_GreenAlien";
 		descriptionShort = "$STR_GreenAlienDesc";
@@ -1838,7 +1838,7 @@ class cfgVehicles
 			{
 				class Health
 				{
-					hitpoints = 60;
+					hitpoints = 400;
 				};
 			};
 
@@ -1858,7 +1858,7 @@ class cfgVehicles
 				{
 					class Health
 					{
-						hitpoints = 50;
+						hitpoints = 400;
 					};
 				};
 			};
