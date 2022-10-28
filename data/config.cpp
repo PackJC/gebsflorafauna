@@ -2080,7 +2080,7 @@ class cfgVehicles
 				};
 			};
 	}
-	class geb_GreenAlienMeat : CowSteakMeat
+	class geb_AlienMeat : CowSteakMeat
 	{
 		scope = 2;
 		displayName = "$STR_GreenAlienMeat";
@@ -2098,7 +2098,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burned_CO.paa"
 		};
 	}
-	class geb_GreenAlienSkin: BearPelt
+	class geb_AlienSkin: BearPelt
 	{
 		scope=2;
 		displayName="$STR_GreenAlienskin";
