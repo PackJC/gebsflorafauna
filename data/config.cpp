@@ -62,7 +62,7 @@ class CfgHorticulture
 		lootTag[] =
 		{
 			"Farm",
-			"Kitchen",
+			"KitcTurkey",
 			"Forester"
 		};
 		class DamageSystem
@@ -1829,8 +1829,8 @@ class cfgVehicles
 	}
 	class geb_Alien : AlienBase
 	{
-		displayName = "$STR_GreenAlien";
-		descriptionShort = "$STR_GreenAlienDesc";
+		displayName = "$STR_Alien";
+		descriptionShort = "$STR_AlienDesc";
 		scope = 2;
 		model = "\gebsflorafauna\data\fauna\alien\geb_GreenAlien.p3d";
 
@@ -2083,8 +2083,8 @@ class cfgVehicles
 	class geb_AlienMeat : CowSteakMeat
 	{
 		scope = 2;
-		displayName = "$STR_GreenAlienMeat";
-		descriptionShort = "$STR_GreenAlienMeatDesc";
+		displayName = "$STR_AlienMeat";
+		descriptionShort = "$STR_AlienMeatDesc";
 		hiddenSelections[] =
 		{
 			"cs_raw"
@@ -2101,8 +2101,8 @@ class cfgVehicles
 	class geb_AlienSkin: BearPelt
 	{
 		scope=2;
-		displayName="$STR_GreenAlienskin";
-		descriptionShort="$STR_GreenAlienskinDesc";
+		displayName="$STR_Alienskin";
+		descriptionShort="$STR_AlienskinDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -2294,127 +2294,127 @@ class cfgVehicles
 			};
 			class Sounds
 			{
-				class HenChick
+				class TurkeyChick
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 1;
 				};
-				class HenCluck_A
+				class TurkeyCluck_A
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 2;
 				};
-				class HenCluck_A_High
+				class TurkeyCluck_A_High
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 3;
 				};
-				class HenCluck_B
+				class TurkeyCluck_B
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 4;
 				};
-				class HenCluck_B_High
+				class TurkeyCluck_B_High
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 5;
 				};
-				class HenCluck_C
+				class TurkeyCluck_C
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 6;
 				};
-				class HenCluck_C_High
+				class TurkeyCluck_C_High
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 7;
 				};
-				class HenCluck_D
+				class TurkeyCluck_D
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 8;
 				};
-				class HenCluck_D_High
+				class TurkeyCluck_D_High
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 9;
 				};
-				class HenCluck_E
+				class TurkeyCluck_E
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 10;
 				};
-				class HenCluck_E_High
+				class TurkeyCluck_E_High
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 11;
 				};
-				class HenCluck_Silky
+				class TurkeyCluck_Silky
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 12;
 				};
-				class HenCluck_Silky_High
+				class TurkeyCluck_Silky_High
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 13;
 				};
-				class HenCrow_A
+				class TurkeyCrow_A
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 14;
 				};
-				class HenCrow_B
+				class TurkeyCrow_B
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 15;
 				};
-				class HenCrow_C
+				class TurkeyCrow_C
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 16;
 				};
-				class HenCrow_D
+				class TurkeyCrow_D
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 17;
 				};
-				class HenCrow_E
+				class TurkeyCrow_E
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 18;
 				};
-				class HenCrow_F
+				class TurkeyCrow_F
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 19;
 				};
-				class HenCrow_G
+				class TurkeyCrow_G
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 20;
 				};
-				class HenScream
+				class TurkeyScream
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
@@ -2444,7 +2444,7 @@ class cfgVehicles
 					noise = "DeerRoarNoise";
 					id = 25;
 				};
-				class HenCrowX1
+				class TurkeyCrowX1
 				{
 					soundSet = "penguin_Calm_soundset";
 					noise = "DeerRoarNoise";
@@ -5071,16 +5071,13 @@ class cfgVehicles
 		};
 	}
 
-
-	//Chicken Skeleton
-	class geb_Turkey: AnimalBase
+	class geb_Female_Turkey: AnimalBase
 	{
-		displayName = "$STR_Turkey";
-		descriptionShort = "$STR_Turkey";
+		displayName = "$STR_Female_Turkey";
+		descriptionShort = "$STR_Female_TurkeyDesc";
 		simulation = "dayzanimal";
 		scope = 2;
-
-		model="\gebsflorafauna\data\fauna\turkey\geb_turkey.p3d";
+		model="\gebsflorafauna\data\fauna\female_turkey\geb_female_turkey.p3d";
 		aiAgentTemplate="AmbientLife";
 		class DamageSystem
 		{
@@ -5158,6 +5155,7 @@ class cfgVehicles
 			startnode="Master_SM";
 			skeletonName="gallus_gallus_domesticus.xob";
 		};
+
 		class AnimEvents
 		{
 			class Steps
@@ -5242,129 +5240,129 @@ class cfgVehicles
 			};
 			class Sounds
 			{
-				class HenChick
+				class TurkeyChick
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyChick_SoundSet";
 					noise="DeerRoarNoise";
 					id=1;
 				};
-				class HenCluck_A
+				class TurkeyCluck_A
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_A_SoundSet";
 					noise="DeerRoarNoise";
 					id=2;
 				};
-				class HenCluck_A_High
+				class TurkeyCluck_A_High
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_A_High_SoundSet";
 					noise="DeerRoarNoise";
 					id=3;
 				};
-				class HenCluck_B
+				class TurkeyCluck_B
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_B_SoundSet";
 					noise="DeerRoarNoise";
 					id=4;
 				};
-				class HenCluck_B_High
+				class TurkeyCluck_B_High
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_B_High_SoundSet";
 					noise="DeerRoarNoise";
 					id=5;
 				};
-				class HenCluck_C
+				class TurkeyCluck_C
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_C_SoundSet";
 					noise="DeerRoarNoise";
 					id=6;
 				};
-				class HenCluck_C_High
+				class TurkeyCluck_C_High
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_C_High_SoundSet";
 					noise="DeerRoarNoise";
 					id=7;
 				};
-				class HenCluck_D
+				class TurkeyCluck_D
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_D_SoundSet";
 					noise="DeerRoarNoise";
 					id=8;
 				};
-				class HenCluck_D_High
+				class TurkeyCluck_D_High
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_D_High_SoundSet";
 					noise="DeerRoarNoise";
 					id=9;
 				};
-				class HenCluck_E
+				class TurkeyCluck_E
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_E_SoundSet";
 					noise="DeerRoarNoise";
 					id=10;
 				};
-				class HenCluck_E_High
+				class TurkeyCluck_E_High
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_E_High_SoundSet";
 					noise="DeerRoarNoise";
 					id=11;
 				};
-				class HenCluck_Silky
+				class TurkeyCluck_Silky
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_Silky_SoundSet";
 					noise="DeerRoarNoise";
 					id=12;
 				};
-				class HenCluck_Silky_High
+				class TurkeyCluck_Silky_High
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCluck_Silky_High_SoundSet";
 					noise="DeerRoarNoise";
 					id=13;
 				};
-				class HenCrow_A
+				class TurkeyCrow_A
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_A_SoundSet";
 					noise="DeerRoarNoise";
 					id=14;
 				};
-				class HenCrow_B
+				class TurkeyCrow_B
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_B_SoundSet";
 					noise="DeerRoarNoise";
 					id=15;
 				};
-				class HenCrow_C
+				class TurkeyCrow_C
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_C_SoundSet";
 					noise="DeerRoarNoise";
 					id=16;
 				};
-				class HenCrow_D
+				class TurkeyCrow_D
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_D_SoundSet";
 					noise="DeerRoarNoise";
 					id=17;
 				};
-				class HenCrow_E
+				class TurkeyCrow_E
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_E_SoundSet";
 					noise="DeerRoarNoise";
 					id=18;
 				};
-				class HenCrow_F
+				class TurkeyCrow_F
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_F_SoundSet";
 					noise="DeerRoarNoise";
 					id=19;
 				};
-				class HenCrow_G
+				class TurkeyCrow_G
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrow_G_SoundSet";
 					noise="DeerRoarNoise";
 					id=20;
 				};
-				class HenScream
+				class TurkeyScream
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyScream_SoundSet";
 					noise="DeerRoarNoise";
 					id=21;
 				};
@@ -5392,9 +5390,9 @@ class cfgVehicles
 					noise="DeerRoarNoise";
 					id=25;
 				};
-				class HenCrowX1
+				class TurkeyCrowX1
 				{
-					soundSet="Turkey_Soundset";
+					soundSet="TurkeyCrowX1_SoundSet";
 					noise="DeerRoarNoise";
 					id=26;
 				};
@@ -5408,6 +5406,355 @@ class cfgVehicles
 				};
 			};
 		};
+		
+		
+	
+		class CommandMoveSettings
+		{
+			useSpeedMapping=1;
+			movementSpeedMapping[]={0,0.25,0.80000001,3};
+		};
+	}
+	//Chicken Skeleton
+	class geb_Turkey: AnimalBase
+	{
+		displayName = "$STR_Turkey";
+		descriptionShort = "$STR_TurkeyDesc";
+		simulation = "dayzanimal";
+		scope = 2;
+
+		model="\gebsflorafauna\data\fauna\turkey\geb_turkey.p3d";
+		aiAgentTemplate="AmbientLife";
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=15;
+					healthLevels[]=
+					{
+						
+						{
+							1,
+							{}
+						},
+						
+						{
+							0.69999999,
+							{}
+						},
+						
+						{
+							0.5,
+							{}
+						},
+						
+						{
+							0.30000001,
+							{}
+						},
+						
+						{
+							0,
+							{}
+						}
+					};
+				};
+				class Blood
+				{
+					hitpoints=5000;
+				};
+				class Shock
+				{
+					hitpoints=100;
+				};
+			};
+		};
+		class Skinning
+		{
+			class ObtainedSteaks
+			{
+				item="geb_TurkeyMeat";
+				count=2;
+				quantityMinMaxCoef[]={0.5,1};
+			};
+			class ObtainedGuts
+			{
+				item="SmallGuts";
+				count=0;
+				quantityMinMaxCoef[]={0.5,0.80000001};
+			};
+			class ObtainedBones
+			{
+				item="Bone";
+				count=1;
+				quantityMinMaxCoef[]={0.2,0.30000001};
+				transferToolDamageCoef=1;
+			};
+		};
+		class enfanimsys
+		{
+			meshObject="dz\animals\gallus_gallus_domesticus\data\gallus_gallus_domesticus.xob";
+			graphname="dz\animals\animations\!graph_files\AmbientLife\AmbientLife_Graph.agr";
+			defaultinstance="dz\animals\animations\!graph_files\AmbientLife\GallusGallus_skeleton_AnimInstance.asi";
+			startnode="Master_SM";
+			skeletonName="gallus_gallus_domesticus.xob";
+		};
+
+		class AnimEvents
+		{
+			class Steps
+			{
+				class Walk1
+				{
+					soundLookupTable="BirdWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=1;
+				};
+				class Walk2
+				{
+					soundLookupTable="BirdWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=2;
+				};
+				class Walk3
+				{
+					soundLookupTable="BirdWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=3;
+				};
+				class Walk4
+				{
+					soundLookupTable="BirdWalk_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=4;
+				};
+				class Grazing1
+				{
+					soundLookupTable="BirdGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=9;
+				};
+				class Grazing2
+				{
+					soundLookupTable="BirdGrazing_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=10;
+				};
+				class Bodyfall
+				{
+					soundLookupTable="BirdBodyfall_LookupTable";
+					noise="DeerStepNoise";
+					effectSet[]=
+					{
+						"DeerStepEffect1",
+						"DeerStepEffect2"
+					};
+					id=11;
+				};
+			};
+			class Sounds
+			{
+				class TurkeyChick
+				{
+					soundSet="TurkeyChick_SoundSet";
+					noise="DeerRoarNoise";
+					id=1;
+				};
+				class TurkeyCluck_A
+				{
+					soundSet="TurkeyCluck_A_SoundSet";
+					noise="DeerRoarNoise";
+					id=2;
+				};
+				class TurkeyCluck_A_High
+				{
+					soundSet="TurkeyCluck_A_High_SoundSet";
+					noise="DeerRoarNoise";
+					id=3;
+				};
+				class TurkeyCluck_B
+				{
+					soundSet="TurkeyCluck_B_SoundSet";
+					noise="DeerRoarNoise";
+					id=4;
+				};
+				class TurkeyCluck_B_High
+				{
+					soundSet="TurkeyCluck_B_High_SoundSet";
+					noise="DeerRoarNoise";
+					id=5;
+				};
+				class TurkeyCluck_C
+				{
+					soundSet="TurkeyCluck_C_SoundSet";
+					noise="DeerRoarNoise";
+					id=6;
+				};
+				class TurkeyCluck_C_High
+				{
+					soundSet="TurkeyCluck_C_High_SoundSet";
+					noise="DeerRoarNoise";
+					id=7;
+				};
+				class TurkeyCluck_D
+				{
+					soundSet="TurkeyCluck_D_SoundSet";
+					noise="DeerRoarNoise";
+					id=8;
+				};
+				class TurkeyCluck_D_High
+				{
+					soundSet="TurkeyCluck_D_High_SoundSet";
+					noise="DeerRoarNoise";
+					id=9;
+				};
+				class TurkeyCluck_E
+				{
+					soundSet="TurkeyCluck_E_SoundSet";
+					noise="DeerRoarNoise";
+					id=10;
+				};
+				class TurkeyCluck_E_High
+				{
+					soundSet="TurkeyCluck_E_High_SoundSet";
+					noise="DeerRoarNoise";
+					id=11;
+				};
+				class TurkeyCluck_Silky
+				{
+					soundSet="TurkeyCluck_Silky_SoundSet";
+					noise="DeerRoarNoise";
+					id=12;
+				};
+				class TurkeyCluck_Silky_High
+				{
+					soundSet="TurkeyCluck_Silky_High_SoundSet";
+					noise="DeerRoarNoise";
+					id=13;
+				};
+				class TurkeyCrow_A
+				{
+					soundSet="TurkeyCrow_A_SoundSet";
+					noise="DeerRoarNoise";
+					id=14;
+				};
+				class TurkeyCrow_B
+				{
+					soundSet="TurkeyCrow_B_SoundSet";
+					noise="DeerRoarNoise";
+					id=15;
+				};
+				class TurkeyCrow_C
+				{
+					soundSet="TurkeyCrow_C_SoundSet";
+					noise="DeerRoarNoise";
+					id=16;
+				};
+				class TurkeyCrow_D
+				{
+					soundSet="TurkeyCrow_D_SoundSet";
+					noise="DeerRoarNoise";
+					id=17;
+				};
+				class TurkeyCrow_E
+				{
+					soundSet="TurkeyCrow_E_SoundSet";
+					noise="DeerRoarNoise";
+					id=18;
+				};
+				class TurkeyCrow_F
+				{
+					soundSet="TurkeyCrow_F_SoundSet";
+					noise="DeerRoarNoise";
+					id=19;
+				};
+				class TurkeyCrow_G
+				{
+					soundSet="TurkeyCrow_G_SoundSet";
+					noise="DeerRoarNoise";
+					id=20;
+				};
+				class TurkeyScream
+				{
+					soundSet="TurkeyScream_SoundSet";
+					noise="DeerRoarNoise";
+					id=21;
+				};
+				class BirdFlapping
+				{
+					soundSet="BirdFlapping_SoundSet";
+					noise="DeerRoarNoise";
+					id=22;
+				};
+				class BirdFlapping_short
+				{
+					soundSet="BirdFlapping_short_SoundSet";
+					noise="DeerRoarNoise";
+					id=23;
+				};
+				class BirdFlapping_mid
+				{
+					soundSet="BirdFlapping_mid_SoundSet";
+					noise="DeerRoarNoise";
+					id=24;
+				};
+				class BirdFlapping_long
+				{
+					soundSet="BirdFlapping_long_SoundSet";
+					noise="DeerRoarNoise";
+					id=25;
+				};
+				class TurkeyCrowX1
+				{
+					soundSet="TurkeyCrowX1_SoundSet";
+					noise="DeerRoarNoise";
+					id=26;
+				};
+			};
+			class Damages
+			{
+				class Bite
+				{
+					damage="DeerBiteDamage";
+					id=1;
+				};
+			};
+		};
+		
+		
+	
 		class CommandMoveSettings
 		{
 			useSpeedMapping=1;
@@ -5614,127 +5961,127 @@ class cfgVehicles
 			};
 			class Sounds
 			{
-				class HenChick
+				class TurkeyChick
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 1;
 				};
-				class HenCluck_A
+				class TurkeyCluck_A
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 2;
 				};
-				class HenCluck_A_High
+				class TurkeyCluck_A_High
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 3;
 				};
-				class HenCluck_B
+				class TurkeyCluck_B
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 4;
 				};
-				class HenCluck_B_High
+				class TurkeyCluck_B_High
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 5;
 				};
-				class HenCluck_C
+				class TurkeyCluck_C
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 6;
 				};
-				class HenCluck_C_High
+				class TurkeyCluck_C_High
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 7;
 				};
-				class HenCluck_D
+				class TurkeyCluck_D
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 8;
 				};
-				class HenCluck_D_High
+				class TurkeyCluck_D_High
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 9;
 				};
-				class HenCluck_E
+				class TurkeyCluck_E
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 10;
 				};
-				class HenCluck_E_High
+				class TurkeyCluck_E_High
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 11;
 				};
-				class HenCluck_Silky
+				class TurkeyCluck_Silky
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 12;
 				};
-				class HenCluck_Silky_High
+				class TurkeyCluck_Silky_High
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 13;
 				};
-				class HenCrow_A
+				class TurkeyCrow_A
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 14;
 				};
-				class HenCrow_B
+				class TurkeyCrow_B
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 15;
 				};
-				class HenCrow_C
+				class TurkeyCrow_C
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 16;
 				};
-				class HenCrow_D
+				class TurkeyCrow_D
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 17;
 				};
-				class HenCrow_E
+				class TurkeyCrow_E
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
 					id = 18;
 				};
-				class HenCrow_F
+				class TurkeyCrow_F
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 19;
 				};
-				class HenCrow_G
+				class TurkeyCrow_G
 				{
 					soundSet = "";
 					noise = "DeerRoarNoise";
 					id = 20;
 				};
-				class HenScream
+				class TurkeyScream
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";
@@ -5764,7 +6111,7 @@ class cfgVehicles
 					noise = "DeerRoarNoise";
 					id = 25;
 				};
-				class HenCrowX1
+				class TurkeyCrowX1
 				{
 					soundSet = "peacock_Calm_soundset";
 					noise = "DeerRoarNoise";

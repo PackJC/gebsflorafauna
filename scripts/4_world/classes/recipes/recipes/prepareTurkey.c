@@ -39,7 +39,7 @@ class PrepareTurkey extends PrepareFish
 		InsertIngredient(1,"FangeKnife");
 		InsertIngredient(1,"Hacksaw");
 		InsertIngredient(1,"HandSaw");
-		InsertIngredient(1,"KitchenKnife");
+		InsertIngredient(1,"KitcTurkeyKnife");
 		InsertIngredient(1,"SteakKnife");
 		InsertIngredient(1,"StoneKnife");
 		InsertIngredient(1,"Cleaver");
