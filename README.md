@@ -1,5 +1,7 @@
 # Geb's Flora & Fauna
 
+![Geb's Flora & Fauna banner](docs/assets/gebs-flora-fauna-banner.png)
+
 [![Steam Workshop](https://img.shields.io/badge/Steam-Workshop-1b2838?logo=steam)](https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664)
 [![Workshop subscribers](https://img.shields.io/steam/subscriptions/2764114664?label=Workshop%20subscribers&logo=steam)](https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664)
 [![Website](https://img.shields.io/badge/Guide-GitHub%20Pages-2f855a)](https://packjc.github.io/gebsflorafauna/)
