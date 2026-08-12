@@ -1,10 +1,11 @@
 class CfgPatches
 {
-	class gebsflorafauna
+	class gebsflorafauna_data
 	{
 		requiredVersion=0.1;
 		requiredAddons[]=
 		{
+			"gebsflorafauna",
 			"DZ_Characters",
 			"DZ_Characters_Pants",
 			"DZ_Characters_Tops",
@@ -62,7 +63,7 @@ class CfgHorticulture
 		lootTag[] =
 		{
 			"Farm",
-			"KitcTurkey",
+			"Kitchen",
 			"Forester"
 		};
 		class DamageSystem
@@ -772,13 +773,13 @@ class cfgVehicles
 					"sprint"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class AttackRun
 			{
@@ -791,13 +792,13 @@ class cfgVehicles
 					"sprint"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class AttackShort
 			{
@@ -810,13 +811,13 @@ class cfgVehicles
 					"walk"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class AttackShortLow
 			{
@@ -830,13 +831,13 @@ class cfgVehicles
 					"run"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class CrawlAttackMove
 			{
@@ -848,13 +849,13 @@ class cfgVehicles
 					"walk"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class CrawlAttackStill
 			{
@@ -866,16 +867,16 @@ class cfgVehicles
 					"idle"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 		};
-	}
+	};
 	class geb_Chimp : ChimpBase
 	{
 		displayName = "$STR_Chimp";
@@ -1128,7 +1129,7 @@ class cfgVehicles
 					};
 				};
 			};
-	}
+	};
 	class geb_ChimpMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -1142,7 +1143,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_dried_CO.paa",
 			"dz\gear\food\data\meat_steak_burned_CO.paa"
 		};
-	}
+	};
 
 
 	//Zombie Skeleton
@@ -1723,13 +1724,13 @@ class cfgVehicles
 					"sprint"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class AttackRun
 			{
@@ -1742,13 +1743,13 @@ class cfgVehicles
 					"sprint"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class AttackShort
 			{
@@ -1761,13 +1762,13 @@ class cfgVehicles
 					"walk"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class AttackShortLow
 			{
@@ -1781,13 +1782,13 @@ class cfgVehicles
 					"run"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class CrawlAttackMove
 			{
@@ -1799,13 +1800,13 @@ class cfgVehicles
 					"walk"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 			class CrawlAttackStill
 			{
@@ -1817,16 +1818,16 @@ class cfgVehicles
 					"idle"
 				};
 				minDistance = 0;
-				distance = 100.75;
+				distance = 1.75;
 				time = 0.001;
 				yawAngle = 90;
 				pitchAngle = 30;
 				attackWidth = 5.1999998;
 				repeatable = 0;
-				cooldown = 100.75;
+				cooldown = 1.75;
 			};
 		};
-	}
+	};
 	class geb_Alien : AlienBase
 	{
 		displayName = "$STR_Alien";
@@ -2079,7 +2080,7 @@ class cfgVehicles
 					};
 				};
 			};
-	}
+	};
 	class geb_AlienMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -2097,12 +2098,12 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_dried_CO.paa",
 			"dz\gear\food\data\meat_steak_burned_CO.paa"
 		};
-	}
+	};
 	class geb_AlienSkin: BearPelt
 	{
 		scope=2;
-		displayName="$STR_Alienskin";
-		descriptionShort="$STR_AlienskinDesc";
+		displayName="$STR_AlienSkin";
+		descriptionShort="$STR_AlienSkinDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -2111,7 +2112,7 @@ class cfgVehicles
 		{
 			"\gebsflorafauna\data\fauna\alien\alienpelt.paa";
 		};
-	}
+	};
 
 	//Human Skeleton
 	class geb_Penguin : AnimalBase
@@ -2465,7 +2466,7 @@ class cfgVehicles
 			useSpeedMapping = 1;
 			movementSpeedMapping[] = { 0,0.25,0.30000001,0.3 };
 		};
-	}
+	};
 	class geb_PenguinMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -2492,7 +2493,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-	}
+	};
 
 
 	//Goat Skeleton
@@ -3026,7 +3027,7 @@ class cfgVehicles
 			lookAtFilterTimeout = 0.5;
 			lookAtFilterSpeed = 1.5700001;
 		};
-	}
+	};
 	class geb_RabbitMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -3053,7 +3054,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-	}
+	};
 
 
 	//Cow Skeleton
@@ -3686,7 +3687,7 @@ class cfgVehicles
 			lookAtFilterTimeout=0.5;
 			lookAtFilterSpeed=1.5700001;
 		};
-	}
+	};
 	class geb_CamelMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -3713,7 +3714,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-	}
+	};
 
 
 	//Cow Skeleton
@@ -4346,7 +4347,7 @@ class cfgVehicles
 			lookAtFilterTimeout=0.5;
 			lookAtFilterSpeed=1.5700001;
 		};
-	}
+	};
 	class geb_ElephantMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -4373,7 +4374,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-	}
+	};
 	class geb_ElephantPelt: BearPelt
 	{
 		scope=2;
@@ -4387,7 +4388,7 @@ class cfgVehicles
 		{
 			"\gebsflorafauna\data\fauna\elephant\elephantpelt.paa";
 		};
-	}
+	};
 	class geb_ElephantTusk: BearPelt
 	{
 		scope=2;
@@ -4395,7 +4396,7 @@ class cfgVehicles
 		descriptionShort="$STR_ElephantTuskDesc";
 		model = "\gebsflorafauna\data\fauna\elephant\geb_elephanttusk.p3d";
 
-	}
+	};
 
 	//Cow Skeleton
 	class geb_Giraffe: Animal_BosTaurus
@@ -5027,7 +5028,7 @@ class cfgVehicles
 			lookAtFilterTimeout=0.5;
 			lookAtFilterSpeed=1.5700001;
 		};
-	}
+	};
 	class geb_GiraffeMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -5055,7 +5056,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-	}
+	};
 	class geb_GiraffePelt: BearPelt
 	{
 		scope=2;
@@ -5069,7 +5070,7 @@ class cfgVehicles
 		{
 			"\gebsflorafauna\data\fauna\giraffe\giraffepelt.paa";
 		};
-	}
+	};
 
 	class geb_Female_Turkey: AnimalBase
 	{
@@ -5414,7 +5415,7 @@ class cfgVehicles
 			useSpeedMapping=1;
 			movementSpeedMapping[]={0,0.25,0.80000001,3};
 		};
-	}
+	};
 	//Chicken Skeleton
 	class geb_Turkey: AnimalBase
 	{
@@ -5760,7 +5761,7 @@ class cfgVehicles
 			useSpeedMapping=1;
 			movementSpeedMapping[]={0,0.25,0.80000001,3};
 		};
-	}
+	};
 	class geb_TurkeyMeat : ChickenBreastMeat
 	{
 		scope = 2;
@@ -5787,7 +5788,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_breast_burnt.rvmat",
 			"dz\gear\food\data\meat_breast_rotten.rvmat"
 		};
-	}
+	};
 
 
 	//Chicken Skeleton
@@ -6132,7 +6133,7 @@ class cfgVehicles
 			useSpeedMapping = 1;
 			movementSpeedMapping[] = { 0,0.25,0.80000001,3 };
 		};
-	}
+	};
 	class geb_PeacockMeat : ChickenBreastMeat
 	{
 		scope = 2;
@@ -7062,6 +7063,7 @@ class cfgVehicles
 			simulation="dayzanimal";
 			scope=2;
 			displayName="$STR_Cheetah";
+			descriptionShort="$STR_CheetahDesc";
 			model = "\gebsflorafauna\data\fauna\cheetah\geb_cheetah.p3d";
 			hiddenSelections[]=
 			{
@@ -7636,7 +7638,7 @@ class cfgVehicles
 				lookAtFilterTimeout=0.5;
 				lookAtFilterSpeed=1.5700001;
 			};
-	}
+	};
 	class geb_CheetahMeat : CowSteakMeat
 	{
 		scope = 2;
@@ -7663,7 +7665,7 @@ class cfgVehicles
 			"dz\gear\food\data\meat_steak_burnt.rvmat",
 			"dz\gear\food\data\meat_steak_rotten.rvmat"
 		};
-	}
+	};
 	class geb_CheetahPelt: BearPelt
 	{
 		scope=2;
@@ -7677,14 +7679,14 @@ class cfgVehicles
 		{
 			"\gebsflorafauna\data\fauna\cheetah\cheetahpelt.paa";
 		};
-	}
+	};
 
 	//Bears
 	class geb_BlackbearPelt: BearPelt
 	{
 		scope=2;
-		displayName="Black Bear Pelt";
-		descriptionShort="Black Bear Pelt";
+		displayName="$STR_BlackbearPelt";
+		descriptionShort="$STR_BlackbearPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -7697,8 +7699,8 @@ class cfgVehicles
 	class geb_PolarbearPelt: BearPelt
 	{
 		scope=2;
-		displayName="Polar Bear Pelt";
-		descriptionShort="Polar Bear Pelt";
+		displayName="$STR_PolarbearPelt";
+		descriptionShort="$STR_PolarbearPeltDesc";
 		hiddenSelections[]=
 		{
 			"Camo"
@@ -7720,8 +7722,8 @@ class cfgVehicles
 	class geb_BlackMorel : MushroomBase
 	{
 		scope = 2;
-		displayName = "Black Morel";
-		descriptionShort = "$STR_AgaricusMushroom1";
+		displayName = "$STR_BlackMorel";
+		descriptionShort = "$STR_BlackMorelDesc";
 		model = "\gebsflorafauna\data\mycology\blackmorel\blackmorel.p3d";
 		weight = 0;
 		itemSize[] = { 1,2 };
@@ -7883,8 +7885,8 @@ class cfgVehicles
 	class geb_LionsMane : MushroomBase
 	{
 		scope = 2;
-		displayName = "Lions Mane";
-		descriptionShort = "$STR_AgaricusMushroom1";
+		displayName = "$STR_LionsMane";
+		descriptionShort = "$STR_LionsManeDesc";
 		model = "\gebsflorafauna\data\mycology\lionsmane\lionsmane.p3d";
 		weight = 0;
 		itemSize[] = { 1,2 };
@@ -8046,8 +8048,8 @@ class cfgVehicles
 	class geb_PuffBall : MushroomBase
 	{
 		scope = 2;
-		displayName = "Puff Ball";
-		descriptionShort = "$STR_AgaricusMushroom1";
+		displayName = "$STR_PuffBall";
+		descriptionShort = "$STR_PuffBallDesc";
 		model = "\gebsflorafauna\data\mycology\puffball\puffball.p3d";
 		weight = 0;
 		itemSize[] = { 1,2 };
@@ -8209,8 +8211,8 @@ class cfgVehicles
 	class geb_WhiteMorel : MushroomBase
 	{
 		scope = 2;
-		displayName = "White Morel";
-		descriptionShort = "$STR_AgaricusMushroom1";
+		displayName = "$STR_WhiteMorel";
+		descriptionShort = "$STR_WhiteMorelDesc";
 		model = "\gebsflorafauna\data\mycology\whitemorel\whitemorel.p3d";
 		weight = 0;
 		itemSize[] = { 1,2 };
@@ -8369,4 +8371,4 @@ class cfgVehicles
 			};
 		};
 	};
-}
+};

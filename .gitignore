@@ -1,0 +1,23 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Windows metadata
+desktop.ini
+Thumbs.db
+
+# Build output
+*.pbo
+*.bisign
+*.bikey
+temp/
+build/
+
+# Logs and local tools
+*.log
+*.rpt
+.idea/
+.vscode/

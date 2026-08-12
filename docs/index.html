@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251c">
+  <meta name="description" content="Geb's Flora & Fauna for DayZ — wildlife, fungi, harvesting, classnames, and server installation.">
+  <meta property="og:title" content="Geb's Flora & Fauna — DayZ Ecosystem Guide">
+  <meta property="og:description" content="Configure new wildlife, fungi, harvestable resources, and survival crafting for your DayZ server.">
+  <meta property="og:url" content="https://packjc.github.io/gebsflorafauna/">
+  <title>Geb's Flora & Fauna — DayZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero" id="top"><div class="canopy"></div><div class="hero-inner"><p class="eyebrow">DayZ ecosystem expansion</p><h1>Geb's<br><span>Flora &amp; Fauna</span></h1><p>New wildlife, fungi, harvestable resources, and fieldcraft—balanced and placed by each server's Central Economy.</p><div class="actions"><a class="button primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe on Steam</a><button class="button" data-open="install">Server setup</button></div><div class="badges"><img src="https://img.shields.io/steam/subscriptions/2764114664?style=for-the-badge&label=Workshop%20Subs&color=5da66f&labelColor=183126" alt="Current Steam Workshop subscribers"><span>14 animals</span><span>4 fungi</span><span>39 classes</span></div></div></header>
+  <nav><a class="brand" href="#top">GFF / Field Guide</a><button class="menu" aria-expanded="false">Menu</button><div class="tabs" role="tablist"><button class="active" data-tab="overview">Overview</button><button data-tab="install">Server setup</button><button data-tab="species">Species</button><button data-tab="classnames">Classnames</button><button data-tab="faq">FAQ</button></div></nav>
+  <main>
+    <section id="overview" class="panel active"><div class="heading"><p class="eyebrow">A wider wilderness</p><h2>More life between the towns.</h2><p>Geb's Flora &amp; Fauna broadens the survival sandbox without prescribing one universal ecosystem. Server owners choose the species, territories, and population limits that fit their map.</p></div><div class="cards"><article><b>01</b><h3>Wildlife</h3><p>Fourteen creatures range from rabbits and turkeys to elephants, polar bears, and stranger encounters.</p></article><article><b>02</b><h3>Harvesting</h3><p>Animals provide their own meats and, where configured, pelts, tusks, tails, guts, bones, and lard.</p></article><article><b>03</b><h3>Mycology</h3><p>Black morels, white morels, lion's mane, and puffballs add variety to forest foraging.</p></article><article><b>04</b><h3>Fieldcraft</h3><p>Prepare harvested turkey and turn a raccoon pelt plus tail into a wearable skin cap.</p></article></div><aside><strong>Server-controlled by design.</strong> Nothing has to replace vanilla wildlife. Add only the event definitions and spawn positions you want.</aside></section>
+
+    <section id="install" class="panel" hidden><div class="heading"><p class="eyebrow">Server-owner guide</p><h2>Deploy the ecosystem.</h2><p>The process follows DayZ's normal Central Economy animal-event pattern: define a type in <code>events.xml</code>, give it territories in <code>cfgeventspawns.xml</code>, and let the CE maintain the population.</p></div><ol class="steps"><li><span>01</span><div><h3>Install the Workshop mod</h3><p>Place <code>@gebsflorafauna</code> beside the server executable, copy its key into <code>keys/</code>, and load <code>-mod=@gebsflorafauna</code> on the server and clients.</p></div></li><li><span>02</span><div><h3>Choose an animal classname</h3><p>Start with one species while testing—for example <code>geb_Racoon</code>. Animal classes do not belong in <code>types.xml</code>; dynamic animal populations are managed through events.</p></div></li><li><span>03</span><div><h3>Add an event definition</h3><p>Copy an existing vanilla animal event in <code>db/events.xml</code>, give it a unique event name, and replace its child type with the desired <code>geb_</code> classname. Keep the same structure and tune nominal/min/max for your server.</p><div class="code"><button data-copy-target="event-code">Copy</button><pre><code id="event-code">&lt;event name="AnimalGebRacoon"&gt;
+    &lt;nominal&gt;8&lt;/nominal&gt;
+    &lt;min&gt;4&lt;/min&gt;
+    &lt;max&gt;12&lt;/max&gt;
+    &lt;lifetime&gt;180&lt;/lifetime&gt;
+    &lt;restock&gt;0&lt;/restock&gt;
+    &lt;saferadius&gt;200&lt;/saferadius&gt;
+    &lt;distanceradius&gt;50&lt;/distanceradius&gt;
+    &lt;cleanupradius&gt;200&lt;/cleanupradius&gt;
+    &lt;flags deletable="0" init_random="0" remove_damaged="1"/&gt;
+    &lt;position&gt;fixed&lt;/position&gt;
+    &lt;limit&gt;child&lt;/limit&gt;
+    &lt;active&gt;1&lt;/active&gt;
+    &lt;children&gt;
+        &lt;child lootmax="0" lootmin="0" max="4" min="1" type="geb_Racoon"/&gt;
+    &lt;/children&gt;
+&lt;/event&gt;</code></pre></div></div></li><li><span>04</span><div><h3>Add map territories</h3><p>In <code>cfgeventspawns.xml</code>, add a matching event block inside <code>&lt;eventposdef&gt;</code>. Replace the example coordinates with safe locations from your map. Each <code>&lt;pos&gt;</code> is a possible territory center; the zone values control group spread.</p><div class="code"><button data-copy-target="spawn-code">Copy</button><pre><code id="spawn-code">&lt;event name="AnimalGebRacoon"&gt;
+    &lt;zone smin="0" smax="0" dmin="40" dmax="80" r="100"/&gt;
+    &lt;!-- Replace these with coordinates for your map. --&gt;
+    &lt;pos x="7500.0" z="7500.0" a="0.0"/&gt;
+    &lt;pos x="8000.0" z="7200.0" a="0.0"/&gt;
+&lt;/event&gt;</code></pre></div></div></li><li><span>05</span><div><h3>Validate and test</h3><p>Stop the server before editing, keep backups, validate the XML, restart, and inspect the RPT and script logs. Add species one at a time. Excessive totals across all animal events can suppress or destabilize other wildlife populations.</p></div></li></ol><div class="notice"><strong>Use the current map's own vanilla animal events as your template.</strong><span>CE values that feel reasonable on Chernarus may not suit Sakhal, Livonia, or a custom terrain.</span></div></section>
+
+    <section id="species" class="panel" hidden><div class="heading"><p class="eyebrow">Field index</p><h2>Creatures and fungi.</h2></div><div class="species-grid" id="species-grid"></div></section>
+    <section id="classnames" class="panel" hidden><div class="heading"><p class="eyebrow">Admin reference</p><h2>Search all public classes.</h2></div><div class="filters"><input id="search" type="search" placeholder="Search classname or item…"><select id="filter"><option value="all">All categories</option></select><span id="count"></span></div><div class="table-wrap"><table><thead><tr><th>Classname</th><th>Category</th><th>Description</th><th></th></tr></thead><tbody id="class-body"></tbody></table></div></section>
+    <section id="faq" class="panel" hidden><div class="heading"><p class="eyebrow">Troubleshooting</p><h2>Common questions.</h2></div><div class="faq"><details><summary>Does this replace vanilla animals?<span>+</span></summary><p>No. Custom events can coexist with vanilla wildlife. Your mission configuration decides which events are active.</p></details><details><summary>Why can I spawn an animal manually but not find it naturally?<span>+</span></summary><p>A working classname confirms the mod loaded, but natural populations still require matching entries in <code>events.xml</code> and <code>cfgeventspawns.xml</code>.</p></details><details><summary>Why did vanilla animals stop spawning?<span>+</span></summary><p>Check the server logs for malformed XML and review the combined nominal/min/max totals of every animal event. Start with one custom event and add more gradually.</p></details><details><summary>Does every player need the mod?</summary><p>Yes. It supplies custom models, textures, sounds, scripts, and localized item data.</p></details><details><summary>Can I put it in a server pack?</summary><p>No. Use the authorized Workshop item and a Steam Collection for your server's required mods.</p></details></div></section>
+  </main>
+  <footer><div><strong>GEB'S FLORA &amp; FAUNA</strong><span>A DayZ community mod by Geb / Cole</span></div><div><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Steam</a><a href="https://github.com/PackJC/gebsflorafauna">GitHub</a><a href="https://discord.gg/G8uSGZ8yyf">Discord</a></div><p>DayZ and Bohemia Interactive are trademarks of Bohemia Interactive. This project is not affiliated with or endorsed by Bohemia Interactive.</p></footer><div class="toast">Copied</div>
+</body>
+</html>

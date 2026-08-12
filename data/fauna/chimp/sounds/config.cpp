@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class DZ_Sounds_Effects
+	class gebsflorafauna_sounds_chimp
 	{
 		units[]={};
 		weapons[]={};
