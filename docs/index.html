@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10251c">
+  <meta name="theme-color" content="#070f0b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
   <meta name="description" content="Geb's Flora & Fauna for DayZ — wildlife, fungi, harvesting, classnames, and server installation.">
   <meta property="og:title" content="Geb's Flora & Fauna — DayZ Ecosystem Guide">
   <meta property="og:description" content="Configure new wildlife, fungi, harvestable resources, and survival crafting for your DayZ server.">
@@ -15,12 +16,12 @@
   <title>Geb's Flora & Fauna — DayZ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="hero" id="top"><div class="canopy"></div><div class="hero-inner"><p class="eyebrow">DayZ ecosystem expansion</p><h1>Geb's<br><span>Flora &amp; Fauna</span></h1><p>New wildlife, fungi, harvestable resources, and fieldcraft—balanced and placed by each server's Central Economy.</p><div class="actions"><a class="button primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe on Steam</a><button class="button" data-open="install">Server setup</button></div><div class="badges"><img src="https://img.shields.io/steam/subscriptions/2764114664?style=for-the-badge&label=Workshop%20Subs&color=5da66f&labelColor=183126" alt="Current Steam Workshop subscribers"><span>14 animals</span><span>4 fungi</span><span>39 classes</span></div></div></header>
+  <header class="hero" id="top"><canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas><div class="canopy"></div><div class="hero-inner"><p class="eyebrow">DayZ ecosystem expansion</p><h1>Geb's<br><span>Flora &amp; Fauna</span></h1><p>New wildlife, fungi, harvestable resources, and fieldcraft—balanced and placed by each server's Central Economy.</p><div class="actions"><a class="button primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe on Steam</a><button class="button" data-open="install">Server setup</button></div><div class="badges"><img src="https://img.shields.io/steam/subscriptions/2764114664?style=for-the-badge&label=Workshop%20Subs&color=5da66f&labelColor=183126" alt="Current Steam Workshop subscribers"><span>14 animals</span><span>4 fungi</span><span>39 classes</span></div></div></header>
   <nav><a class="brand" href="#top">GFF / Field Guide</a><button class="menu" aria-expanded="false">Menu</button><div class="tabs" role="tablist"><button class="active" data-tab="overview">Overview</button><button data-tab="install">Server setup</button><button data-tab="species">Species</button><button data-tab="classnames">Classnames</button><button data-tab="faq">FAQ</button></div></nav>
   <main>
     <section id="overview" class="panel active"><div class="heading"><p class="eyebrow">A wider wilderness</p><h2>More life between the towns.</h2><p>Geb's Flora &amp; Fauna broadens the survival sandbox without prescribing one universal ecosystem. Server owners choose the species, territories, and population limits that fit their map.</p></div><div class="cards"><article><b>01</b><h3>Wildlife</h3><p>Fourteen creatures range from rabbits and turkeys to elephants, polar bears, and stranger encounters.</p></article><article><b>02</b><h3>Harvesting</h3><p>Animals provide their own meats and, where configured, pelts, tusks, tails, guts, bones, and lard.</p></article><article><b>03</b><h3>Mycology</h3><p>Black morels, white morels, lion's mane, and puffballs add variety to forest foraging.</p></article><article><b>04</b><h3>Fieldcraft</h3><p>Prepare harvested turkey and turn a raccoon pelt plus tail into a wearable skin cap.</p></article></div><aside><strong>Server-controlled by design.</strong> Nothing has to replace vanilla wildlife. Add only the event definitions and spawn positions you want.</aside></section>
