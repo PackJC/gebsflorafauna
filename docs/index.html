@@ -3,30 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070f0b">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
-  <meta name="description" content="Geb's Flora & Fauna for DayZ — wildlife, fungi, harvesting, classnames, and server installation.">
-  <meta property="og:title" content="Geb's Flora & Fauna — DayZ Ecosystem Guide">
-  <meta property="og:description" content="Configure new wildlife, fungi, harvestable resources, and survival crafting for your DayZ server.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2321a052' d='M27 4C13 4 5 11 5 21c0 2 .4 3.8 1.1 5.4C8 20 13 15 20 12c-6 4-10 9-12 16 1 .4 2.2.6 3.4.6C22 28.6 27 18 27 4z'/%3E%3C/svg%3E">
+  <title>Geb's Flora &amp; Fauna</title>
+  <meta name="description" content="Geb's Flora & Fauna for DayZ: 15 animals, 44 wild fungi, 10 garden crops, and a complete server setup guide.">
+  <meta property="og:title" content="Geb's Flora & Fauna for DayZ">
+  <meta property="og:description" content="Fifteen animals, forty-four fungi and ten garden crops for DayZ servers.">
   <meta property="og:url" content="https://packjc.github.io/gebsflorafauna/">
   <meta property="og:image" content="https://raw.githubusercontent.com/PackJC/gebsflorafauna/master/docs/assets/gebs-flora-fauna-banner.png">
-  <meta property="og:image:alt" content="Geb's Flora & Fauna wildlife banner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/PackJC/gebsflorafauna/master/docs/assets/gebs-flora-fauna-banner.png">
-  <title>Geb's Flora & Fauna — DayZ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="hero" id="top"><canvas class="fireflies" id="fireflies" aria-hidden="true"></canvas><div class="canopy"></div><div class="hero-inner"><p class="eyebrow">DayZ ecosystem expansion</p><h1>Geb's<br><span>Flora &amp; Fauna</span></h1><p>New wildlife, fungi, harvestable resources, and fieldcraft—balanced and placed by each server's Central Economy.</p><div class="actions"><a class="button primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe on Steam</a><button class="button" data-open="install">Server setup</button></div><div class="badges"><img src="https://img.shields.io/steam/subscriptions/2764114664?style=for-the-badge&label=Workshop%20Subs&color=5da66f&labelColor=183126" alt="Current Steam Workshop subscribers"><span>15 animals</span><span>44 fungi</span><span>5 crops</span><span>101 classes</span></div></div></header>
-  <nav><a class="brand" href="#top">GFF / Field Guide</a><button class="menu" aria-expanded="false">Menu</button><div class="tabs" role="tablist"><button class="active" data-tab="overview">Overview</button><button data-tab="install">Server setup</button><button data-tab="species">Species</button><button data-tab="classnames">Classnames</button><button data-tab="faq">FAQ</button></div></nav>
-  <main>
-    <section id="overview" class="panel active"><div class="heading"><p class="eyebrow">A wider wilderness</p><h2>More life between the towns.</h2><p>Geb's Flora &amp; Fauna broadens the survival sandbox without prescribing one universal ecosystem. Server owners choose the species, territories, and population limits that fit their map.</p></div><div class="cards"><article><b>01</b><h3>Wildlife</h3><p>Fifteen creatures range from rabbits and turkeys to elephants, polar bears, and stranger encounters.</p></article><article><b>02</b><h3>Harvesting</h3><p>Animals provide their own meats and, where configured, pelts, tusks, tails, guts, bones, and lard.</p></article><article><b>03</b><h3>Mycology</h3><p>44 fungi to forage: chanterelles, morels, boletes, the sky-blue indigo milk cap and more, beside deadly look-alikes like the death cap, the funeral bell and the jack-o'-lantern.</p></article><article><b>04</b><h3>Fieldcraft</h3><p>Prepare harvested turkey and turn a raccoon pelt plus tail into a wearable skin cap.</p></article><article><b>05</b><h3>Gardening</h3><p>Grow corn, okra, green beans, onions, garlic, yellow squash, watermelon, cantaloupe, carrots and cucumbers from seed packets in a garden plot, then cook the harvest, slice the melons or cut fresh seeds back out of it.</p></article></div><aside><strong>Server-controlled by design.</strong> Nothing has to replace vanilla wildlife. Add only the event definitions and spawn positions you want.</aside></section>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <section id="install" class="panel" hidden><div class="heading"><p class="eyebrow">Server-owner guide</p><h2>Deploy the ecosystem.</h2><p>The process follows DayZ's normal Central Economy animal-event pattern: define a type in <code>events.xml</code>, give it territories in <code>cfgeventspawns.xml</code>, and let the CE maintain the population.</p></div><ol class="steps"><li><span>01</span><div><h3>Install the Workshop mod</h3><p>Place <code>@gebsflorafauna</code> beside the server executable, copy its key into <code>keys/</code>, and load <code>-mod=@gebsflorafauna</code> on the server and clients.</p></div></li><li><span>02</span><div><h3>Choose an animal classname</h3><p>Start with one species while testing—for example <code>geb_Racoon</code>. Animal classes do not belong in <code>types.xml</code>; dynamic animal populations are managed through events.</p></div></li><li><span>03</span><div><h3>Add an event definition</h3><p>Copy an existing vanilla animal event in <code>db/events.xml</code>, give it a unique event name, and replace its child type with the desired <code>geb_</code> classname. Keep the same structure and tune nominal/min/max for your server.</p><div class="code"><button data-copy-target="event-code">Copy</button><pre><code id="event-code">&lt;event name="AnimalGebRacoon"&gt;
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Geb's Flora and Fauna, back to top">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27 4C13 4 5 11 5 21c0 2 .4 3.8 1.1 5.4C8 20 13 15 20 12c-6 4-10 9-12 16 1 .4 2.2.6 3.4.6C22 28.6 27 18 27 4z"/></svg>
+        <span>Flora &amp; Fauna</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Sections">
+        <a href="#wildlife">Wildlife</a>
+        <a href="#mushrooms">Mushrooms</a>
+        <a href="#garden">Garden</a>
+        <a href="#setup">Server setup</a>
+        <a href="#classnames">Classnames</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="pill small" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe</a>
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow rise">A DayZ mod by Geb</p>
+      <h1 class="rise">Flora &amp; Fauna.</h1>
+      <p class="lede rise">The wild side of DayZ. Hunt <b data-stat="animals">15</b> new animals, forage <b data-stat="fungi">44</b> wild mushrooms, and grow <b data-stat="crops">10</b> garden crops.</p>
+      <div class="cta rise">
+        <a class="pill" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe on Steam</a>
+        <a class="link-arrow" href="#setup">Set up your server</a>
+      </div>
+      <div class="lineup rise" aria-hidden="true">
+        <img src="assets/img/hero/chanterelle.webp" alt="" class="l1">
+        <img src="assets/img/hero/pandabear.webp" alt="" class="l2">
+        <img src="assets/img/hero/watermelon_slice.webp" alt="" class="l3">
+        <img src="assets/img/hero/peacock.webp" alt="" class="l4">
+        <img src="assets/img/hero/deathcap.webp" alt="" class="l5">
+        <img src="assets/img/hero/yellowsquash.webp" alt="" class="l6">
+        <img src="assets/img/hero/cheetah.webp" alt="" class="l7">
+      </div>
+    </section>
+
+    <section class="stats" aria-label="At a glance">
+      <div class="stat reveal"><b data-stat="animals">15</b><span>animals to hunt</span></div>
+      <div class="stat reveal"><b data-stat="fungi">44</b><span>wild fungi</span></div>
+      <div class="stat reveal"><b data-stat="crops">10</b><span>garden crops</span></div>
+      <div class="stat reveal"><b data-stat="classes">123</b><span>classnames</span></div>
+    </section>
+
+    <section class="band" id="wildlife">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">Wildlife</p>
+          <h2>From rabbits to elephants.</h2>
+          <p class="sub">Every animal has its own model and its own harvest: meat, hides, fat, a raccoon's tail or an elephant's tusks. You choose which ones live on your map.</p>
+        </header>
+        <div class="seg reveal" role="group" aria-label="Filter animals" id="animal-filter"></div>
+        <div class="grid cards" id="animal-grid"></div>
+      </div>
+    </section>
+
+    <section class="band dark" id="mushrooms">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">Mycology</p>
+          <h2>Forty-four fungi.<br>Know which is which.</h2>
+          <p class="sub"><b data-stat="edible">24</b> are good to eat. <b data-stat="poisonous">20</b> are look-alikes that will make you sick, and <b data-stat="deadly">6</b> of those can kill. Each one cooks, dries, burns and rots with its own look.</p>
+        </header>
+        <div class="tools reveal">
+          <div class="seg" role="group" aria-label="Filter mushrooms" id="fungi-filter"></div>
+          <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="fungi-search" type="search" placeholder="Search mushrooms" autocomplete="off" aria-label="Search mushrooms"></label>
+        </div>
+        <div class="grid cards" id="fungi-grid"></div>
+        <div class="legend reveal">
+          <div><i class="dot edible"></i><p><b>Edible.</b> Safe raw or cooked.</p></div>
+          <div><i class="dot cook"></i><p><b>Cook first.</b> Upsets the stomach raw.</p></div>
+          <div><i class="dot poison"></i><p><b>Poisonous.</b> Food poisoning; charcoal tablets help.</p></div>
+          <div><i class="dot deadly"></i><p><b>Deadly.</b> Organ damage that cooking doesn't stop. Only chelation tablets save you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="garden">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">Gardening</p>
+          <h2>Grow your own.</h2>
+          <p class="sub">Ten crops, each from its own seed packet, through five growth stages in a garden plot. Eat the harvest raw, bake it, boil it, or dry it for later.</p>
+        </header>
+        <ol class="how reveal">
+          <li><img src="assets/img/crops/carrot_pack.webp" alt="A carrot seed packet" loading="lazy" width="600" height="600"><b>Open a packet.</b><span>Each crop comes in a Geb's Garden seed packet, found as loot.</span></li>
+          <li><img src="assets/img/plants/carrot.webp" alt="A ripe carrot plant" loading="lazy" width="800" height="800"><b>Plant and water.</b><span>Sow in a tilled garden plot, just like vanilla seeds.</span></li>
+          <li><img src="assets/img/crops/carrot.webp" alt="A harvested carrot" loading="lazy" width="800" height="800"><b>Harvest.</b><span>Pick it when ripe, before it dries out or spoils.</span></li>
+        </ol>
+        <div class="grid crops" id="crop-grid"></div>
+      </div>
+    </section>
+
+    <section class="band soft" id="setup">
+      <div class="wrap narrow">
+        <header class="head reveal">
+          <p class="eyebrow">For server owners</p>
+          <h2>Set up in minutes.</h2>
+          <p class="sub">Nothing replaces vanilla. Animals spawn through Central Economy events; mushrooms and seed packets are ordinary loot. Add only what you want.</p>
+        </header>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="num">1</span>
+            <div>
+              <h3>Install the mod</h3>
+              <p>Subscribe on the Workshop, place <code>@gebsflorafauna</code> beside the server executable, copy its key into <code>keys/</code>, and load <code>-mod=@gebsflorafauna</code> on the server. Every player needs the mod too.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">2</span>
+            <div>
+              <h3>Add an animal event</h3>
+              <p>Animals don't go in <code>types.xml</code>. Copy one of your map's vanilla animal events in <code>db/events.xml</code>, give it a new name, and swap in a <code>geb_</code> animal. Start with one species and tune the numbers.</p>
+              <div class="code"><button class="copy" data-copy="event-code">Copy</button><pre><code id="event-code">&lt;event name="AnimalGebRacoon"&gt;
     &lt;nominal&gt;8&lt;/nominal&gt;
     &lt;min&gt;4&lt;/min&gt;
     &lt;max&gt;12&lt;/max&gt;
@@ -42,12 +155,28 @@
     &lt;children&gt;
         &lt;child lootmax="0" lootmin="0" max="4" min="1" type="geb_Racoon"/&gt;
     &lt;/children&gt;
-&lt;/event&gt;</code></pre></div></div></li><li><span>04</span><div><h3>Add map territories</h3><p>In <code>cfgeventspawns.xml</code>, add a matching event block inside <code>&lt;eventposdef&gt;</code>. Replace the example coordinates with safe locations from your map. Each <code>&lt;pos&gt;</code> is a possible territory center; the zone values control group spread.</p><div class="code"><button data-copy-target="spawn-code">Copy</button><pre><code id="spawn-code">&lt;event name="AnimalGebRacoon"&gt;
+&lt;/event&gt;</code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">3</span>
+            <div>
+              <h3>Give it territory</h3>
+              <p>In <code>cfgeventspawns.xml</code>, add a matching block inside <code>&lt;eventposdef&gt;</code>. Each <code>&lt;pos&gt;</code> is a possible territory centre; use safe spots from your own map.</p>
+              <div class="code"><button class="copy" data-copy="spawn-code">Copy</button><pre><code id="spawn-code">&lt;event name="AnimalGebRacoon"&gt;
     &lt;zone smin="0" smax="0" dmin="40" dmax="80" r="100"/&gt;
     &lt;!-- Replace these with coordinates for your map. --&gt;
     &lt;pos x="7500.0" z="7500.0" a="0.0"/&gt;
     &lt;pos x="8000.0" z="7200.0" a="0.0"/&gt;
-&lt;/event&gt;</code></pre></div></div></li><li><span>05</span><div><h3>Add forest fungi (optional)</h3><p>Fungi are loot, not animal events. Give each one a <code>types.xml</code> entry like vanilla's <code>AgaricusMushroom</code> (nominal 0, lifetime 900, category food), then add it as a child of the vanilla <code>Trajectory</code> events in <code>events.xml</code>, which drop mushrooms on the forest floor around players. Leave out the poisonous species if your server should not have them.</p><div class="code"><button data-copy-target="fungi-code">Copy</button><pre><code id="fungi-code">&lt;type name="geb_Chanterelle"&gt;
+&lt;/event&gt;</code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">4</span>
+            <div>
+              <h3>Let mushrooms grow</h3>
+              <p>Give each fungus a <code>types.xml</code> entry like vanilla's <code>AgaricusMushroom</code>, then add it to the vanilla <code>Trajectory</code> events that scatter mushrooms on the forest floor around players. Leave out the poisonous ones if you'd rather.</p>
+              <div class="code"><button class="copy" data-copy="fungi-types">Copy</button><pre><code id="fungi-types">&lt;type name="geb_Chanterelle"&gt;
     &lt;nominal&gt;0&lt;/nominal&gt;
     &lt;lifetime&gt;900&lt;/lifetime&gt;
     &lt;restock&gt;0&lt;/restock&gt;
@@ -57,60 +186,78 @@
     &lt;cost&gt;100&lt;/cost&gt;
     &lt;flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="1" deloot="0"/&gt;
     &lt;category name="food"/&gt;
-&lt;/type&gt;
+&lt;/type&gt;</code></pre></div>
+              <div class="code"><button class="copy" data-copy="fungi-events">Copy</button><pre><code id="fungi-events"></code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">5</span>
+            <div>
+              <h3>Stock the seed packets</h3>
+              <p>Seed packets are loot, like vanilla's <code>TomatoSeedsPack</code>. Copy its <code>types.xml</code> entry once for each packet below and change the name.</p>
+              <div class="code"><button class="copy" data-copy="crops-code">Copy</button><pre><code id="crops-code"></code></pre></div>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="num">6</span>
+            <div>
+              <h3>Test it</h3>
+              <p>Stop the server before editing and keep backups. Validate the XML, restart, and read the RPT and script logs. Add species one at a time: too many animal events can crowd out vanilla wildlife. Values that suit Chernarus may not suit Sakhal, Livonia or a custom map.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-&lt;!-- TrajectoryConiferous --&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_BlackMorel"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_Chanterelle"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_HedgehogMushroom"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_LobsterMushroom"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_CauliflowerMushroom"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_BayBolete"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_DestroyingAngel"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_FalseMorel"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_DeadlyWebcap"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_PantherCap"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_FuneralBell"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_EmeticRussula"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_FalseDeathCap"/&gt;
-&lt;!-- TrajectoryDeciduous --&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_WhiteMorel"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_LionsMane"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_ChickenOfTheWoods"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_HenOfTheWoods"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_HoneyMushroom"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_WoodBlewit"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_IndigoMilkCap"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_VelvetFoot"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_BeefsteakFungus"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_OrangeBirchBolete"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_OldManOfTheWoods"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_AmethystDeceiver"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_HalfFreeMorel"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_DeathCap"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_JackOLantern"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_SulphurTuft"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_BrownRollrim"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_DevilsBolete"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_DeadlyFibrecap"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_LividPinkgill"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_EarlyFalseMorel"/&gt;
-&lt;!-- TrajectoryHumus --&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_PuffBall"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_ShaggyMane"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_WineCap"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_GemPuffball"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_FairyRingChampignon"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_Earthball"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_GreenSporedParasol"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_YellowStainer"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_IvoryFunnel"/&gt;
-&lt;child lootmax="0" lootmin="0" max="0" min="0" type="geb_DeadlyDapperling"/&gt;</code></pre></div></div></li><li><span>06</span><div><h3>Add seed packets (optional)</h3><p>Seed packets are loot, like vanilla's <code>TomatoSeedsPack</code>: copy its <code>types.xml</code> entry once per packet below and change the name. Players empty a packet for its seeds and plant them in a tilled garden plot.</p><div class="code"><button data-copy-target="crops-code">Copy</button><pre><code id="crops-code">geb_CornSeedsPack&#10;geb_OkraSeedsPack&#10;geb_GreenBeanSeedsPack&#10;geb_OnionSeedsPack&#10;geb_GarlicClovesPack&#10;geb_YellowSquashSeedsPack&#10;geb_WatermelonSeedsPack&#10;geb_CantaloupeSeedsPack&#10;geb_CarrotSeedsPack&#10;geb_CucumberSeedsPack</code></pre></div></div></li><li><span>07</span><div><h3>Validate and test</h3><p>Stop the server before editing, keep backups, validate the XML, restart, and inspect the RPT and script logs. Add species one at a time. Excessive totals across all animal events can suppress or destabilize other wildlife populations.</p></div></li></ol><div class="notice"><strong>Use the current map's own vanilla animal events as your template.</strong><span>CE values that feel reasonable on Chernarus may not suit Sakhal, Livonia, or a custom terrain.</span></div></section>
+    <section class="band" id="classnames">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">Reference</p>
+          <h2>Every classname.</h2>
+          <p class="sub">All <b data-stat="classes">123</b> public classes, for spawning, trader lists and loot tables. Click a name to copy it.</p>
+        </header>
+        <div class="tools reveal">
+          <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="class-search" type="search" placeholder="Search classnames" autocomplete="off" aria-label="Search classnames"></label>
+          <label class="select"><span class="sr">Category</span><select id="class-filter"><option value="">All categories</option></select></label>
+          <span class="count" id="class-count"></span>
+        </div>
+        <div class="table reveal"><table><thead><tr><th>Classname</th><th>Name</th><th>Category</th></tr></thead><tbody id="class-body"></tbody></table></div>
+      </div>
+    </section>
 
-    <section id="species" class="panel" hidden><div class="heading"><p class="eyebrow">Field index</p><h2>Creatures and fungi.</h2></div><div class="species-grid" id="species-grid"></div></section>
-    <section id="classnames" class="panel" hidden><div class="heading"><p class="eyebrow">Admin reference</p><h2>Search all public classes.</h2></div><div class="filters"><input id="search" type="search" placeholder="Search classname or item…"><select id="filter"><option value="all">All categories</option></select><span id="count"></span></div><div class="table-wrap"><table><thead><tr><th>Classname</th><th>Category</th><th>Description</th><th></th></tr></thead><tbody id="class-body"></tbody></table></div></section>
-    <section id="faq" class="panel" hidden><div class="heading"><p class="eyebrow">Troubleshooting</p><h2>Common questions.</h2></div><div class="faq"><details><summary>Does this replace vanilla animals?<span>+</span></summary><p>No. Custom events can coexist with vanilla wildlife. Your mission configuration decides which events are active.</p></details><details><summary>Why can I spawn an animal manually but not find it naturally?<span>+</span></summary><p>A working classname confirms the mod loaded, but natural populations still require matching entries in <code>events.xml</code> and <code>cfgeventspawns.xml</code>.</p></details><details><summary>Why did vanilla animals stop spawning?<span>+</span></summary><p>Check the server logs for malformed XML and review the combined nominal/min/max totals of every animal event. Start with one custom event and add more gradually.</p></details><details><summary>Which mushrooms are poisonous?<span>+</span></summary><p>Death Cap, Destroying Angel, False Morel, Jack-o&#x27;-Lantern, Common Earthball, Sulphur Tuft, Deadly Webcap, Green-spored Parasol, Panther Cap, Funeral Bell, The Sickener, Yellow Stainer, Ivory Funnel, Brown Roll-rim, Devil&#x27;s Bolete, Deadly Dapperling, Deadly Fibrecap, Livid Pinkgill, False Death Cap and Early False Morel. Most cause food poisoning (vomiting; charcoal tablets help). The Death Cap, Destroying Angel, Funeral Bell, Deadly Dapperling and Deadly Webcap are deadly: their toxins survive cooking and cause organ damage that only chelation tablets stop. The Brown Roll-rim builds up the same damage over several meals. The Deadly Fibrecap and Ivory Funnel strike within the hour: drenching sweat, tears and a failing pulse. The False Morel is dangerous raw or cooked, and only partly safer boiled. Morels, Wood Blewit, Wine Cap, Bay Boletes and Chicken of the Woods upset the stomach raw, and Honey Mushrooms and Orange Birch Boletes must be cooked.</p></details><details><summary>How do the garden crops grow?<span>+</span></summary><p>Empty a Geb's Garden seed packet, then plant the seeds in a tilled garden plot and water them, as with vanilla seeds. Each crop grows through five stages; harvest it when ripe, before it dries or spoils. Cut seeds out of a raw crop with any blade (garlic splits into cloves; carrots have none, so keep a packet). A whole watermelon or cantaloupe is too big to eat: prepare it with a blade for slices and seeds, as with vanilla's pumpkin. Raw green beans upset the stomach; cook them.</p></details><details><summary>Does every player need the mod?</summary><p>Yes. It supplies custom models, textures, sounds, scripts, and localized item data.</p></details><details><summary>Can I put it in a server pack?</summary><p>No. Use the authorized Workshop item and a Steam Collection for your server's required mods.</p></details></div></section>
+    <section class="band soft" id="faq">
+      <div class="wrap narrow">
+        <header class="head reveal"><p class="eyebrow">Help</p><h2>Questions.</h2></header>
+        <div class="faq reveal">
+          <details><summary>Does this replace vanilla animals?</summary><p>No. Custom events sit alongside vanilla wildlife, and your mission files decide which ones are active.</p></details>
+          <details><summary>I can spawn an animal by hand, but none appear naturally. Why?</summary><p>A working classname proves the mod is loaded. Natural populations also need matching entries in <code>events.xml</code> and <code>cfgeventspawns.xml</code>.</p></details>
+          <details><summary>Vanilla animals stopped spawning. What happened?</summary><p>Check the server log for malformed XML, then look at the combined nominal, min and max of every animal event. Start with one custom event and add more gradually.</p></details>
+          <details><summary>Which mushrooms are dangerous?</summary><p id="faq-poison">Most of the poisonous ones cause food poisoning: vomiting, eased by charcoal tablets. The deadly ones damage the organs, and cooking doesn't help; only chelation tablets stop it. Several edible species, such as morels, must be cooked first. The Mushrooms section above marks every one.</p></details>
+          <details><summary>How do the garden crops grow?</summary><p>Empty a Geb's Garden seed packet, plant the seeds in a tilled garden plot and water them, as with vanilla seeds. Each crop grows through five stages; harvest it when ripe, before it dries or spoils. Cut fresh seeds out of a raw harvest with any blade (garlic splits into cloves; carrots come from packets only). A whole watermelon or cantaloupe is too big to eat: prepare it with a blade for slices and seeds, as with vanilla's pumpkin.</p></details>
+          <details><summary>Does every player need the mod?</summary><p>Yes. It supplies the models, textures, sounds, scripts and item names.</p></details>
+          <details><summary>Can I put it in a server pack?</summary><p>No. Use the Workshop item, and a Steam Collection for your server's required mods.</p></details>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div><strong>GEB'S FLORA &amp; FAUNA</strong><span>A DayZ community mod by Geb / Cole</span></div><div><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Steam</a><a href="https://github.com/PackJC/gebsflorafauna">GitHub</a><a href="https://discord.gg/G8uSGZ8yyf">Discord</a></div><p>DayZ and Bohemia Interactive are trademarks of Bohemia Interactive. This project is not affiliated with or endorsed by Bohemia Interactive.</p></footer><div class="toast">Copied</div>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <span class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27 4C13 4 5 11 5 21c0 2 .4 3.8 1.1 5.4C8 20 13 15 20 12c-6 4-10 9-12 16 1 .4 2.2.6 3.4.6C22 28.6 27 18 27 4z"/></svg><span>Geb's Flora &amp; Fauna</span></span>
+        <nav aria-label="Elsewhere"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Steam Workshop</a><a href="https://github.com/PackJC/gebsflorafauna">GitHub</a><a href="https://discord.gg/G8uSGZ8yyf">Discord</a></nav>
+      </div>
+      <p>A DayZ community mod by Geb / Cole. DayZ and Bohemia Interactive are trademarks of Bohemia Interactive. This project is not affiliated with or endorsed by Bohemia Interactive.</p>
+    </div>
+  </footer>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <button class="close" id="sheet-close" aria-label="Close">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg>
+    </button>
+    <div class="sheet-body" id="sheet-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
 </body>
 </html>
