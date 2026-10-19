@@ -1,23 +1,38 @@
-# Visual Studio
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+.vs
+.idea
+.claude
+__pycache__/
+*.ini
+*.bin
+*.vs
+.DS_Store
+/.rules
+/CF
+*.webp
+# ...but everything the site serves must ship: GitHub Pages publishes
+# docs/, so item renders and anything added later need to be tracked or
+# they 404 on the site.
+!docs/**/*.webp
+# Local only, never on GitHub: the Python build and render tools, and the
+# old Workbench project. Anchored to the top folder.
+/tools/
+/Workbench/
 
-# Windows metadata
-desktop.ini
-Thumbs.db
-
-# Build output
+# Not in gebsfish's list, but this repo needs them too:
+# DayZ build outputs
 *.pbo
 *.bisign
 *.bikey
 temp/
 build/
-
-# Logs and local tools
+# Visual Studio / VS Code leftovers, Windows thumbnails, logs
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/
+Thumbs.db
 *.log
 *.rpt
-.idea/
-.vscode/
+*.tmp
+*~
