@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664"><img src="docs/assets/gebs-flora-fauna-banner.png" alt="Geb's Flora & Fauna" width="900"></a>
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664"><img src="https://github.com/user-attachments/assets/cec91a07-e35f-4c86-a3d1-f07f8a278ac2" alt="Geb's Flora & Fauna" width="900"></a>
   <br>
   <a href="https://discord.gg/G8uSGZ8yyf"><img src="https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the Discord"></a>
   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664"><img src="https://img.shields.io/badge/Like_%26_Favorite-Steam_Workshop-1b2838?style=for-the-badge&logo=steam&logoColor=white" alt="Like and favorite Geb's Flora & Fauna on Steam Workshop"></a>
