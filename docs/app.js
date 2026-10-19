@@ -1,69 +1,236 @@
-const species=[
-  ["Mammal","Chimpanzee","geb_Chimp"],["Unusual","Green Alien","geb_Alien"],["Bird","Penguin","geb_Penguin"],["Mammal","Rabbit","geb_Rabbit"],["Mammal","Camel","geb_Camel"],["Mammal","Elephant","geb_Elephant"],["Mammal","Giraffe","geb_Giraffe"],["Bird","Female Turkey","geb_Female_Turkey"],["Bird","Turkey","geb_Turkey"],["Bird","Peacock","geb_Peacock"],["Predator","Black Bear","geb_Blackbear"],["Predator","Polar Bear","geb_Polarbear"],["Predator","Panda Bear","geb_Pandabear"],["Mammal","Raccoon","geb_Racoon"],["Predator","Cheetah","geb_Cheetah"],["Edible fungus","Black Morel","geb_BlackMorel"],["Edible fungus","White Morel","geb_WhiteMorel"],["Edible fungus","Lion's Mane","geb_LionsMane"],["Edible fungus","Giant Puffball","geb_PuffBall"],["Edible fungus","Chanterelle","geb_Chanterelle"],["Edible fungus","Chicken of the Woods","geb_ChickenOfTheWoods"],["Edible fungus","Hen of the Woods","geb_HenOfTheWoods"],["Edible fungus","Shaggy Mane","geb_ShaggyMane"],["Edible fungus","Hedgehog Mushroom","geb_HedgehogMushroom"],["Edible fungus","Honey Mushroom","geb_HoneyMushroom"],["Edible fungus","Wood Blewit","geb_WoodBlewit"],["Edible fungus","Lobster Mushroom","geb_LobsterMushroom"],["Edible fungus","Indigo Milk Cap","geb_IndigoMilkCap"],["Edible fungus","Wine Cap","geb_WineCap"],["Edible fungus","Velvet Foot","geb_VelvetFoot"],["Edible fungus","Beefsteak Fungus","geb_BeefsteakFungus"],["Edible fungus","Cauliflower Mushroom","geb_CauliflowerMushroom"],["Edible fungus","Gem-studded Puffball","geb_GemPuffball"],["Edible fungus","Bay Bolete","geb_BayBolete"],["Edible fungus","Orange Birch Bolete","geb_OrangeBirchBolete"],["Edible fungus","Old Man of the Woods","geb_OldManOfTheWoods"],["Edible fungus","Amethyst Deceiver","geb_AmethystDeceiver"],["Edible fungus","Fairy Ring Champignon","geb_FairyRingChampignon"],["Edible fungus","Half-free Morel","geb_HalfFreeMorel"],["Poisonous fungus","Death Cap","geb_DeathCap"],["Poisonous fungus","Destroying Angel","geb_DestroyingAngel"],["Poisonous fungus","False Morel","geb_FalseMorel"],["Poisonous fungus","Jack-o'-Lantern","geb_JackOLantern"],["Poisonous fungus","Common Earthball","geb_Earthball"],["Poisonous fungus","Sulphur Tuft","geb_SulphurTuft"],["Poisonous fungus","Deadly Webcap","geb_DeadlyWebcap"],["Poisonous fungus","Green-spored Parasol","geb_GreenSporedParasol"],["Poisonous fungus","Panther Cap","geb_PantherCap"],["Poisonous fungus","Funeral Bell","geb_FuneralBell"],["Poisonous fungus","The Sickener","geb_EmeticRussula"],["Poisonous fungus","Yellow Stainer","geb_YellowStainer"],["Poisonous fungus","Ivory Funnel","geb_IvoryFunnel"],["Poisonous fungus","Brown Roll-rim","geb_BrownRollrim"],["Poisonous fungus","Devil's Bolete","geb_DevilsBolete"],["Poisonous fungus","Deadly Dapperling","geb_DeadlyDapperling"],["Poisonous fungus","Deadly Fibrecap","geb_DeadlyFibrecap"],["Poisonous fungus","Livid Pinkgill","geb_LividPinkgill"],["Poisonous fungus","False Death Cap","geb_FalseDeathCap"],["Poisonous fungus","Early False Morel","geb_EarlyFalseMorel"],["Garden crop","Ear of Corn","geb_Corn"],["Garden crop","Okra Pod","geb_Okra"],["Garden crop","Green Beans","geb_GreenBeans"],["Garden crop","Onion","geb_Onion"],["Garden crop","Garlic Bulb","geb_Garlic"],["Garden crop","Yellow Squash","geb_YellowSquash"],["Garden crop","Watermelon","geb_Watermelon"],["Garden crop","Cantaloupe","geb_Cantaloupe"],["Garden crop","Carrot","geb_Carrot"],["Garden crop","Cucumber","geb_Cucumber"]
-];
-const items=[
-  ["geb_Chimp","Animal","Chimpanzee"],["geb_ChimpMeat","Meat","Chimp meat"],["geb_Alien","Animal","Green alien"],["geb_AlienMeat","Meat","Alien meat"],["geb_AlienSkin","Pelt","Alien skin"],["geb_Penguin","Animal","Penguin"],["geb_PenguinMeat","Meat","Penguin meat"],["geb_Rabbit","Animal","Rabbit"],["geb_RabbitMeat","Meat","Rabbit meat"],["geb_Camel","Animal","Camel"],["geb_CamelMeat","Meat","Camel meat"],["geb_Elephant","Animal","Elephant"],["geb_ElephantMeat","Meat","Elephant meat"],["geb_ElephantPelt","Pelt","Elephant pelt"],["geb_ElephantTusk","Resource","Elephant tusk"],["geb_Giraffe","Animal","Giraffe"],["geb_GiraffeMeat","Meat","Giraffe meat"],["geb_GiraffePelt","Pelt","Giraffe pelt"],["geb_Female_Turkey","Animal","Female turkey"],["geb_Turkey","Animal","Turkey"],["geb_TurkeyMeat","Meat","Turkey meat"],["geb_Peacock","Animal","Peacock"],["geb_PeacockMeat","Meat","Peacock meat"],["geb_Blackbear","Animal","Black bear"],["geb_Polarbear","Animal","Polar bear"],["geb_Pandabear","Animal","Panda bear"],["geb_Racoon","Animal","Raccoon"],["geb_RacoonMeat","Meat","Raccoon meat"],["geb_RacoonPelt","Pelt","Raccoon pelt"],["geb_RacoonTail","Resource","Raccoon tail"],["geb_RacoonSkinCap","Clothing","Crafted raccoon-skin cap"],["geb_Cheetah","Animal","Cheetah"],["geb_CheetahMeat","Meat","Cheetah meat"],["geb_CheetahPelt","Pelt","Cheetah pelt"],["geb_BlackbearPelt","Pelt","Black bear pelt"],["geb_PolarbearPelt","Pelt","Polar bear pelt"],["geb_PandabearPelt","Pelt","Panda bear pelt"],["geb_BlackMorel","Fungus","Black morel"],["geb_WhiteMorel","Fungus","White morel"],["geb_LionsMane","Fungus","Lion's mane"],["geb_PuffBall","Fungus","Giant puffball"],["geb_Chanterelle","Fungus","Chanterelle"],["geb_ChickenOfTheWoods","Fungus","Chicken of the woods"],["geb_HenOfTheWoods","Fungus","Hen of the woods"],["geb_ShaggyMane","Fungus","Shaggy mane"],["geb_HedgehogMushroom","Fungus","Hedgehog mushroom"],["geb_HoneyMushroom","Fungus","Honey mushroom"],["geb_WoodBlewit","Fungus","Wood blewit"],["geb_LobsterMushroom","Fungus","Lobster mushroom"],["geb_IndigoMilkCap","Fungus","Indigo milk cap"],["geb_WineCap","Fungus","Wine cap"],["geb_VelvetFoot","Fungus","Velvet foot"],["geb_BeefsteakFungus","Fungus","Beefsteak fungus"],["geb_CauliflowerMushroom","Fungus","Cauliflower mushroom"],["geb_GemPuffball","Fungus","Gem-studded puffball"],["geb_BayBolete","Fungus","Bay bolete"],["geb_OrangeBirchBolete","Fungus","Orange birch bolete"],["geb_OldManOfTheWoods","Fungus","Old man of the woods"],["geb_AmethystDeceiver","Fungus","Amethyst deceiver"],["geb_FairyRingChampignon","Fungus","Fairy ring champignon"],["geb_HalfFreeMorel","Fungus","Half-free morel"],["geb_DeathCap","Poisonous fungus","Death cap"],["geb_DestroyingAngel","Poisonous fungus","Destroying angel"],["geb_FalseMorel","Poisonous fungus","False morel"],["geb_JackOLantern","Poisonous fungus","Jack-o'-lantern"],["geb_Earthball","Poisonous fungus","Common earthball"],["geb_SulphurTuft","Poisonous fungus","Sulphur tuft"],["geb_DeadlyWebcap","Poisonous fungus","Deadly webcap"],["geb_GreenSporedParasol","Poisonous fungus","Green-spored parasol"],["geb_PantherCap","Poisonous fungus","Panther cap"],["geb_FuneralBell","Poisonous fungus","Funeral bell"],["geb_EmeticRussula","Poisonous fungus","The Sickener"],["geb_YellowStainer","Poisonous fungus","Yellow stainer"],["geb_IvoryFunnel","Poisonous fungus","Ivory funnel"],["geb_BrownRollrim","Poisonous fungus","Brown roll-rim"],["geb_DevilsBolete","Poisonous fungus","Devil's bolete"],["geb_DeadlyDapperling","Poisonous fungus","Deadly dapperling"],["geb_DeadlyFibrecap","Poisonous fungus","Deadly fibrecap"],["geb_LividPinkgill","Poisonous fungus","Livid pinkgill"],["geb_FalseDeathCap","Poisonous fungus","False death cap"],["geb_EarlyFalseMorel","Poisonous fungus","Early false morel"],["geb_Corn","Garden crop","Ear of corn"],["geb_Okra","Garden crop","Okra pod"],["geb_GreenBeans","Garden crop","Green beans"],["geb_Onion","Garden crop","Onion"],["geb_Garlic","Garden crop","Garlic bulb"],["geb_YellowSquash","Garden crop","Yellow squash"],["geb_Watermelon","Garden crop","Watermelon"],["geb_WatermelonSlice","Garden crop","Watermelon slice"],["geb_Cantaloupe","Garden crop","Cantaloupe"],["geb_CantaloupeSlice","Garden crop","Cantaloupe slice"],["geb_Carrot","Garden crop","Carrot"],["geb_Cucumber","Garden crop","Cucumber"],["geb_CornSeeds","Seeds","Corn kernels"],["geb_OkraSeeds","Seeds","Okra seeds"],["geb_GreenBeanSeeds","Seeds","Bean seeds"],["geb_OnionSeeds","Seeds","Onion seeds"],["geb_GarlicCloves","Seeds","Garlic cloves"],["geb_YellowSquashSeeds","Seeds","Squash seeds"],["geb_WatermelonSeeds","Seeds","Watermelon seeds"],["geb_CantaloupeSeeds","Seeds","Cantaloupe seeds"],["geb_CarrotSeeds","Seeds","Carrot seeds"],["geb_CucumberSeeds","Seeds","Cucumber seeds"],["geb_CornSeedsPack","Seed packet","Sweet corn seed packet"],["geb_OkraSeedsPack","Seed packet","Okra seed packet"],["geb_GreenBeanSeedsPack","Seed packet","Green bean seed packet"],["geb_OnionSeedsPack","Seed packet","Onion seed packet"],["geb_GarlicClovesPack","Seed packet","Seed garlic packet"],["geb_YellowSquashSeedsPack","Seed packet","Yellow squash seed packet"],["geb_WatermelonSeedsPack","Seed packet","Watermelon seed packet"],["geb_CantaloupeSeedsPack","Seed packet","Cantaloupe seed packet"],["geb_CarrotSeedsPack","Seed packet","Carrot seed packet"],["geb_CucumberSeedsPack","Seed packet","Cucumber seed packet"],["geb_Plant_Corn","Plant","Corn plant"],["geb_Plant_Okra","Plant","Okra plant"],["geb_Plant_GreenBeans","Plant","Bush bean plant"],["geb_Plant_Onion","Plant","Onion plant"],["geb_Plant_Garlic","Plant","Garlic plant"],["geb_Plant_YellowSquash","Plant","Yellow squash plant"],["geb_Plant_Watermelon","Plant","Watermelon plant"],["geb_Plant_Cantaloupe","Plant","Cantaloupe plant"],["geb_Plant_Carrot","Plant","Carrot plant"],["geb_Plant_Cucumber","Plant","Cucumber plant"]
-];
-const panels=[...document.querySelectorAll(".panel")],tabs=[...document.querySelectorAll("[data-tab]")],toast=document.querySelector(".toast");
-function activate(id,hash=true){const panel=document.getElementById(id);if(!panel)return;panels.forEach(p=>{p.hidden=p!==panel;p.classList.toggle("active",p===panel)});tabs.forEach(t=>t.classList.toggle("active",t.dataset.tab===id));document.querySelector(".tabs").classList.remove("open");if(hash)history.replaceState(null,"",`#${id}`);scrollTo({top:document.querySelector("nav").offsetTop,behavior:"smooth"})}
-tabs.forEach(t=>t.onclick=()=>activate(t.dataset.tab));document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>activate(b.dataset.open));document.querySelector(".menu").onclick=e=>{const list=document.querySelector(".tabs");list.classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",String(list.classList.contains("open")))};
-document.querySelector("#species-grid").replaceChildren(...species.map(([type,name,cls])=>{const a=document.createElement("article");a.className="species-card";a.innerHTML=`<small>${type}</small><h3>${name}</h3><p>Available for server-controlled placement and population balancing.</p><code>${cls}</code>`;return a}));
-const filter=document.querySelector("#filter"),search=document.querySelector("#search"),body=document.querySelector("#class-body"),count=document.querySelector("#count");[...new Set(items.map(i=>i[1]))].sort().forEach(c=>filter.add(new Option(c,c)));
-async function copy(value){try{await navigator.clipboard.writeText(value)}catch{const e=document.createElement("textarea");e.value=value;document.body.append(e);e.select();document.execCommand("copy");e.remove()}toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1400)}
-function render(){const q=search.value.toLowerCase(),category=filter.value;const list=items.filter(i=>(category==="all"||i[1]===category)&&i.join(" ").toLowerCase().includes(q));body.replaceChildren(...list.map(i=>{const r=document.createElement("tr");r.innerHTML=`<td>${i[0]}</td><td>${i[1]}</td><td>${i[2]}</td><td></td>`;const b=document.createElement("button");b.textContent="Copy";b.onclick=()=>copy(i[0]);r.lastElementChild.append(b);return r}));count.textContent=`${list.length} entries`}search.oninput=render;filter.onchange=render;render();
-document.querySelectorAll("[data-copy-target]").forEach(b=>b.onclick=()=>{const target=document.getElementById(b.dataset.copyTarget);if(target)copy(target.textContent.trim())});const initial=location.hash.slice(1);if(panels.some(p=>p.id===initial))activate(initial,false);
+// Geb's Flora & Fauna: project site. Everything below renders from window.GFF (data.js), which
+// gebsflorafauna_work/site/build_site_data.py generates from the mod's own data.
+(() => {
+  "use strict";
+  const D = window.GFF;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  document.documentElement.classList.add("js");
 
-/* --- Ambient effects --------------------------------------------------- */
-
-const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-// Drifting fireflies in the hero.
-const flyCanvas=document.getElementById("fireflies");
-if(flyCanvas&&!reducedMotion){
-  const ctx=flyCanvas.getContext("2d");
-  let flies=[],width=0,height=0;
-  function resizeFlies(){
-    const dpr=Math.min(window.devicePixelRatio||1,2);
-    width=flyCanvas.clientWidth;height=flyCanvas.clientHeight;
-    flyCanvas.width=width*dpr;flyCanvas.height=height*dpr;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    const count=Math.min(46,Math.round(width*height/26000));
-    flies=Array.from({length:count},()=>({
-      x:Math.random()*width,y:Math.random()*height,
-      angle:Math.random()*Math.PI*2,turn:(Math.random()-.5)*.04,
-      speed:.14+Math.random()*.3,radius:.8+Math.random()*1.5,
-      phase:Math.random()*Math.PI*2,pulse:.6+Math.random()*1.2,
-      tint:Math.random()<.3?"230, 200, 125":"150, 232, 172"
-    }));
-  }
-  function drawFlies(now){
-    ctx.clearRect(0,0,width,height);
-    for(const f of flies){
-      f.angle+=f.turn;f.x+=Math.cos(f.angle)*f.speed;f.y+=Math.sin(f.angle)*f.speed*.7;
-      if(f.x<-6)f.x=width+6;if(f.x>width+6)f.x=-6;
-      if(f.y<-6)f.y=height+6;if(f.y>height+6)f.y=-6;
-      const glow=.25+.75*(0.5+0.5*Math.sin(f.phase+now*.001*f.pulse));
-      ctx.beginPath();ctx.arc(f.x,f.y,f.radius*2.6,0,Math.PI*2);ctx.fillStyle=`rgba(${f.tint}, ${glow*.08})`;ctx.fill();
-      ctx.beginPath();ctx.arc(f.x,f.y,f.radius,0,Math.PI*2);ctx.fillStyle=`rgba(${f.tint}, ${glow})`;ctx.fill();
+  function h(tag, attrs = {}, ...kids) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === "class") el.className = v;
+      else if (k === "text") el.textContent = v;
+      else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? "" : v);
     }
-    requestAnimationFrame(drawFlies);
+    for (const kid of kids.flat()) if (kid != null && kid !== false) el.append(kid);
+    return el;
   }
-  resizeFlies();window.addEventListener("resize",resizeFlies);requestAnimationFrame(drawFlies);
-}
 
-// Reveal cards and steps as they scroll (or tab) into view.
-const revealTargets=document.querySelectorAll(".cards article,.species-card,.steps li,.faq details,aside,.notice");
-if(revealTargets.length&&!reducedMotion&&"IntersectionObserver" in window){
-  const revealObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting)return;
-      entry.target.classList.add("fx-in");
-      revealObserver.unobserve(entry.target);
-    });
-  },{threshold:.15});
-  revealTargets.forEach((el,i)=>{
-    el.classList.add("fx-reveal");
-    el.style.transitionDelay=`${(i%4)*70}ms`;
-    revealObserver.observe(el);
+  const WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+    "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+  const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+  const words = n => n < 20 ? WORDS[n] : TENS[Math.floor(n / 10)] + (n % 10 ? "-" + WORDS[n % 10] : "");
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+  // ---- stats and counts in the copy
+  if (D) {
+    $$("[data-stat]").forEach(el => { const v = D.stats[el.dataset.stat]; if (v != null) el.textContent = v; });
+    const h2 = $("#mushrooms h2");
+    if (h2) h2.firstChild.textContent = cap(words(D.stats.fungi)) + " fungi.";
+  }
+
+  // ---- copy + toast
+  const toast = $("#toast");
+  let toastTimer;
+  async function copy(text, label = "Copied") {
+    try { await navigator.clipboard.writeText(text); }
+    catch {
+      const t = h("textarea", { style: "position:fixed;opacity:0" }); t.value = text;
+      document.body.append(t); t.select(); document.execCommand("copy"); t.remove();
+    }
+    toast.textContent = label;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-copy]");
+    if (b) copy($("#" + b.dataset.copy).textContent, "Copied to clipboard");
   });
-}
+
+  // ---- navigation
+  const menu = $("#menu"), links = $("#nav-links");
+  menu.addEventListener("click", () => {
+    const open = links.classList.toggle("open");
+    menu.setAttribute("aria-expanded", String(open));
+  });
+  $$("a", links).forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open"); menu.setAttribute("aria-expanded", "false");
+  }));
+  const navMap = new Map($$("a", links).map(a => [a.getAttribute("href").slice(1), a]));
+  const spy = new IntersectionObserver(entries => {
+    for (const en of entries) {
+      if (!en.isIntersecting) continue;
+      navMap.forEach(a => a.classList.remove("active"));
+      const a = navMap.get(en.target.id);
+      if (a) a.classList.add("active");
+    }
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  navMap.forEach((_, id) => { const s = document.getElementById(id); if (s) spy.observe(s); });
+
+  // ---- reveal on scroll
+  const reveal = new IntersectionObserver(entries => {
+    for (const en of entries) if (en.isIntersecting) { en.target.classList.add("in"); reveal.unobserve(en.target); }
+  }, { rootMargin: "0px 0px -8% 0px" });
+  const watch = root => $$(".reveal:not(.in)", root).forEach(el => reveal.observe(el));
+  watch(document);
+
+  if (!D) return;
+
+  // ---- detail sheet
+  const sheet = $("#sheet"), body = $("#sheet-body");
+  function openSheet(content) {
+    body.replaceChildren(...content);
+    if (typeof sheet.showModal === "function") sheet.showModal(); else sheet.setAttribute("open", "");
+    sheet.scrollTop = 0;
+  }
+  $("#sheet-close").addEventListener("click", () => sheet.close());
+  sheet.addEventListener("click", e => { if (e.target === sheet) sheet.close(); });
+  const clsButton = cls => h("button", { class: "cls", type: "button", title: "Copy classname", onclick: () => copy(cls, cls + " copied") }, cls);
+  const img = (src, alt, extra = {}) => h("img", { src, alt, loading: "lazy", decoding: "async", width: 800, height: 800, ...extra });
+
+  // ---- segmented filters
+  function segmented(root, options, onPick) {
+    let current = options[0].key;
+    const buttons = options.map(o => h("button", {
+      type: "button", "aria-pressed": String(o.key === current),
+      onclick: () => {
+        current = o.key;
+        buttons.forEach((b, i) => b.setAttribute("aria-pressed", String(options[i].key === current)));
+        onPick(current);
+      }
+    }, o.label, o.count != null ? h("small", { text: o.count }) : null));
+    root.replaceChildren(...buttons);
+  }
+
+  function stagger(grid, cards) {
+    grid.replaceChildren(...cards);
+    cards.forEach((c, i) => { c.classList.add("reveal"); c.style.transitionDelay = Math.min(i % 8, 7) * 40 + "ms"; });
+    watch(grid);
+  }
+
+  // ---- wildlife
+  const KINDS = [["all", "All"], ["Mammal", "Mammals"], ["Bird", "Birds"], ["Predator", "Predators"], ["Unusual", "Unusual"]];
+  function animalSheet(a) {
+    openSheet([
+      h("div", { class: "gallery" }, img(a.img, a.name, { loading: "eager" })),
+      h("div", { class: "text" },
+        h("p", { class: "kicker", text: a.kind === "Unusual" ? "Unusual" : a.kind }),
+        h("h2", { id: "sheet-title", text: a.name }),
+        h("p", { class: "desc", text: a.blurb }),
+        h("dl", {},
+          h("dt", { text: "Harvest" }), h("dd", {}, h("div", { class: "chips" }, a.drops.map(d => h("span", { class: "chip", text: d })))),
+          h("dt", { text: "Classname" }), h("dd", {}, clsButton(a.cls))))
+    ]);
+  }
+  function animalCards(kind) {
+    const list = D.animals.filter(a => kind === "all" || a.kind === kind);
+    stagger($("#animal-grid"), list.map(a => h("button", { class: "card", type: "button", onclick: () => animalSheet(a), "aria-label": a.name + ", details" },
+      h("div", { class: "pic" }, img(a.img, "")),
+      h("div", { class: "info" },
+        h("h3", { text: a.name }),
+        h("p", { class: "meta", text: a.kind }),
+        h("div", { class: "chips" }, a.drops.slice(0, 3).map(d => h("span", { class: "chip", text: d })),
+          a.drops.length > 3 ? h("span", { class: "chip", text: "+" + (a.drops.length - 3) }) : null)))));
+  }
+  segmented($("#animal-filter"), KINDS.map(([k, l]) => ({ key: k, label: l })), animalCards);
+  animalCards("all");
+
+  // ---- mushrooms
+  const LEVELS = { "Edible": "edible", "Cook first": "cook", "Poisonous": "poison", "Deadly": "deadly" };
+  const levelBadge = f => h("span", { class: "badge lv-" + LEVELS[f.level], text: f.level });
+  const poisonText = {
+    "Edible": "Safe to eat raw, and better cooked.",
+    "Cook first": "Edible once cooked; raw, it upsets the stomach.",
+    "Poisonous": "Causes food poisoning: vomiting and stomach pain. Charcoal tablets help.",
+    "Deadly": "Causes organ damage that cooking does not prevent, and can kill. Only chelation tablets stop it."
+  };
+  function fungusSheet(f) {
+    openSheet([
+      h("div", { class: "gallery" }, img(f.img, f.name, { loading: "eager" })),
+      h("div", { class: "text" },
+        h("p", { class: "kicker lv-" + LEVELS[f.level], text: f.edible ? "Edible fungus" : "Poisonous fungus" }),
+        h("h2", { id: "sheet-title", text: f.name }),
+        h("p", { class: "latin", text: f.latin }),
+        levelBadge(f),
+        h("p", { class: "desc", text: f.desc }),
+        h("dl", {},
+          h("dt", { text: "Effect" }), h("dd", { text: poisonText[f.level] }),
+          h("dt", { text: "Habitat" }), h("dd", { text: f.habitat }),
+          h("dt", { text: "Classname" }), h("dd", {}, clsButton(f.cls))))
+    ]);
+  }
+  let fungiLevel = "all", fungiQuery = "";
+  function fungiCards() {
+    const q = fungiQuery.trim().toLowerCase();
+    const list = D.fungi.filter(f => (fungiLevel === "all" || f.level === fungiLevel) &&
+      (!q || (f.name + " " + f.latin + " " + f.cls).toLowerCase().includes(q)));
+    const cards = list.map(f => h("button", { class: "card", type: "button", onclick: () => fungusSheet(f), "aria-label": f.name + ", " + f.level },
+      h("div", { class: "pic" }, img(f.img, "")),
+      h("div", { class: "info" }, h("h3", { text: f.name }), h("p", { class: "meta latin", text: f.latin }), levelBadge(f))));
+    if (!cards.length) cards.push(h("p", { class: "empty", text: "No mushrooms match that search." }));
+    stagger($("#fungi-grid"), cards);
+  }
+  const count = lv => D.fungi.filter(f => f.level === lv).length;
+  segmented($("#fungi-filter"), [{ key: "all", label: "All", count: D.fungi.length }]
+    .concat(Object.keys(LEVELS).map(lv => ({ key: lv, label: lv, count: count(lv) }))), lv => { fungiLevel = lv; fungiCards(); });
+  $("#fungi-search").addEventListener("input", e => { fungiQuery = e.target.value; fungiCards(); });
+  fungiCards();
+
+  // ---- garden
+  function cropSheet(c) {
+    const thumbs = [[c.pack_img, "Seed packet"], [c.plant_img, "Ripe plant"], [c.img, c.name]];
+    if (c.slice) thumbs.push([c.slice.img, c.slice.name]);
+    const classes = [[c.cls, c.name], c.slice ? [c.slice.cls, c.slice.name] : null, [c.seeds_cls, "Seeds"], [c.pack_cls, "Seed packet"],
+      [c.plant_cls, "Plant"]].filter(Boolean);
+    openSheet([
+      h("div", { class: "gallery" }, img(c.plant_img, c.name + " plant", { loading: "eager" }),
+        h("div", { class: "thumbs" }, thumbs.map(([s, l]) => h("figure", {}, img(s, l, { loading: "eager" }), h("figcaption", { text: l }))))),
+      h("div", { class: "text" },
+        h("p", { class: "kicker", text: "Garden crop" }),
+        h("h2", { id: "sheet-title", text: c.name }),
+        h("p", { class: "desc", text: c.desc }),
+        c.slice ? h("p", { class: "desc", text: "Prepare it with a blade for " + c.slice.count + " slices and its seeds. " + c.slice.desc }) : null,
+        h("p", { class: "desc", style: "color:var(--muted)", text: c.plant }),
+        h("dl", {},
+          h("dt", { text: "Ripens in" }), h("dd", { text: "About " + c.minutes + " minutes" }),
+          h("dt", { text: "Harvest" }), h("dd", { text: c.crops + " per plant" }),
+          h("dt", { text: "New seeds" }), h("dd", { text: c.seeds }),
+          ...classes.flatMap(([cls, l]) => [h("dt", { text: l }), h("dd", {}, clsButton(cls))])))
+    ]);
+  }
+  stagger($("#crop-grid"), D.crops.map(c => h("button", { class: "card crop", type: "button", onclick: () => cropSheet(c), "aria-label": c.name + ", details" },
+    h("div", { class: "pic" }, img(c.img, ""), c.slice ? img(c.slice.img, "", { class: "extra" }) : null),
+    h("div", { class: "info" },
+      h("h3", { text: c.name }),
+      h("p", { class: "meta", text: c.tagline }),
+      h("div", { class: "facts" },
+        h("div", {}, h("b", { text: "~" + c.minutes + " min" }), h("span", { text: "to ripen" })),
+        h("div", {}, h("b", { text: String(c.crops) }), h("span", { text: "per plant" })))))));
+
+  // ---- setup snippets generated from the data
+  const events = {};
+  D.fungi.forEach(f => (events[f.event] = events[f.event] || []).push(f));
+  $("#fungi-events").textContent = Object.entries(events).map(([ev, list]) =>
+    "<!-- Add to the vanilla " + ev + " event's <children> -->\n" +
+    list.map(f => '<child lootmax="0" lootmin="0" max="0" min="0" type="' + f.cls + '"/>' + (f.edible ? "" : "  <!-- " + f.level.toLowerCase() + " -->")).join("\n")
+  ).join("\n\n");
+  $("#crops-code").textContent = D.crops.map(c => c.pack_cls).join("\n");
+
+  // ---- classnames
+  const filter = $("#class-filter"), search = $("#class-search"), tbody = $("#class-body"), countEl = $("#class-count");
+  [...new Set(D.classes.map(c => c[1]))].forEach(c => filter.add(new Option(c, c)));
+  function table() {
+    const q = search.value.trim().toLowerCase(), cat = filter.value;
+    const rows = D.classes.filter(([cls, c, name]) => (!cat || c === cat) && (!q || (cls + " " + name).toLowerCase().includes(q)));
+    tbody.replaceChildren(...rows.map(([cls, c, name]) => h("tr", {}, h("td", {}, clsButton(cls)), h("td", { text: name }), h("td", { text: c }))));
+    countEl.textContent = rows.length + (rows.length === 1 ? " class" : " classes");
+  }
+  filter.addEventListener("change", table);
+  search.addEventListener("input", table);
+  table();
+})();
