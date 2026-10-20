@@ -20,7 +20,7 @@ class Stage1
 };
 class Stage2
 {
-	texture="gebsflorafauna\data\fauna\bears\ursus_arctos\panda_furry_mc.paa";
+	texture="gebsanimals\data\fauna\bears\ursus_arctos\panda_furry_mc.paa";
 	uvSource="tex1";
 	class uvTransform
 	{

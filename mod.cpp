@@ -1,0 +1,14 @@
+name = "Geb's Animals";
+dir = "gebsanimals";
+overview = "Geb's Animals: 15 new wildlife species for DayZ";
+credits = "Geb";
+author = "Geb";
+authorID = "0";
+version = "2.0.0";
+picture = "gebsanimals/data/logo.paa";				// picture in expanded description
+logoSmall = "gebsanimals/data/logo.paa";				// icon next to mod name when description is not expanded
+logo = "gebsanimals/data/logo.paa";					// logo below game menu
+logoOver = "gebsanimals/data/logo_hover.paa";			// on mouse hover over logo
+tooltip = "Geb's Animals";						// tool tip on mouse hover
+skeletonDefinitions = "DZ/anims/cfg/skeletons.anim.xml";	// stops the "Can't load gebsanimals/Anims/cfg/skeletons.anim.xml" RPT error
+action = "https://discord.gg/9dhXCbDJq4";			// link

@@ -1,4 +1,4 @@
-/* Geb's Flora & Fauna: project site. Light by default, dark when the system is. */
+/* Geb's Animals: project site. Light by default, dark when the system is. */
 
 :root {
   --bg: #fbfbfd;
@@ -10,8 +10,8 @@
   --faint: #86868b;
   --line: #d2d2d7;
   --hair: rgba(0, 0, 0, .08);
-  --accent: #1f8a4c;
-  --accent-hover: #187a42;
+  --accent: #c0392b;
+  --accent-hover: #a93226;
   --accent-text: #ffffff;
   --link: #0066cc;
   --edible: #23934a;
@@ -41,8 +41,8 @@
     --faint: #86868b;
     --line: #424245;
     --hair: rgba(255, 255, 255, .1);
-    --accent: #2fa765;
-    --accent-hover: #38b46f;
+    --accent: #ff6450;
+    --accent-hover: #ff7d6c;
     --link: #2997ff;
     --edible: #30d158;
     --cook: #ff9f0a;
@@ -97,6 +97,8 @@ b { font-weight: 600; }
   font-size: 17px; letter-spacing: -.02em; white-space: nowrap; }
 .brand:hover { text-decoration: none; }
 .brand svg { width: 22px; height: 22px; fill: var(--accent); }
+.brand .glyph { width: 22px; height: 22px; flex: none; background: var(--accent);
+  -webkit-mask: url(assets/glyph.png) center / contain no-repeat; mask: url(assets/glyph.png) center / contain no-repeat; }
 .nav-links { display: flex; gap: 26px; margin-left: auto; }
 .nav-links a { color: var(--muted); font-size: 14px; transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); text-decoration: none; }
@@ -305,6 +307,10 @@ b { font-weight: 600; }
 .foot nav { display: flex; gap: 22px; }
 .foot nav a { color: var(--muted); font-size: 13px; }
 .foot p { margin: 0; max-width: 760px; }
+.foot .family { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin: 0 0 16px; }
+.foot .family span { color: var(--faint); }
+.foot .family a { color: var(--muted); font-size: 13px; }
+.foot .family a[aria-current] { color: var(--text); font-weight: 600; }
 
 /* --- Sheet (details dialog) ------------------------------------------------------------------------ */
 

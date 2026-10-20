@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class gebsflorafauna_sounds_rabbit
+	class gebsanimals_sounds_rabbit
 	{
 		units[]={};
 		weapons[]={};
@@ -84,7 +84,7 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			}
 		};
@@ -97,22 +97,22 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			}
 		};
@@ -127,7 +127,7 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			}
 		};
@@ -140,7 +140,7 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			}
 		};
@@ -153,52 +153,52 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\rabbit\sounds\rabbit1",
+				"gebsanimals\data\fauna\rabbit\sounds\rabbit1",
 				0.80000001
 			}
 		};

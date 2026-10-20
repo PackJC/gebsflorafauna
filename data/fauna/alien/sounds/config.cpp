@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class gebsflorafauna_sounds_alien
+	class gebsanimals_sounds_alien
 	{
 		units[]={};
 		weapons[]={};
@@ -83,12 +83,12 @@ class CfgSoundShaders
 		samples[]=
 		{
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
+				"gebsanimals\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			}
 		};
@@ -101,22 +101,22 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
+				"gebsanimals\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
+				"gebsanimals\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};
@@ -130,12 +130,12 @@ class CfgSoundShaders
 		samples[] =
 		{
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
+				"gebsanimals\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			}
 		};
@@ -148,12 +148,12 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\alienscream",
+				"gebsanimals\data\fauna\alien\sounds\alienscream",
 				0.80000001
 			}
 		};
@@ -166,52 +166,52 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\alien\sounds\Alien",
+				"gebsanimals\data\fauna\alien\sounds\Alien",
 				0.80000001
 			}
 		};

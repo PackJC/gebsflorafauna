@@ -1,8 +1,9 @@
-// Geb's Flora & Fauna: project site. Everything below renders from window.GFF (data.js), which
-// gebsflorafauna_work/site/build_site_data.py generates from the mod's own data.
+// Geb's Animals, Plants and Mushrooms share this site script. Everything below renders from
+// window.MOD (data.js), which tools/site/build_site_data.py generates from the mod's own data.
+// Each section only runs when its markup is on the page, so one file serves all three sites.
 (() => {
   "use strict";
-  const D = window.GFF;
+  const D = window.MOD;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   document.documentElement.classList.add("js");
@@ -29,8 +30,7 @@
   // ---- stats and counts in the copy
   if (D) {
     $$("[data-stat]").forEach(el => { const v = D.stats[el.dataset.stat]; if (v != null) el.textContent = v; });
-    const h2 = $("#mushrooms h2");
-    if (h2) h2.firstChild.textContent = cap(words(D.stats.fungi)) + " fungi.";
+    $$("[data-stat-words]").forEach(el => { const v = D.stats[el.dataset.statWords]; if (v != null) el.textContent = cap(words(v)); });
   }
 
   // ---- copy + toast
@@ -61,7 +61,7 @@
   $$("a", links).forEach(a => a.addEventListener("click", () => {
     links.classList.remove("open"); menu.setAttribute("aria-expanded", "false");
   }));
-  const navMap = new Map($$("a", links).map(a => [a.getAttribute("href").slice(1), a]));
+  const navMap = new Map($$("a[href^='#']", links).map(a => [a.getAttribute("href").slice(1), a]));
   const spy = new IntersectionObserver(entries => {
     for (const en of entries) {
       if (!en.isIntersecting) continue;
@@ -114,43 +114,44 @@
   }
 
   // ---- wildlife
-  const KINDS = [["all", "All"], ["Mammal", "Mammals"], ["Bird", "Birds"], ["Predator", "Predators"], ["Unusual", "Unusual"]];
-  function animalSheet(a) {
-    openSheet([
+  if ($("#animal-grid") && D.animals) {
+    const KINDS = [["all", "All"], ["Mammal", "Mammals"], ["Bird", "Birds"], ["Predator", "Predators"], ["Unusual", "Unusual"]];
+    const animalSheet = a => openSheet([
       h("div", { class: "gallery" }, img(a.img, a.name, { loading: "eager" })),
       h("div", { class: "text" },
-        h("p", { class: "kicker", text: a.kind === "Unusual" ? "Unusual" : a.kind }),
+        h("p", { class: "kicker", text: a.kind }),
         h("h2", { id: "sheet-title", text: a.name }),
         h("p", { class: "desc", text: a.blurb }),
         h("dl", {},
           h("dt", { text: "Harvest" }), h("dd", {}, h("div", { class: "chips" }, a.drops.map(d => h("span", { class: "chip", text: d })))),
           h("dt", { text: "Classname" }), h("dd", {}, clsButton(a.cls))))
     ]);
+    const animalCards = kind => {
+      const list = D.animals.filter(a => kind === "all" || a.kind === kind);
+      stagger($("#animal-grid"), list.map(a => h("button", { class: "card", type: "button", onclick: () => animalSheet(a), "aria-label": a.name + ", details" },
+        h("div", { class: "pic" }, img(a.img, "")),
+        h("div", { class: "info" },
+          h("h3", { text: a.name }),
+          h("p", { class: "meta", text: a.kind }),
+          h("div", { class: "chips" }, a.drops.slice(0, 3).map(d => h("span", { class: "chip", text: d })),
+            a.drops.length > 3 ? h("span", { class: "chip", text: "+" + (a.drops.length - 3) }) : null)))));
+    };
+    segmented($("#animal-filter"), KINDS.filter(([k]) => k === "all" || D.animals.some(a => a.kind === k))
+      .map(([k, l]) => ({ key: k, label: l })), animalCards);
+    animalCards("all");
   }
-  function animalCards(kind) {
-    const list = D.animals.filter(a => kind === "all" || a.kind === kind);
-    stagger($("#animal-grid"), list.map(a => h("button", { class: "card", type: "button", onclick: () => animalSheet(a), "aria-label": a.name + ", details" },
-      h("div", { class: "pic" }, img(a.img, "")),
-      h("div", { class: "info" },
-        h("h3", { text: a.name }),
-        h("p", { class: "meta", text: a.kind }),
-        h("div", { class: "chips" }, a.drops.slice(0, 3).map(d => h("span", { class: "chip", text: d })),
-          a.drops.length > 3 ? h("span", { class: "chip", text: "+" + (a.drops.length - 3) }) : null)))));
-  }
-  segmented($("#animal-filter"), KINDS.map(([k, l]) => ({ key: k, label: l })), animalCards);
-  animalCards("all");
 
   // ---- mushrooms
   const LEVELS = { "Edible": "edible", "Cook first": "cook", "Poisonous": "poison", "Deadly": "deadly" };
   const levelBadge = f => h("span", { class: "badge lv-" + LEVELS[f.level], text: f.level });
-  const poisonText = {
-    "Edible": "Safe to eat raw, and better cooked.",
-    "Cook first": "Edible once cooked; raw, it upsets the stomach.",
-    "Poisonous": "Causes food poisoning: vomiting and stomach pain. Charcoal tablets help.",
-    "Deadly": "Causes organ damage that cooking does not prevent, and can kill. Only chelation tablets stop it."
-  };
-  function fungusSheet(f) {
-    openSheet([
+  if ($("#fungi-grid") && D.fungi) {
+    const poisonText = {
+      "Edible": "Safe to eat raw, and better cooked.",
+      "Cook first": "Edible once cooked; raw, it upsets the stomach.",
+      "Poisonous": "Causes food poisoning: vomiting and stomach pain. Charcoal tablets help.",
+      "Deadly": "Causes organ damage that cooking does not prevent, and can kill. Only chelation tablets stop it."
+    };
+    const fungusSheet = f => openSheet([
       h("div", { class: "gallery" }, img(f.img, f.name, { loading: "eager" })),
       h("div", { class: "text" },
         h("p", { class: "kicker lv-" + LEVELS[f.level], text: f.edible ? "Edible fungus" : "Poisonous fungus" }),
@@ -163,74 +164,103 @@
           h("dt", { text: "Habitat" }), h("dd", { text: f.habitat }),
           h("dt", { text: "Classname" }), h("dd", {}, clsButton(f.cls))))
     ]);
+    let fungiLevel = "all", fungiQuery = "";
+    const fungiCards = () => {
+      const q = fungiQuery.trim().toLowerCase();
+      const list = D.fungi.filter(f => (fungiLevel === "all" || f.level === fungiLevel) &&
+        (!q || (f.name + " " + f.latin + " " + f.cls).toLowerCase().includes(q)));
+      const cards = list.map(f => h("button", { class: "card", type: "button", onclick: () => fungusSheet(f), "aria-label": f.name + ", " + f.level },
+        h("div", { class: "pic" }, img(f.img, "")),
+        h("div", { class: "info" }, h("h3", { text: f.name }), h("p", { class: "meta latin", text: f.latin }), levelBadge(f))));
+      if (!cards.length) cards.push(h("p", { class: "empty", text: "No mushrooms match that search." }));
+      stagger($("#fungi-grid"), cards);
+    };
+    const count = lv => D.fungi.filter(f => f.level === lv).length;
+    segmented($("#fungi-filter"), [{ key: "all", label: "All", count: D.fungi.length }]
+      .concat(Object.keys(LEVELS).map(lv => ({ key: lv, label: lv, count: count(lv) }))), lv => { fungiLevel = lv; fungiCards(); });
+    $("#fungi-search").addEventListener("input", e => { fungiQuery = e.target.value; fungiCards(); });
+    fungiCards();
   }
-  let fungiLevel = "all", fungiQuery = "";
-  function fungiCards() {
-    const q = fungiQuery.trim().toLowerCase();
-    const list = D.fungi.filter(f => (fungiLevel === "all" || f.level === fungiLevel) &&
-      (!q || (f.name + " " + f.latin + " " + f.cls).toLowerCase().includes(q)));
-    const cards = list.map(f => h("button", { class: "card", type: "button", onclick: () => fungusSheet(f), "aria-label": f.name + ", " + f.level },
-      h("div", { class: "pic" }, img(f.img, "")),
-      h("div", { class: "info" }, h("h3", { text: f.name }), h("p", { class: "meta latin", text: f.latin }), levelBadge(f))));
-    if (!cards.length) cards.push(h("p", { class: "empty", text: "No mushrooms match that search." }));
-    stagger($("#fungi-grid"), cards);
-  }
-  const count = lv => D.fungi.filter(f => f.level === lv).length;
-  segmented($("#fungi-filter"), [{ key: "all", label: "All", count: D.fungi.length }]
-    .concat(Object.keys(LEVELS).map(lv => ({ key: lv, label: lv, count: count(lv) }))), lv => { fungiLevel = lv; fungiCards(); });
-  $("#fungi-search").addEventListener("input", e => { fungiQuery = e.target.value; fungiCards(); });
-  fungiCards();
 
   // ---- garden
-  function cropSheet(c) {
-    const thumbs = [[c.pack_img, "Seed packet"], [c.plant_img, "Ripe plant"], [c.img, c.name]];
-    if (c.slice) thumbs.push([c.slice.img, c.slice.name]);
-    const classes = [[c.cls, c.name], c.slice ? [c.slice.cls, c.slice.name] : null, [c.seeds_cls, "Seeds"], [c.pack_cls, "Seed packet"],
-      [c.plant_cls, "Plant"]].filter(Boolean);
-    openSheet([
-      h("div", { class: "gallery" }, img(c.plant_img, c.name + " plant", { loading: "eager" }),
-        h("div", { class: "thumbs" }, thumbs.map(([s, l]) => h("figure", {}, img(s, l, { loading: "eager" }), h("figcaption", { text: l }))))),
-      h("div", { class: "text" },
-        h("p", { class: "kicker", text: "Garden crop" }),
-        h("h2", { id: "sheet-title", text: c.name }),
-        h("p", { class: "desc", text: c.desc }),
-        c.slice ? h("p", { class: "desc", text: "Prepare it with a blade for " + c.slice.count + " slices and its seeds. " + c.slice.desc }) : null,
-        h("p", { class: "desc", style: "color:var(--muted)", text: c.plant }),
-        h("dl", {},
-          h("dt", { text: "Ripens in" }), h("dd", { text: "About " + c.minutes + " minutes" }),
-          h("dt", { text: "Harvest" }), h("dd", { text: c.crops + " per plant" }),
-          h("dt", { text: "New seeds" }), h("dd", { text: c.seeds }),
-          ...classes.flatMap(([cls, l]) => [h("dt", { text: l }), h("dd", {}, clsButton(cls))])))
-    ]);
+  if ($("#crop-grid") && D.crops) {
+    const cropSheet = c => {
+      const thumbs = [[c.pack_img, "Seed packet"], [c.plant_img, "Ripe plant"], [c.img, c.name]];
+      if (c.slice) thumbs.push([c.slice.img, c.slice.name]);
+      const classes = [[c.cls, c.name], c.slice ? [c.slice.cls, c.slice.name] : null, [c.seeds_cls, "Seeds"], [c.pack_cls, "Seed packet"],
+        [c.plant_cls, "Plant"]].filter(Boolean);
+      openSheet([
+        h("div", { class: "gallery" }, img(c.plant_img, c.name + " plant", { loading: "eager" }),
+          h("div", { class: "thumbs" }, thumbs.map(([s, l]) => h("figure", {}, img(s, l, { loading: "eager" }), h("figcaption", { text: l }))))),
+        h("div", { class: "text" },
+          h("p", { class: "kicker", text: "Garden crop" }),
+          h("h2", { id: "sheet-title", text: c.name }),
+          h("p", { class: "desc", text: c.desc }),
+          c.slice ? h("p", { class: "desc", text: "Prepare it with a blade for " + c.slice.count + " slices and its seeds. " + c.slice.desc }) : null,
+          h("p", { class: "desc", style: "color:var(--muted)", text: c.plant }),
+          h("dl", {},
+            h("dt", { text: "Ripens in" }), h("dd", { text: "About " + c.minutes + " minutes" }),
+            h("dt", { text: "Harvest" }), h("dd", { text: c.crops + " per plant" }),
+            h("dt", { text: "New seeds" }), h("dd", { text: c.seeds }),
+            ...classes.flatMap(([cls, l]) => [h("dt", { text: l }), h("dd", {}, clsButton(cls))])))
+      ]);
+    };
+    stagger($("#crop-grid"), D.crops.map(c => h("button", { class: "card crop", type: "button", onclick: () => cropSheet(c), "aria-label": c.name + ", details" },
+      h("div", { class: "pic" }, img(c.img, ""), c.slice ? img(c.slice.img, "", { class: "extra" }) : null),
+      h("div", { class: "info" },
+        h("h3", { text: c.name }),
+        h("p", { class: "meta", text: c.tagline }),
+        h("div", { class: "facts" },
+          h("div", {}, h("b", { text: "~" + c.minutes + " min" }), h("span", { text: "to ripen" })),
+          h("div", {}, h("b", { text: String(c.crops) }), h("span", { text: "per plant" })))))));
   }
-  stagger($("#crop-grid"), D.crops.map(c => h("button", { class: "card crop", type: "button", onclick: () => cropSheet(c), "aria-label": c.name + ", details" },
-    h("div", { class: "pic" }, img(c.img, ""), c.slice ? img(c.slice.img, "", { class: "extra" }) : null),
-    h("div", { class: "info" },
-      h("h3", { text: c.name }),
-      h("p", { class: "meta", text: c.tagline }),
-      h("div", { class: "facts" },
-        h("div", {}, h("b", { text: "~" + c.minutes + " min" }), h("span", { text: "to ripen" })),
-        h("div", {}, h("b", { text: String(c.crops) }), h("span", { text: "per plant" })))))));
+
+  // ---- wild plants
+  if ($("#flora-grid") && D.flora) {
+    const floraSheet = f => openSheet([
+      h("div", { class: "gallery" }, img(f.img, f.name, { loading: "eager" })),
+      h("div", { class: "text" },
+        h("p", { class: "kicker", text: "Wild plant" }),
+        h("h2", { id: "sheet-title", text: f.name }),
+        h("p", { class: "desc", text: f.desc }),
+        h("dl", {},
+          h("dt", { text: "Habitat" }), h("dd", { text: f.habitat }),
+          h("dt", { text: "Found by" }), h("dd", { text: "The vanilla " + f.event + " event, with the mushrooms" }),
+          h("dt", { text: "Classname" }), h("dd", {}, clsButton(f.cls))))
+    ]);
+    stagger($("#flora-grid"), D.flora.map(f => h("button", { class: "card", type: "button", onclick: () => floraSheet(f), "aria-label": f.name + ", details" },
+      h("div", { class: "pic" }, img(f.img, "")),
+      h("div", { class: "info" }, h("h3", { text: f.name }), h("p", { class: "meta", text: f.habitat })))));
+  }
 
   // ---- setup snippets generated from the data
-  const events = {};
-  D.fungi.concat(D.flora || []).forEach(f => (events[f.event] = events[f.event] || []).push(f));
-  $("#fungi-events").textContent = Object.entries(events).map(([ev, list]) =>
-    "<!-- Add to the vanilla " + ev + " event's <children> -->\n" +
-    list.map(f => '<child lootmax="0" lootmin="0" max="0" min="0" type="' + f.cls + '"/>' + (D.flora && D.flora.includes(f) ? "  <!-- wild plant -->" : f.edible ? "" : "  <!-- " + f.level.toLowerCase() + " -->")).join("\n")
-  ).join("\n\n");
-  $("#crops-code").textContent = D.crops.map(c => c.pack_cls).join("\n");
+  const eventChildren = (list, note) => {
+    const events = {};
+    list.forEach(f => (events[f.event] = events[f.event] || []).push(f));
+    return Object.entries(events).map(([ev, items]) =>
+      "<!-- Add to the vanilla " + ev + " event's <children> -->\n" +
+      items.map(f => '<child lootmax="0" lootmin="0" max="0" min="0" type="' + f.cls + '"/>' + note(f)).join("\n")
+    ).join("\n\n");
+  };
+  const fungiEvents = $("#fungi-events");
+  if (fungiEvents && D.fungi) fungiEvents.textContent = eventChildren(D.fungi, f => f.edible ? "" : "  <!-- " + f.level.toLowerCase() + " -->");
+  const floraEvents = $("#flora-events");
+  if (floraEvents && D.flora) floraEvents.textContent = eventChildren(D.flora, () => "  <!-- wild plant -->");
+  const cropsCode = $("#crops-code");
+  if (cropsCode && D.crops) cropsCode.textContent = D.crops.map(c => c.pack_cls).join("\n");
 
   // ---- classnames
   const filter = $("#class-filter"), search = $("#class-search"), tbody = $("#class-body"), countEl = $("#class-count");
-  [...new Set(D.classes.map(c => c[1]))].forEach(c => filter.add(new Option(c, c)));
-  function table() {
-    const q = search.value.trim().toLowerCase(), cat = filter.value;
-    const rows = D.classes.filter(([cls, c, name]) => (!cat || c === cat) && (!q || (cls + " " + name).toLowerCase().includes(q)));
-    tbody.replaceChildren(...rows.map(([cls, c, name]) => h("tr", {}, h("td", {}, clsButton(cls)), h("td", { text: name }), h("td", { text: c }))));
-    countEl.textContent = rows.length + (rows.length === 1 ? " class" : " classes");
+  if (tbody && D.classes) {
+    [...new Set(D.classes.map(c => c[1]))].forEach(c => filter.add(new Option(c, c)));
+    const table = () => {
+      const q = search.value.trim().toLowerCase(), cat = filter.value;
+      const rows = D.classes.filter(([cls, c, name]) => (!cat || c === cat) && (!q || (cls + " " + name).toLowerCase().includes(q)));
+      tbody.replaceChildren(...rows.map(([cls, c, name]) => h("tr", {}, h("td", {}, clsButton(cls)), h("td", { text: name }), h("td", { text: c }))));
+      countEl.textContent = rows.length + (rows.length === 1 ? " class" : " classes");
+    };
+    filter.addEventListener("change", table);
+    search.addEventListener("input", table);
+    table();
   }
-  filter.addEventListener("change", table);
-  search.addEventListener("input", table);
-  table();
 })();

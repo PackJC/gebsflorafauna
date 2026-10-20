@@ -8,7 +8,7 @@ PixelShaderID="Super";
 VertexShaderID="Super";
 class Stage1
 {
-	texture="gebsflorafauna\data\fauna\female_turkey\female_turkey_nohq.paa";
+	texture="gebsanimals\data\fauna\female_turkey\female_turkey_nohq.paa";
 	uvSource="tex";
 	class uvTransform
 	{
@@ -56,7 +56,7 @@ class Stage4
 };
 class Stage5
 {
-	texture="gebsflorafauna\data\fauna\female_turkey\female_turkey_smdi.paa";
+	texture="gebsanimals\data\fauna\female_turkey\female_turkey_smdi.paa";
 	uvSource="tex";
 	class uvTransform
 	{

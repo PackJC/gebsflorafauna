@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class gebsflorafauna_sounds_giraffe
+	class gebsanimals_sounds_giraffe
 	{
 		units[]={};
 		weapons[]={};
@@ -84,7 +84,7 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			}
 		};
@@ -97,22 +97,22 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 			
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			}
 		};
@@ -127,7 +127,7 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			}
 		};
@@ -140,7 +140,7 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			}
 		};
@@ -153,52 +153,52 @@ class CfgSoundShaders
 		{
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			},
 
 			{
-				"gebsflorafauna\data\fauna\giraffe\sounds\giraffe1",
+				"gebsanimals\data\fauna\giraffe\sounds\giraffe1",
 				0.80000001
 			}
 		};

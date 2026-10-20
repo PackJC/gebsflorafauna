@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class gebsflorafauna_sounds_turkey
+	class gebsanimals_sounds_turkey
 	{
 		units[]={};
 		weapons[]={};
@@ -209,17 +209,17 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+				"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -233,12 +233,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -252,17 +252,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -276,32 +276,32 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
@@ -316,7 +316,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 			
@@ -331,12 +331,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -350,12 +350,12 @@ class CfgSoundShaders
 		{
 			
 			{
-				"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+				"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-			"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+			"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -369,12 +369,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -388,17 +388,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -412,17 +412,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -436,17 +436,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -460,22 +460,22 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -489,12 +489,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -508,12 +508,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -527,12 +527,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -546,12 +546,12 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -565,7 +565,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -579,7 +579,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -593,17 +593,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -617,17 +617,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -641,17 +641,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -665,17 +665,17 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			},
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -690,7 +690,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -704,7 +704,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -724,7 +724,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -745,7 +745,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -766,7 +766,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -786,7 +786,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
@@ -807,7 +807,7 @@ class CfgSoundShaders
 		{
 			
 			{
-"gebsflorafauna\data\fauna\turkey\sounds\gobble",
+"gebsanimals\data\fauna\turkey\sounds\gobble",
 				1
 			}
 		};
