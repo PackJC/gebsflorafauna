@@ -9,30 +9,12 @@ __pycache__/
 /.rules
 /CF
 *.webp
-# ...but everything the site serves must ship: GitHub Pages publishes
-# docs/, so item renders and anything added later need to be tracked or
-# they 404 on the site.
+# ...but everything the website serves must ship: GitHub Pages publishes
+# docs/, so renders and anything added later need to be tracked or they
+# 404 on the site.
 !docs/**/*.webp
 # Local only, never on GitHub: the Python build and render tools, and the
-# old Workbench project. Anchored to the top folder.
+# old Workbench project. Anchored to the top folder, so a data/tools folder
+# or a script folder called Tools is mod content and stays tracked.
 /tools/
 /Workbench/
-
-# Not in gebsfish's list, but this repo needs them too:
-# DayZ build outputs
-*.pbo
-*.bisign
-*.bikey
-temp/
-build/
-# Visual Studio / VS Code leftovers, Windows thumbnails, logs
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-.vscode/
-Thumbs.db
-*.log
-*.rpt
-*.tmp
-*~
