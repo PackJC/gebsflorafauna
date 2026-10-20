@@ -1,32 +1,38 @@
 <h1 align="center">
   <br>
-  <a href="https://packjc.github.io/gebsanimals/"><img src="docs/assets/banner.png" alt="Geb's Animals" width="900"></a>
+  <img src=".github/logo.png" alt="Geb's Animals" width="500"/>
   <br>
-  <a href="https://discord.gg/G8uSGZ8yyf"><img src="https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the Discord"></a>
-  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664"><img src="https://img.shields.io/badge/Steam-Workshop-1b2838?style=for-the-badge&logo=steam&logoColor=white" alt="Geb's Animals on the Steam Workshop"></a>
+  <a href="https://discord.gg/G8uSGZ8yyf" style="width:250"><img src="https://i.imgur.com/4IyA522.png" alt="Join Our Discord" width="250" style="margin-left:9%"/></a><img src="https://i.imgur.com/3rhti8A.gif" alt="Like & Favorite" width="500" style="margin-left:-10%"/>
   <br>
 </h1>
 
 <h3 align="center">New Wildlife for DayZ</h3>
 
 <p align="center">
+  <img alt="Mod Version" src="https://img.shields.io/badge/Mod-v2.0.0-blue?style=for-the-badge">
+  <img alt="DayZ Version" src="https://img.shields.io/badge/DayZ-v1.30-teal?style=for-the-badge">
   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664"><img alt="Workshop Subscribers" src="https://img.shields.io/steam/subscriptions/2764114664?style=for-the-badge&color=purple&label=Workshop%20Subs"></a>
-  <a href="https://packjc.github.io/gebsanimals/"><img alt="Website" src="https://img.shields.io/badge/Website-Field%20Guide-7ed99a?style=for-the-badge"></a>
+  <a href="https://packjc.github.io/gebsanimals/"><img alt="Website" src="https://img.shields.io/badge/Website-Field%20Guide-c0392b?style=for-the-badge"></a>
 </p>
 
 <p align="center">
   <a href="https://packjc.github.io/gebsanimals/">Website</a> •
-  <a href="#information">Information</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#installation">Installation</a> •
   <a href="#main-classnames">Classnames</a> •
-  <a href="#support">Support</a> •
-  <a href="#license--terms">License & Terms</a>
+  <a href="#credits">Credits</a> •
+  <a href="#license">License & Terms</a> •
+  <a href='CHANGELOG.md'>Change Log</a>
 </p>
 
 ## Information
 
-Geb's Animals adds 15 new animals to DayZ, each with its own model, sounds and harvest. The animals are server-configured Central Economy encounters rather than effortless food: server owners decide which species appear, where they live, and how common they are.
+Geb's Animals adds 15 new animals to DayZ, each with its own model, sounds and harvest.
+The animals are server-configured Central Economy encounters rather than free food: server owners decide which species appear, where they live, and how common they are.
+
+## Requirements
+
+* DayZ 1.30. No other mods are needed: load Geb's Animals on both the server and every client.
 
 ## Key Features
 
@@ -34,7 +40,21 @@ Geb's Animals adds 15 new animals to DayZ, each with its own model, sounds and h
 * **Harvesting**: species-specific meat, pelts, a raccoon tail and elephant tusks.
 * **Crafting**: prepare a turkey with a blade, and craft a coonskin cap from a raccoon pelt and tail.
 * **Server-controlled by design**: nothing replaces vanilla wildlife. You add only the event definitions and spawn positions you want.
-* **Localization**: a DayZ `stringtable.csv` for the supported interface languages.
+* Supported languages:
+  - English
+  - Czech
+  - German
+  - Russian
+  - Polish
+  - Hungarian
+  - Italian
+  - Spanish
+  - French
+  - Chinese (Traditional and Simplified)
+  - Japanese
+  - Portuguese
+  > **Note**
+  > Although supported languages are listed above, we cannot verify complete accuracy. If you are a native speaker and notice anything wrong, please reach out to us in the Discord via a ticket to assist us in getting proper translations.
 
 ## Installation
 
@@ -68,14 +88,38 @@ This mod is one of three that used to be **Geb's Flora & Fauna**. Each now stand
 
 The classnames are unchanged. A server that ran Geb's Flora & Fauna should load all three to keep every item players already have; leaving one out deletes its items from the server's storage at the next restart.
 
+## Credits
+
+- [CADNav](https://www.cadnav.com/) for the camel, elephant, chimpanzee, cheetah, peacock, rabbit and giraffe models
+- [Emperor Penguin model](https://sketchfab.com/3d-models/emperor-penguin-310f1d21cf534fd0bcf073aa9b08a740), [Brown Raccoon model](https://www.turbosquid.com/3d-models/3d-fully-rigged-brown-raccoon-model-1710706), [Realistic Alien model](https://www.cgtrader.com/3d-models/character/sci-fi-character/realistic-alien-8) and [Rigged Turkey model](https://www.turbosquid.com/3d-models/turkey-rigged-3d-model-1602065)
+- Alien sounds by Geb; animal sounds from [JarredGibb (Freesound)](https://freesound.org/people/JarredGibb/sounds/233125/), SoundBible's [chimpanzee](https://soundbible.com/1188-Chimpanzee.html) (Attribution 3.0), [elephant](https://soundbible.com/1140-Elephant.html), [raccoon](https://soundbible.com/1853-Raccoon.html), [mountain lion](https://soundbible.com/1160-Mountain-Lion.html) and [peacock](https://soundbible.com/1430-Peacock.html), and the [penguin](https://www.freesoundslibrary.com/penguin-noise/) from Free Sounds Library
+- The DayZ community for reporting bugs and inspiration throughout the life of the mod
+
+
 ## Support
 
-* [Discord](https://discord.gg/G8uSGZ8yyf)
-* [GitHub issues](https://github.com/PackJC/gebsanimals/issues)
-* [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664)
+If you like this project and think it has improved your server in any way, consider contributing! We are always looking for help with ideas, new models, and any monetary support that can help improve the mod. Open a ticket in the [Discord](https://discord.gg/G8uSGZ8yyf) to discuss how you can contribute, or report a bug on [GitHub](https://github.com/PackJC/gebsanimals/issues).
 
-## License & Terms
 
-The Steam Workshop item is the authorized distribution source. Do not re-upload, repack, mirror, or include the mod in a server/mod pack. Use a Steam Collection to publish a server's required mod list. Refer to the Workshop page for the complete current terms.
+## License
 
-Copyright 2022–2026 Cole / PackJC.
+[Attribution-NonCommercial-NoDerivatives 4.0 International](https://github.com/PackJC/gebsanimals/blob/master/LICENSE)
+
+## Usage & Terms
+This item is NOT authorized (strictly forbidden) for any of these conditions:
+- posting on Steam, except under the Steam account Cole.
+- hosting on any download server other than Geb's Animals current workshop download.
+- hosting on any launcher for distribution other than Geb's Animals current workshop download.
+- to be packaged in any form other than Geb's Animals current workshop download.
+- to create derivative works.
+
+## PERMISSION IS NOT GRANTED FOR THIS MOD TO BE INCLUDED IN A "SERVER PACK" or "MOD PACK" DO NOT EVEN ASK TO REPACK. NO. NOT ALLOWED.
+Use a Collection if you want to include this mod on your server for your users.
+
+## Monetization
+You are hereby given monetization approval under the conditions that you follow the DayZ Server Monetization agreement and have obtained permission from Bohemia. Read more here https://www.bohemia.net/monetization
+
+## Donations
+We accept donations at https://www.paypal.com/paypalme/packjc every dollar counts and we greatly appreciate any contributions!
+
+### Copyright © Smoky Mountain Software 2022-2026
