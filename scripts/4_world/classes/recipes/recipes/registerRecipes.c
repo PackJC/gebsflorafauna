@@ -31,6 +31,19 @@ modded class PluginRecipesManager
 		RegisterRecipe(new geb_PrepareWatermelon);
 		RegisterRecipe(new geb_PrepareCantaloupe);
 		RegisterRecipe(new CutOutCucumberSeeds);
+		RegisterRecipe(new geb_ThreshBarley);
+		RegisterRecipe(new geb_StripTobaccoSeeds);
+		RegisterRecipe(new geb_CutSweetPotatoSeedPieces);
+		RegisterRecipe(new geb_ShellPeas);
+		RegisterRecipe(new geb_CutOutPoleBeanSeeds);
+		RegisterRecipe(new geb_ShellPeanuts);
+		RegisterRecipe(new geb_CutOutStrawberrySeeds);
+		RegisterRecipe(new geb_ThreshSorghum);
+		RegisterRecipe(new geb_CutOutSunflowerSeeds);
+		RegisterRecipe(new geb_CutOutGinsengSeeds);
+		RegisterRecipe(new geb_TieTobaccoHand);
+		RegisterRecipe(new geb_StartTobaccoBale);
+		RegisterRecipe(new geb_AddToTobaccoBale);
 		//Garden crops end
 
 

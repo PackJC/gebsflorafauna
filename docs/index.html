@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2321a052' d='M27 4C13 4 5 11 5 21c0 2 .4 3.8 1.1 5.4C8 20 13 15 20 12c-6 4-10 9-12 16 1 .4 2.2.6 3.4.6C22 28.6 27 18 27 4z'/%3E%3C/svg%3E">
   <title>Geb's Flora &amp; Fauna</title>
-  <meta name="description" content="Geb's Flora & Fauna for DayZ: 15 animals, 44 wild fungi, 10 garden crops, and a complete server setup guide.">
+  <meta name="description" content="Geb's Flora & Fauna for DayZ: 15 animals, 63 wild fungi, 27 garden crops, and a complete server setup guide.">
   <meta property="og:title" content="Geb's Flora & Fauna for DayZ">
-  <meta property="og:description" content="Fifteen animals, forty-four fungi and ten garden crops for DayZ servers.">
+  <meta property="og:description" content="Fifteen animals, sixty-three fungi and twenty-seven garden crops for DayZ servers.">
   <meta property="og:url" content="https://packjc.github.io/gebsflorafauna/">
   <meta property="og:image" content="https://raw.githubusercontent.com/PackJC/gebsflorafauna/master/docs/assets/gebs-flora-fauna-banner.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@
     <section class="hero">
       <p class="eyebrow rise">A DayZ mod by Geb</p>
       <h1 class="rise">Flora &amp; Fauna.</h1>
-      <p class="lede rise">The wild side of DayZ. Hunt <b data-stat="animals">15</b> new animals, forage <b data-stat="fungi">44</b> wild mushrooms, and grow <b data-stat="crops">10</b> garden crops.</p>
+      <p class="lede rise">The wild side of DayZ. Hunt <b data-stat="animals">15</b> new animals, forage <b data-stat="fungi">63</b> wild mushrooms and wild ginseng, and grow <b data-stat="crops">27</b> garden crops.</p>
       <div class="cta rise">
         <a class="pill" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2764114664">Subscribe on Steam</a>
         <a class="link-arrow" href="#setup">Set up your server</a>
@@ -65,9 +65,9 @@
 
     <section class="stats" aria-label="At a glance">
       <div class="stat reveal"><b data-stat="animals">15</b><span>animals to hunt</span></div>
-      <div class="stat reveal"><b data-stat="fungi">44</b><span>wild fungi</span></div>
-      <div class="stat reveal"><b data-stat="crops">10</b><span>garden crops</span></div>
-      <div class="stat reveal"><b data-stat="classes">123</b><span>classnames</span></div>
+      <div class="stat reveal"><b data-stat="fungi">63</b><span>wild fungi</span></div>
+      <div class="stat reveal"><b data-stat="crops">27</b><span>garden crops</span></div>
+      <div class="stat reveal"><b data-stat="classes">212</b><span>classnames</span></div>
     </section>
 
     <section class="band" id="wildlife">
@@ -86,8 +86,8 @@
       <div class="wrap">
         <header class="head reveal">
           <p class="eyebrow">Mycology</p>
-          <h2>Forty-four fungi.<br>Know which is which.</h2>
-          <p class="sub"><b data-stat="edible">24</b> are good to eat. <b data-stat="poisonous">20</b> are look-alikes that will make you sick, and <b data-stat="deadly">6</b> of those can kill. Each one cooks, dries, burns and rots with its own look.</p>
+          <h2>Sixty-three fungi.<br>Know which is which.</h2>
+          <p class="sub"><b data-stat="edible">36</b> are good to eat. <b data-stat="poisonous">27</b> are look-alikes that will make you sick, and <b data-stat="deadly">7</b> of those can kill. Each one cooks, dries, burns and rots with its own look.</p>
         </header>
         <div class="tools reveal">
           <div class="seg" role="group" aria-label="Filter mushrooms" id="fungi-filter"></div>
@@ -174,8 +174,8 @@
           <li class="reveal">
             <span class="num">4</span>
             <div>
-              <h3>Let mushrooms grow</h3>
-              <p>Give each fungus a <code>types.xml</code> entry like vanilla's <code>AgaricusMushroom</code>, then add it to the vanilla <code>Trajectory</code> events that scatter mushrooms on the forest floor around players. Leave out the poisonous ones if you'd rather.</p>
+              <h3>Let mushrooms and wild plants grow</h3>
+              <p>Give each fungus, and wild ginseng, a <code>types.xml</code> entry like vanilla's <code>AgaricusMushroom</code>, then add it to the vanilla <code>Trajectory</code> events that scatter mushrooms on the forest floor around players. Leave out the poisonous ones if you'd rather.</p>
               <div class="code"><button class="copy" data-copy="fungi-types">Copy</button><pre><code id="fungi-types">&lt;type name="geb_Chanterelle"&gt;
     &lt;nominal&gt;0&lt;/nominal&gt;
     &lt;lifetime&gt;900&lt;/lifetime&gt;
@@ -214,7 +214,7 @@
         <header class="head reveal">
           <p class="eyebrow">Reference</p>
           <h2>Every classname.</h2>
-          <p class="sub">All <b data-stat="classes">123</b> public classes, for spawning, trader lists and loot tables. Click a name to copy it.</p>
+          <p class="sub">All <b data-stat="classes">212</b> public classes, for spawning, trader lists and loot tables. Click a name to copy it.</p>
         </header>
         <div class="tools reveal">
           <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="class-search" type="search" placeholder="Search classnames" autocomplete="off" aria-label="Search classnames"></label>
@@ -233,7 +233,9 @@
           <details><summary>I can spawn an animal by hand, but none appear naturally. Why?</summary><p>A working classname proves the mod is loaded. Natural populations also need matching entries in <code>events.xml</code> and <code>cfgeventspawns.xml</code>.</p></details>
           <details><summary>Vanilla animals stopped spawning. What happened?</summary><p>Check the server log for malformed XML, then look at the combined nominal, min and max of every animal event. Start with one custom event and add more gradually.</p></details>
           <details><summary>Which mushrooms are dangerous?</summary><p id="faq-poison">Most of the poisonous ones cause food poisoning: vomiting, eased by charcoal tablets. The deadly ones damage the organs, and cooking doesn't help; only chelation tablets stop it. Several edible species, such as morels, must be cooked first. The Mushrooms section above marks every one.</p></details>
-          <details><summary>How do the garden crops grow?</summary><p>Empty a Geb's Garden seed packet, plant the seeds in a tilled garden plot and water them, as with vanilla seeds. Each crop grows through five stages; harvest it when ripe, before it dries or spoils. Cut fresh seeds out of a raw harvest with any blade (garlic splits into cloves; carrots come from packets only). A whole watermelon or cantaloupe is too big to eat: prepare it with a blade for slices and seeds, as with vanilla's pumpkin.</p></details>
+          <details><summary>Where do I find ginseng?</summary><p>On the forest floor in hardwood woods, where the server adds it to the vanilla <code>TrajectoryDeciduous</code> event with the mushrooms. You find the whole dug plant: look for three prongs of five toothed leaflets and a cluster of red berries over a forked, ringed tan root. Chew the root for a bitter-sweet lift, boil it into a tea, or dry it to keep and trade. You can also grow it: sow seeds from a Geb's Garden packet, or take them from the red berries with a blade, and dig the plants once they carry ripe berries.</p></details>
+          <details><summary>How do the garden crops grow?</summary><p>Empty a Geb's Garden seed packet, plant the seeds in a tilled garden plot and water them, as with vanilla seeds. Each crop grows through five stages; harvest it when ripe, before it dries or spoils. Cut fresh seeds out of a raw harvest with any blade: thresh barley and sorghum, shell peas and peanuts, cut sweet potatoes into seed pieces, take ginseng seeds from the berries, and split garlic into cloves. Carrots, cabbage, collards, beets, radishes, turnips, leeks and hops come from packets only. A whole watermelon or cantaloupe is too big to eat: prepare it with a blade for slices and seeds, as with vanilla's pumpkin.</p></details>
+          <details><summary>How do I cure tobacco?</summary><p>Tie two bunches of green leaves into a hand. Hang the hand in a smoking slot of a stone oven, a closed barrel stove or an indoor fireplace, and take it out when it turns golden brown, after about eight minutes of smoke; left in, it scorches. A hand left hanging anywhere else may cure by itself or rot. Start a bale from a cured hand and a rope, then add cured hands until it holds five.</p></details>
           <details><summary>Does every player need the mod?</summary><p>Yes. It supplies the models, textures, sounds, scripts and item names.</p></details>
           <details><summary>Can I put it in a server pack?</summary><p>No. Use the Workshop item, and a Steam Collection for your server's required mods.</p></details>
         </div>

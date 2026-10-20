@@ -214,10 +214,10 @@
 
   // ---- setup snippets generated from the data
   const events = {};
-  D.fungi.forEach(f => (events[f.event] = events[f.event] || []).push(f));
+  D.fungi.concat(D.flora || []).forEach(f => (events[f.event] = events[f.event] || []).push(f));
   $("#fungi-events").textContent = Object.entries(events).map(([ev, list]) =>
     "<!-- Add to the vanilla " + ev + " event's <children> -->\n" +
-    list.map(f => '<child lootmax="0" lootmin="0" max="0" min="0" type="' + f.cls + '"/>' + (f.edible ? "" : "  <!-- " + f.level.toLowerCase() + " -->")).join("\n")
+    list.map(f => '<child lootmax="0" lootmin="0" max="0" min="0" type="' + f.cls + '"/>' + (D.flora && D.flora.includes(f) ? "  <!-- wild plant -->" : f.edible ? "" : "  <!-- " + f.level.toLowerCase() + " -->")).join("\n")
   ).join("\n\n");
   $("#crops-code").textContent = D.crops.map(c => c.pack_cls).join("\n");
 
